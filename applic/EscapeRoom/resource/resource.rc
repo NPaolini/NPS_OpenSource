@@ -1,0 +1,328 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Italiano (Italia) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ITA)
+LANGUAGE LANG_ITALIAN, SUBLANG_ITALIAN
+#pragma code_page(1252)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+1 VERSIONINFO
+ FILEVERSION 1,0,0,3
+ PRODUCTVERSION 1,0,0,0
+ FILEFLAGSMASK 0x0L
+#ifdef _DEBUG
+ FILEFLAGS 0x3fL
+#else
+ FILEFLAGS 0x3eL
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041004b0"
+        BEGIN
+            VALUE "Comments", "Licenced by NPS"
+            VALUE "CompanyName", "NPS"
+            VALUE "FileDescription", "NpS Escape Room - Free Version"
+            VALUE "FileVersion", "1.0.0.3"
+            VALUE "InternalName", "Appl (by NPS)"
+            VALUE "LegalCopyright", "Copyright © 2001-2020. All Rights Reserved"
+            VALUE "LegalTrademarks", "Windows(TM) is a trademark of Microsoft Corporation"
+            VALUE "OriginalFilename", "ER.exe"
+            VALUE "PrivateBuild", " "
+            VALUE "ProductName", "ER management - by NPS"
+            VALUE "ProductVersion", "1, 0, 0, 0"
+            VALUE "SpecialBuild", " "
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x410, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_ICON1               ICON                    "escape.ico"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_CURS_HAND           CURSOR                  "hand_p.cur"
+
+IDC_CURS_SLIDER         CURSOR                  "harrow.cur"
+
+IDC_CURS_SLIDER_SX      CURSOR                  "hnesw.cur"
+
+IDC_CURS_SLIDER_DX      CURSOR                  "hnwse.cur"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BITMAP_FOLDER       BITMAP                  "open_folder.bmp"
+
+IDB_BITMAP_OK           BITMAP                  "ok.bmp"
+
+IDB_BITMAP_CANC         BITMAP                  "delete.bmp"
+
+IDB_BITMAP_M_DONE       BITMAP                  "done.bmp"
+
+IDB_BITMAP_M_DONE2      BITMAP                  "done2.bmp"
+
+IDB_BITMAP_M_UPD        BITMAP                  "info.bmp"
+
+IDB_BITMAP_M_UPD2       BITMAP                  "info2.bmp"
+
+IDB_BITMAP_M_UPD_SET    BITMAP                  "info_set.bmp"
+
+IDB_BITMAP_M_UPD_SET2   BITMAP                  "info_set2.bmp"
+
+IDB_BITMAP_M_SAVE       BITMAP                  "timer.bmp"
+
+IDB_BITMAP_M_SAVE2      BITMAP                  "timer2.bmp"
+
+IDB_BITMAP_M_FOLDER     BITMAP                  "setup.bmp"
+
+IDB_BITMAP_M_FOLDER2    BITMAP                  "setup2.bmp"
+
+IDB_BITMAP_M_ADD        BITMAP                  "full_screen.bmp"
+
+IDB_BITMAP_M_ADD2       BITMAP                  "full_screen2.bmp"
+
+IDB_BITMAP_M_REM        BITMAP                  "move.bmp"
+
+IDB_BITMAP_M_REM2       BITMAP                  "move2.bmp"
+
+IDB_BITMAP_M_COPY       BITMAP                  "sound.bmp"
+
+IDB_BITMAP_M_COPY2      BITMAP                  "sound2.bmp"
+
+IDB_BITMAP_M_PASTE      BITMAP                  "alert.bmp"
+
+IDB_BITMAP_M_PASTE2     BITMAP                  "alert2.bmp"
+
+IDB_BITMAP_M_EXPORT     BITMAP                  "pausa.bmp"
+
+IDB_BITMAP_M_EXPORT2    BITMAP                  "pausa2.bmp"
+
+IDB_LED_0               BITMAP                  "num_led\\led0.bmp"
+
+IDB_LED_1               BITMAP                  "num_led\\led1.bmp"
+
+IDB_LED_2               BITMAP                  "num_led\\led2.bmp"
+
+IDB_LED_3               BITMAP                  "num_led\\led3.bmp"
+
+IDB_LED_4               BITMAP                  "num_led\\led4.bmp"
+
+IDB_LED_5               BITMAP                  "num_led\\led5.bmp"
+
+IDB_LED_6               BITMAP                  "num_led\\led6.bmp"
+
+IDB_LED_7               BITMAP                  "num_led\\led7.bmp"
+
+IDB_LED_8               BITMAP                  "num_led\\led8.bmp"
+
+IDB_LED_9               BITMAP                  "num_led\\led9.bmp"
+
+IDB_LED_SIGN            BITMAP                  "num_led\\ledSign.bmp"
+
+IDB_LED_POINT           BITMAP                  "num_led\\ledPoint.bmp"
+
+IDB_SLIDER_SKIN         BITMAP                  "skin_slider.bmp"
+
+IDB_SLIDER              BITMAP                  "slider.bmp"
+
+IDB_SLIDER_SX           BITMAP                  "slider_sx.bmp"
+
+IDB_SLIDER_DX           BITMAP                  "slider_dx.bmp"
+
+IDB_BITMAP_ADD          BITMAP                  "add.bmp"
+
+IDB_BITMAP_MOD          BITMAP                  "mod.bmp"
+
+IDB_BITMAP_REM          BITMAP                  "rem.bmp"
+
+IDB_BITMAP_FONT         BITMAP                  "font.bmp"
+
+IDB_BITMAP_COLOR        BITMAP                  "color.bmp"
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DIALOG_SETUP DIALOGEX 0, 0, 337, 187
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_VISIBLE | WS_CAPTION
+CAPTION "Esporta"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "Ok",IDOK,213,153,50,14
+    PUSHBUTTON      "Canc",IDCANCEL,265,153,50,14
+    GROUPBOX        "Background Pictures folder",IDC_STATIC,14,2,309,40
+    EDITTEXT        IDC_EDIT_IMG_FOLDER,24,17,251,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "",IDC_BUTTON_IMG_FOLDER,287,14,25,19
+    GROUPBOX        "Background music folder",IDC_STATIC,14,43,309,40
+    EDITTEXT        IDC_EDIT_SOUND,24,59,251,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "",IDC_BUTTON_SOUND,287,57,25,19
+    GROUPBOX        "Alert audio folder",IDC_STATIC,14,85,309,58
+    EDITTEXT        IDC_EDIT_SOUND_ALERT,24,101,251,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "",IDC_BUTTON_SOUND_ALERT,287,99,25,19
+    RTEXT           "Duration (sec.)",IDC_STATIC,25,123,54,8
+    EDITTEXT        IDC_EDIT_AUDIO_ALERT_TIME,88,121,40,14,ES_CENTER
+    GROUPBOX        "Timer",IDC_STATIC,14,146,131,30
+    RTEXT           "Duration",IDC_STATIC,23,159,40,8
+    CONTROL         "",IDC_DATETIMEPICKER1,"SysDateTimePick32",DTS_RIGHTALIGN | DTS_UPDOWN | WS_TABSTOP | 0x8,71,155,58,15,WS_EX_RIGHT
+    RTEXT           "(-1 for one time)",IDC_STATIC,132,124,54,8
+END
+
+IDD_DIALOG_INFO DIALOGEX 0, 0, 365, 308
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION
+CAPTION "Text/Image Tips"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    GROUPBOX        "Text",IDC_STATIC,12,10,342,206
+    EDITTEXT        IDC_EDIT_FONT,21,24,108,16,ES_AUTOHSCROLL
+    PUSHBUTTON      "Font",IDC_BUTTON_FONT,131,24,39,16
+    LTEXT           "",IDC_STATIC_COLOR,184,24,25,16,WS_BORDER,WS_EX_CLIENTEDGE
+    PUSHBUTTON      "Color",IDC_BUTTON_COLOR,211,24,45,16
+    COMBOBOX        IDC_COMBO_BORDER,260,24,82,30,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CTEXT           "...",IDC_STATIC_TEXT,21,48,323,57,SS_PATHELLIPSIS | WS_BORDER
+    LISTBOX         IDC_LIST_TEXT,21,108,323,84,WS_VSCROLL | WS_HSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Add",IDC_BUTTON_ADD,23,193,56,17
+    PUSHBUTTON      "Mod",IDC_BUTTON_MOD,81,193,56,17
+    PUSHBUTTON      "Rem",IDC_BUTTON_DEL,140,193,56,17
+    GROUPBOX        "Image",IDC_STATIC,12,220,342,54
+    EDITTEXT        IDC_EDIT_IMG,21,235,189,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "",IDC_BUTTON_IMG,216,232,34,20
+    CONTROL         "Image to bottom",IDC_RADIO_TEXT_UPPER,"Button",BS_AUTORADIOBUTTON,29,256,75,10
+    CONTROL         "Image to top",IDC_RADIO_IMG_UPPER,"Button",BS_AUTORADIOBUTTON,112,256,68,10
+    LTEXT           "Perc. image",IDC_STATIC,269,239,41,8
+    EDITTEXT        IDC_EDIT_PERC,316,237,25,14,ES_CENTER | ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Use Text",IDC_CHECK_USE_TEXT,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,30,285,48,10
+    CONTROL         "Use Image",IDC_CHECK_USE_IMG,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,87,285,61,10
+    DEFPUSHBUTTON   "OK",IDOK,243,283,50,17
+    PUSHBUTTON      "Canc",IDCANCEL,302,283,50,17
+END
+
+IDD_DIALOG_ADD_MOD_TEXT DIALOGEX 0, 0, 309, 176
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION
+CAPTION "Add/modify text"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,198,152,50,17
+    PUSHBUTTON      "Canc",IDCANCEL,252,152,50,17
+    EDITTEXT        IDC_EDIT_ADD_MOD,11,8,287,135,ES_CENTER | ES_MULTILINE | ES_AUTOHSCROLL | ES_WANTRETURN
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_DIALOG_SETUP, DIALOG
+    BEGIN
+        RIGHTMARGIN, 327
+        BOTTOMMARGIN, 171
+    END
+
+    IDD_DIALOG_INFO, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 358
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 289
+    END
+
+    IDD_DIALOG_ADD_MOD_TEXT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 302
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 169
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Italiano (Italia) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

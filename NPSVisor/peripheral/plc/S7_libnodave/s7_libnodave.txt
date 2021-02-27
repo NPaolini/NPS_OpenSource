@@ -1,0 +1,20 @@
+id,type,ip_or_com,slot,rack,baud,speedProf,mpi_adr
+dove
+id -> valore in 'IP4'
+type -> 1 = MPI, 2 = IP
+ip_or_com -> es. 192.168.0.1 (IP), COM2 (MPI)
+slot ->
+rack ->
+baud -> per MPI, se non presente usa '38400',
+        valori possibili: 9600, 19200, 38400, 57600, 115200
+
+speedProf -> per MPI, se non presente usa '187',
+        valori possibili: 9, 19, 45, 93, 187, 500, 1500
+
+mpi_adr -> per MPI, se non presente usa 2
+
+es. per MPI
+;1,1,COM2,2,0,115200,500,2
+
+es. per IP
+1,2,192.168.0.1,2,0

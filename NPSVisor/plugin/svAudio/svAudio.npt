@@ -1,0 +1,32 @@
+---- audio_dll.txt ----
+reset audio -> chiude tutti gli audio attivi
+11,1,321,1,1,0,0
+
+numero di variabili che seguono, flag per comportamento (*)
+(*) 0 o non presente -> ogni attivazione riavvia l'audio
+(*) 1 -> ogni attivazione della variabile esegue un toggle dello stato, se è in run ferma, altrimenti avvia
+12,2,1
+
+variabili per attivazione audio
+id,prph,addr,type,nbit,offs,cd_file,sec,<start_track,n_track | file>
+----------
+cd_file -> 0 = cd, 1 = file
+
+sec -> tempo di ascolto in secondi, 
+       se termina prima il file/le tracce, riparte daccapo fino ad esaurire il tempo
+
+start_track -> traccia da cui iniziare (parte da uno)
+
+n_track     -> numero di tracce da eseguire
+
+file -> file audio in formato wave o mp3
+----------
+esempio per cd
+13,1,322,1,1,0,0,60,2,1
+
+esempio per file
+14,1,323,1,1,0,1,60,audio\\Bacharach_Butch_Cassidy.mp3
+
+per checkAddr
+prf,ind_iniziale-ind_finale,type,nBit,Offset
+2000000,1,321-323,1,1,0

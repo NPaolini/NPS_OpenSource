@@ -1,0 +1,267 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="source\def_mainapp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\fullView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\mainWin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pMenuBtn.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\fv_miniat_images.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pNumberImg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\clientWin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\extMonitor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\audio_dll.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\manage_audio.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\PSliderWin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\P_Setup.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\P_Info.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pManTimer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource\resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="resource\resource.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="resource\edit.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\done.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\done2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\update.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\update2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\save.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\save2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\folder.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\folder2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\add.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\add2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\rem.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\rem2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\copy.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\copy2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\paste.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\paste2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\export.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\export2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\num_led\led0.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\num_led\led1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\num_led\led2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\num_led\led3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\num_led\led4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\num_led\led5.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\num_led\led6.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\num_led\led7.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\num_led\led8.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\num_led\led9.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\num_led\ledSign.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\num_led\ledPoint.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\escape.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\info.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\info2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\timer.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\timer2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\setup.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\setup2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\full_screen.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\full_screen2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\move.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\move2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\sound.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\sound2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\alert.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\alert2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\pausa.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\pausa2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\skin_slider.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\slider.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\slider_sx.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\slider_dx.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\open_folder.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\ok.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\delete.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\mod.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\font.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\color.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\info_set.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\info_set2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resource\hand_p.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\harrow.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\hnesw.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\hnwse.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+</Project>

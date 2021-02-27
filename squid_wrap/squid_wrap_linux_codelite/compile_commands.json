@@ -1,0 +1,17 @@
+[{
+  "file": "/home/utente/Documenti/squid_wrap/wrap/main.cpp",
+  "directory": "/home/utente/Documenti/squid_wrap/wrap",
+  "command": "clang  -c /home/utente/Documenti/squid_wrap/wrap/main.cpp -o /home/utente/Documenti/squid_wrap/wrap/main.cpp.o  -I/usr/include/c++/8 -I/usr/include/x86_64-linux-gnu/c++/8 -I/usr/include/c++/8/backward -I/usr/lib/gcc/x86_64-linux-gnu/8/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include -DNDEBUG -I. -I.  -O2  -Wall"
+ }, {
+  "file": "/home/utente/Documenti/squid_wrap/wrap/pLanConn.cpp",
+  "directory": "/home/utente/Documenti/squid_wrap/wrap",
+  "command": "clang  -c /home/utente/Documenti/squid_wrap/wrap/pLanConn.cpp -o /home/utente/Documenti/squid_wrap/wrap/pLanConn.cpp.o  -I/usr/include/c++/8 -I/usr/include/x86_64-linux-gnu/c++/8 -I/usr/include/c++/8/backward -I/usr/lib/gcc/x86_64-linux-gnu/8/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include -DNDEBUG -I. -I.  -O2  -Wall"
+ }, {
+  "file": "/home/utente/Documenti/squid_wrap/wrap/base64.cpp",
+  "directory": "/home/utente/Documenti/squid_wrap/wrap",
+  "command": "clang  -c /home/utente/Documenti/squid_wrap/wrap/base64.cpp -o /home/utente/Documenti/squid_wrap/wrap/base64.cpp.o  -I/usr/include/c++/8 -I/usr/include/x86_64-linux-gnu/c++/8 -I/usr/include/c++/8/backward -I/usr/lib/gcc/x86_64-linux-gnu/8/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include -DNDEBUG -I. -I.  -O2  -Wall"
+ }, {
+  "file": "/home/utente/Documenti/squid_wrap/wrap/SocketUtil.cpp",
+  "directory": "/home/utente/Documenti/squid_wrap/wrap",
+  "command": "clang  -c /home/utente/Documenti/squid_wrap/wrap/SocketUtil.cpp -o /home/utente/Documenti/squid_wrap/wrap/SocketUtil.cpp.o  -I/usr/include/c++/8 -I/usr/include/x86_64-linux-gnu/c++/8 -I/usr/include/c++/8/backward -I/usr/lib/gcc/x86_64-linux-gnu/8/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include -DNDEBUG -I. -I.  -O2  -Wall"
+ }]

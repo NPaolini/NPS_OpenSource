@@ -1,0 +1,27 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "svExpress", "svExpress.vcxproj", "{D0DEDC07-0D6D-4ECB-9AD2-98A92AF83732}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "test_Expr", "test_Expr.vcxproj", "{44624FDF-1972-442E-B540-7F6043B9BD05}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D0DEDC07-0D6D-4ECB-9AD2-98A92AF83732}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D0DEDC07-0D6D-4ECB-9AD2-98A92AF83732}.Debug|Win32.Build.0 = Debug|Win32
+		{D0DEDC07-0D6D-4ECB-9AD2-98A92AF83732}.Release|Win32.ActiveCfg = Release|Win32
+		{D0DEDC07-0D6D-4ECB-9AD2-98A92AF83732}.Release|Win32.Build.0 = Release|Win32
+		{44624FDF-1972-442E-B540-7F6043B9BD05}.Debug|Win32.ActiveCfg = Debug|Win32
+		{44624FDF-1972-442E-B540-7F6043B9BD05}.Debug|Win32.Build.0 = Debug|Win32
+		{44624FDF-1972-442E-B540-7F6043B9BD05}.Release|Win32.ActiveCfg = Release|Win32
+		{44624FDF-1972-442E-B540-7F6043B9BD05}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

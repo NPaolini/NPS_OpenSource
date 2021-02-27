@@ -1,0 +1,213 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Italiano (Italia) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ITA)
+LANGUAGE LANG_ITALIAN, SUBLANG_ITALIAN
+#pragma code_page(1252)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_CLIENT DIALOGEX 20, 20, 329, 232
+STYLE DS_SETFONT | DS_3DLOOK | WS_POPUP | WS_VISIBLE | WS_CAPTION
+CAPTION "Aggiungi Logo a Foto"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    LTEXT           "Cartella sorgente",IDC_STATIC,10,6,54,8
+    EDITTEXT        IDC_EDIT_P1,9,17,270,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_BUTTON_SOURCE,281,17,29,12
+    LTEXT           "Cartella destinazione",IDC_STATIC,10,41,66,8
+    EDITTEXT        IDC_EDIT_P2,9,53,270,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_BUTTON_TARGET,281,53,29,12
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDFRAME | SS_SUNKEN,9,72,310,1
+    COMBOBOX        IDC_COMBO_LIST,67,77,149,30,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT_WIDTH_PICK,223,77,25,12,ES_CENTER | ES_AUTOHSCROLL | ES_READONLY
+    CTEXT           "x",IDC_STATIC,250,80,8,8
+    EDITTEXT        IDC_EDIT_HEIGHT_PICK,259,77,25,12,ES_CENTER | ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "Foto campione",IDC_STATIC,11,80,48,8
+    CONTROL         "Ridimensiona Foto",IDC_CHECK_REDIM_PHOTO,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,13,99,74,10
+    LTEXT           "Perc. %",IDC_STATIC,93,100,25,8
+    EDITTEXT        IDC_EDIT_PERC_PHOTO,121,96,25,12,ES_CENTER | ES_AUTOHSCROLL
+    LTEXT           "Larghezza",IDC_STATIC,157,100,34,8
+    EDITTEXT        IDC_EDIT_WIDTH_PHOTO,193,96,25,12,ES_CENTER | ES_AUTOHSCROLL
+    LTEXT           "Altezza",IDC_STATIC,229,100,24,8
+    EDITTEXT        IDC_EDIT_HEIGHT_PHOTO,257,96,25,12,ES_CENTER | ES_AUTOHSCROLL
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDFRAME | SS_SUNKEN,9,121,310,1
+    LTEXT           "Immagine Logo",IDC_STATIC,9,125,49,8
+    EDITTEXT        IDC_EDIT_P3,8,138,270,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_BUTTON_LOGO,280,138,29,12
+    CONTROL         "Ridimensiona Logo",IDC_CHECK_REDIM_LOGO,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,157,76,10
+    CONTROL         "Percentuale della Foto",IDC_RADIO_USE_PERC,"Button",BS_AUTORADIOBUTTON,96,157,87,10
+    CONTROL         "Dimensione fissa",IDC_RADIO_USE_FIX,"Button",BS_AUTORADIOBUTTON,199,157,69,10
+    EDITTEXT        IDC_EDIT_WIDTH_PICK_LOGO,15,170,25,12,ES_CENTER | ES_AUTOHSCROLL | ES_READONLY
+    CTEXT           "x",IDC_STATIC,42,173,8,8
+    EDITTEXT        IDC_EDIT_HEIGHT_PICK_LOGO,51,170,25,12,ES_CENTER | ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "Perc. %",IDC_STATIC,98,175,25,8
+    EDITTEXT        IDC_EDIT_PERC_LOGO,130,172,25,12,ES_CENTER | ES_AUTOHSCROLL
+    LTEXT           "Larghezza",IDC_STATIC,188,175,34,8
+    EDITTEXT        IDC_EDIT_WIDTH_LOGO,224,172,25,12,ES_CENTER | ES_AUTOHSCROLL
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDFRAME | SS_SUNKEN,9,200,310,1
+    LTEXT           "Delta X",IDC_STATIC,9,211,24,8
+    EDITTEXT        IDC_EDIT_X,37,209,25,12,ES_CENTER | ES_AUTOHSCROLL
+    LTEXT           "Delta Y",IDC_STATIC,70,211,24,8
+    EDITTEXT        IDC_EDIT_Y,98,209,25,12,ES_CENTER | ES_AUTOHSCROLL
+    LTEXT           "Posiz.",IDC_STATIC,134,212,20,8
+    COMBOBOX        IDC_COMBO_POS,159,210,68,30,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Esegui",IDC_RUN,239,209,33,14
+    PUSHBUTTON      "Esci",IDC_DONE,281,209,33,14
+    EDITTEXT        IDC_EDIT_HEIGHT_LOGO_CALC,51,183,25,12,ES_CENTER | ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT_WIDTH_LOGO_CALC,15,183,25,12,ES_CENTER | ES_AUTOHSCROLL | ES_READONLY
+END
+
+IDD_PROGRESS DIALOGEX 6, 15, 236, 50
+STYLE DS_ABSALIGN | DS_SETFONT | DS_MODALFRAME | DS_3DLOOK | DS_CENTER | WS_POPUP | WS_VISIBLE
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    CONTROL         "ProgressBar1",IDC_PROGRESSBAR_COMM,"msctls_progress32",PBS_SMOOTH | WS_BORDER,12,32,172,8
+    LTEXT           "",IDC_STATICTEXT_PROGRESS,12,8,218,13,NOT WS_GROUP
+    PUSHBUTTON      "&Abort",IDC_BUTTON_ABORT_COMM,191,26,38,18,BS_CENTER
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BITMAP_CANC         BITMAP                  "Delete.bmp"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_ICON1               ICON                    "lente2.ico"
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_CLIENT, DIALOG
+    BEGIN
+        RIGHTMARGIN, 226
+        BOTTOMMARGIN, 193
+    END
+
+    IDD_PROGRESS, DIALOG
+    BEGIN
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+1 VERSIONINFO
+ FILEVERSION 1,0,0,2
+ PRODUCTVERSION 1,0,0,0
+ FILEFLAGSMASK 0x0L
+#ifdef _DEBUG
+ FILEFLAGS 0x3fL
+#else
+ FILEFLAGS 0x3eL
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041004b0"
+        BEGIN
+            VALUE "Comments", "Licenced by NPS"
+            VALUE "CompanyName", "NPS ©"
+            VALUE "FileDescription", "Add banner logo"
+            VALUE "FileVersion", "1.0.0.2"
+            VALUE "InternalName", "P_Appl (by NPS)"
+            VALUE "LegalCopyright", "Copyright © 2000-2020. All Rights Reserved"
+            VALUE "LegalTrademarks", "Windows(TM) is a trademark of Microsoft Corporation"
+            VALUE "OriginalFilename", "add_banner.exe"
+            VALUE "PrivateBuild", " "
+            VALUE "ProductName", "Add banner logo"
+            VALUE "ProductVersion", "1.0.0.0"
+            VALUE "SpecialBuild", " "
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x410, 1200
+    END
+END
+
+#endif    // Italiano (Italia) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

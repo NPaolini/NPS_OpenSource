@@ -1,0 +1,30 @@
+#ifndef P_BASEOBJ_H_
+  #include "p_BaseObj.h"
+#endif
+
+class PVarText;
+class PVarEdit;
+class PVarBtn;
+class PVarBmp;
+class PVarLed;
+class PVarGraph;
+class baseVar;
+class PBitmap;
+class PTextFixedPanel;
+class PPanel;
+class PVarDiam;
+class PVarListBox;
+class PVarChoose;
+class PVarCurve;
+class PVarCam;
+class PVarXMeter;
+class PSimpleText;
+class PSimplePanel;
+class PSimpleBmp;
+class PVarScope;
+class pVarListAlarm;
+class PVarTrend;
+class PVarSpin;
+class pVarTableInfo;
+class PVarPlotXY;
+class PVarSlider;

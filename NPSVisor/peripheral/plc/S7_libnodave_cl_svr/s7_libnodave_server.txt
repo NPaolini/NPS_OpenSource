@@ -1,0 +1,15 @@
+;server
+id,port,slot,rack,ip_nodave
+dove
+id -> id del plc (corrisponde all'id del client, non è univoco, possono esserci più client)
+port -> porta di ascolto per i client
+slot ->
+rack ->
+ip_nodave -> es. 192.168.0.1
+
+nel codice 1000 c'è il code (quindi mille non può essere usato come id)
+code -> codice di riconoscimento per il login iniziale (non deve contenere virgole)
+es.
+1,3100,2,0,192.168.0.1
+1000,progetto_uno
+

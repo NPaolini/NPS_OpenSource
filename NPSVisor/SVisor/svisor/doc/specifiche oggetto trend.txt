@@ -1,0 +1,122 @@
+Specifiche oggetto trend.
+
+Il comportamento ricalca quello dalla pagine trend, solo che, invece di usare
+pulsanti predefiniti, le azioni vengono decise da variabili impostabili.
+In aggiunta ci sono un paio di cursori che permettono di posizionarsi in due
+punti con, a richiesta, l'apertura di una modeless con le visualizzazioni dei
+valori di tutte le variabili abbinate all'oggetto in quei due punti.
+I grafici sono sempre sovrapposti.
+
+Durante l'apertura della modeless si disabilita il refresh, si fanno apparire
+i due cursori e si scrivono i valori in corrispondenza dei cursori che possono
+essere mossi tramite mouse (per visualizzare i valori sulla modeless si può
+usare una listview).
+
+Dati impostati direttamente nell'oggetto:
+1) coordinate e dimensioni,
+2) tipo e colore di sfondo,
+3) tipo e colore dei testi,
+4) tipo e colore griglia, on-off griglia (interna, quella esterna è sempre presente)
+5) spessore e colori per linee (il numero dipende dal trend abbinato)
+6) numero di righe e colonne per griglia
+7) id_font per valori scala e data-ora
+8) nome del trend abbinato (deve esistere e viene preso dallo std_msg)
+
+(per distinguere le variabili di controllo da quelle del trend, queste ultime
+saranno chiamate curve)
+Variabili necessarie:
+ 1) bit per hide-show della curva
+ 2) bit mutualmente esclusivi per curva attiva (visualizza la scala relativa)
+ 3) bit per movimento avanti-indietro
+ 4) variabile per data-ora inizio grafico
+ 5) variabile per distanza temporale
+ 6) bit per apertura modeless con valori ai cursori
+ 7) variabili per min-max per ogni curva (si potrebbero impostare tramite una modale-modeless)
+ 8) bit per auto-calcolo min-max
+ 9) bit per salvataggio-rilettura valori min-max (possibilmente su file con nome)
+10) bit per apertura finestra scelta timer salvataggio trend
+11) bit per apertura zoom
+12) bit per export
+13) bit per stampa
+14) bit per setup stampante
+
+numero di variabili necessarie:
+1 per hide-show, tipo dword (bit) [V1]
+1 per curva attiva, tipo dword (bit) [V2]
+1 per bit di controllo-gestione vari, tipo dword (bit) [V3]
+2 (doppia) per data inizio [V4]
+2 (doppia) per ora inizio [V4] + 2
+2 (doppia) per finestra temporale [V4] + 4
+1 per addr inizio valori impostabili di min-max [BaseVar]. Il numero di variabili
+  necessarie dipende dal numero di variabili salvate nel trend.
+  La serie è formata da coppie di variabili float in cui la prima per il min e
+  la seconda per il max
+naturalmente è preferibile e consigliabile mantenere tutte queste variabili in
+periferica memoria
+
+quindi:
+id,x,y,w,h,type_sf,col_sf(rgb),type_grid,col_grid(rgb),col_text(rgb),col_lineShow(rgb),num_col,num_row,id_font,
+      [V1],[V2],[V3],[V4],trend_name
+id+300,valori standard per addr inizio min-max [BaseVar]
+id+600,valori standard (compresa visibilità)
+id+900,serie di valori formati da S,R,G,B (spessore  e rgb)
+
+type_sf -> 0 = down, 1 = up, 2 = black, 3 = none
+type_grid -> 0 = solo tacche esterne, 1 = continua, 2 = lineette, 3 = punti
+
+[V?] -> id di edit simulati come già usati in altri oggetti
+
+esempio
+55,1
+15001,11,114,528,279,2,192,192,192,3,255,0,0,0,0,128,255,255,255,10,5,100,4012,4013,4014,4001,Trend01
+15301,1,165,5
+15601,0,0,0,0,0,0,0,0
+15901,1,255,255,0,1,0,255,255,255,1,255,0,255,1,255,200,200
+
+significato dei bit di [V3]
+bit  0 -> indietro
+bit  1 -> avanti
+bit  2 -> ricalcolo automatico valori min-max
+bit  3 -> ricalcolo e copia valori min-max in variabili
+bit  4 -> bit attivazione zoom
+bit  5 -> bit apertura finestra con valori ai cursori
+bit  6 -> bit per apertura finestra scelta timer salvataggio trend
+bit  7 -> bit per export
+bit  8 -> bit per stampa
+bit  9 -> bit per setup stampante
+bit 10 ->
+bit 11 ->
+bit 12 ->
+-------------
+Gestione:
+I dati riguardanti le varie visualizzazione vengono caricati e mantenuti in memoria.
+I valori da visualizzare nelle curve vengono mantenuti su vettori nel loro formato
+originario (come da file).
+Sequenza di refresh:
+1) verifica della visibilità dell'oggetto.
+2) verifica dello stato di refresh o visualizzazione valori ai cursori
+  3a) verifica di modifiche ai dati di controllo
+  4a) se c'è stata una modifica, esclusa quelle di solo visualizzazione, si
+      ricaricano  i dati da file e si invalida, altrimenti, se modificata
+      visualizzazione si invalida semplicemente.
+  5a) se non c'è stata modifica e la visualizzazione è quella del time corrente,
+      si verifica se sono stati aggiunti record al file di trend, in caso
+      affermativo si aggiungono al vettore e si invalida
+
+  3b) alla prima entrata in visualizzazione valori correnti, si crea una finestra
+      prendendo le coordinate dall'oggetto, ci si disegna il contenuto dell'oggetto
+      e ci si disegnano i due cursori (non necessaria se si aggiunge la possibilità
+      di zoom). Si crea la finestra che conterrà i valori alle posizioni dei
+      cursori.
+  4b) ad ogni movimento del mouse con un cursore agganciato si calcola la x
+      del mouse, la si riporta alla data e si cerca nei vettori i valori
+      corrispondenti. Si riportano quei valori alla modeless aperta (con listview)
+-------------
+Disegno:
+Nella parte sx ci vanno i valori della scala, la larghezza viene calcolata in base
+al font usato e impostando un numero di una decina di cifre.
+I decimali rappresentati vengono ricavati dalle impostazioni del trend.
+Nella parte bassa viene visualizzata la scala temporale, l'altezza viene anch'essa
+calcolata in base al font. Per evitare sovrapposizioni del testo, si visualizzano
+prima gli estremi, poi gli altri, saltando quelli che intersecano i testi già
+scritti (si può utilizzare un array di bit per salvare e riutilizzare quanto fatto).

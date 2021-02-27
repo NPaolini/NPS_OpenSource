@@ -1,0 +1,172 @@
+;Impostazioni lingua per svTrendEditor, il default è italiano e corrisponde alla riga commentata
+;------------------------------------------------
+; Pulsanti menù principale
+1,Done
+;1,Finito
+
+2,Reload
+;2,ricarica
+
+3,Browse...
+;3,Sfoglia...
+
+4,Save
+;4,Salva
+
+5,Export
+;5,Esporta
+
+6,Import
+;6,Importa
+
+7,Add...
+;7,Aggiungi...
+
+8,Rem...
+;8,Rimuovi
+
+9,Copy
+;9,Copia
+
+10,Paste
+;10,Incolla
+
+11,Mod.date
+;11,Mod.data
+;------------------------------------------------
+; intestazione prime due colonne
+;18,Num
+;19,Date-time
+;------------------------------------------------
+; Dialogo controllo numero di colonne
+;20,Gestione colonne
+
+21,OK
+;21,OK
+22,Cancel
+;22,Annulla
+23,Columns No. (date-hour excluded)
+;23,Num. colonne (esclusa data-ora)
+24,test auto check
+;24,test auto check
+25,Saving timer (msec)
+;25,Timer salvataggio (msec)
+26,No definition columns No. 
+;26,Impossibile determinare il numero di colonne
+27,Error
+;27,Errore
+;------------------------------------------------
+; Dialogo aggiungi/rimuovi colonna
+
+30,Add column
+;30,Aggiungi colonna
+31,Remove column
+;31,Rimuovi colonna
+
+32,After...
+;32,Dopo ...
+33,First
+;33,Primo
+34,Last
+;34,Ultimo
+
+;ok e canc uguali al dialogo precedente
+;------------------------------------------------
+; Menu popup Aggiungi
+
+40,Add row
+;40,Aggiungi riga
+41,Add column
+;41,Aggiungi colonna
+;------------------------------------------------
+; Menu popup Aggiungi riga
+
+44,Actual position
+;44,Posizione corrente
+45,First Row
+;45,Prima riga
+46,Add at the end
+;46,Aggiungi in fondo
+;------------------------------------------------
+; Menu popup Rimuovi
+
+50,Remove rows
+;50,Rimuovi righe
+51,Remove column
+;51,Rimuovi colonna
+
+54;Delete selected rows?
+;54,Vuoi eliminare le righe selezionate?
+55,Confirm deleting
+;55,Conferma eliminazione
+
+;------------------------------------------------
+; Dialogo incolla
+
+60,Paste
+;60,Incolla
+61, After ...
+;61,Dopo ...
+62,First
+;62,Primo
+63,Last
+;63,Ultimo
+64,Rows
+;64,Per righe
+65,Columns
+;65,Per colonne
+66,Overwrite
+;66,Sovrascrivi
+67,After row
+;67,Dopo riga
+
+;ok e canc uguali al dialogo precedente
+;------------------------------------------------
+; Dialogo esporta
+
+70,Export
+;70,Esporta
+71,Actual file
+;71,File corrente
+72,Many files
+;72,Più file
+73, TAB format
+;73,Formato Tab
+74,SQL format
+;74,Formato SQL
+75,One output file
+;75,Unico file destinazione
+76,Selection
+;76,Selezione
+
+80,No file in list
+;80,Nessun file aggiunto alla lista
+81, Files have different column no.\nDo you save individually?
+;81,I file hanno numero di colonne diverse!\nVuoi salvarli individualmente?
+82,Warning
+;82,Attenzione
+
+84,Impossible to create file\n%s.%s
+;84,Impossibile creare il file\n%s.%s
+85,Impossible to open file\n%s
+;85,Impossibile aprire il file\n%s
+
+;------------------------------------------------
+; controllo file
+90,File not saved\nSave before to continue?
+;90,Il file è stato modificato\nVuoi salvare prima di proseguire?
+91,File not saved\nContinuing lose your changes you\nContinue?
+;91,Il file è stato modificato\nProseguendo perderai tutte le modifiche\nVuoi proseguire?
+
+92,No modifications
+;92,Nessuna modifica apportata
+93,Unnecessary to save
+;93,Inutile salvare
+94,Error in saving!
+;94,Errore nel salvataggio!
+;------------------------------------------------
+; filtro apertura file
+98,File Trend
+;98,Trend File
+99,Every Files
+;99,Tutti i File

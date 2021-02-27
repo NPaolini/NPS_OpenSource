@@ -1,0 +1,124 @@
+; -------- svActiveScript.txt -----------
+
+;per ricaricare questo file
+10,1,130,1,1,0
+
+;per fermare l'elaborazione della dll
+11,1,130,1,1,1
+
+;nome dell'interprete da utilizzare
+20,javascript
+;20,vbscript
+;20,python
+
+;nome del file script
+21,dll_main.js
+22,dll_excel.js
+;21,test.vbs
+;21,test.py
+
+; si possono aggiungere fino a tre file da includere prima del principale, così si possono usare parti comuni
+; in più file senza bisogno di copiaeincollare, evitando il possibile errore di mancanza di aggiornamento
+; naturalmente i file inclusi devono usare lo stesso interprete. Per compatibilità il file principale
+; è il primo, a seguire le inclusioni (il caricamento è dato dall'ordine)
+; quindi es.
+;22,costanti.js
+;23,procedure_comuni.js
+;24,alcune_specializzazioni_comuni.js
+; la sequenza del caricamento è: 22, 23, 24, 21 quindi è possibile anche omettere il 21 e magari usare solo il 24
+; l'importante è che ci sia almeno un file
+
+; si possono usare più script fino ad un max di dieci aggiungendo, ad offset dieci, interprete e file.
+; Si possono anche avere dei buchi, il caricamento prosegue fino al decimo id
+;30,vbscript
+;31,test.vbs
+
+; ....
+
+;110,python
+;111,test.py
+
+;sono attive le seguenti funzioni:
+----------------------------
+; 1) sVisor.svScriptGet(prph, addr, type, nbit, offs, norm)
+; 2) sVisor.svScriptSet(prph, addr, type, nbit, offs, norm ,value)
+
+; quando è necessario leggere e impostare una variabile in una operazione atomica
+;17) sVisor.svScriptGetSet(prph, addr, type, nbit, offs, norm ,value)
+-----------------------
+; 3) sVisor.alert(text)
+; serve più che altro per un minimo di debug (attenzione che viene richiamata ad ogni ciclo,
+;   quindi va abbinata ad una variabile da impostare all'occorrenza)
+-----------------------
+; 4) sVisor.openSaveDialog(filtro, percorso_iniziale, forSave)
+; dove -> percorso_iniziale (può essere zero), forSave (0 = open, 1 = save)
+; es.  var filename = sVisor.openSaveDialog("File Excel (xlsx)|*.xlsx|Tutti i File (*.*)|*.*", "C:\\percorso\\sub", 0);
+; il filtro è formato da coppie di dati in cui il primo è il testo che appare, il secondo è l'estensione dei file
+
+-----------------------
+; 5) sVisor.svGetTime(prph, addr)
+; 6) sVisor.svSetTime(prph, addr, value)
+
+; 7) sVisor.svGetDate(prph, addr, type, format)
+; 8) sVisor.svSetDate(prph, addr, type, format, value)
+;  type deve valere 8 o 9, rispettivamente data+ora, solo data
+; format è:
+; European = 1, American = 2, Other = 3
+// European -> dd/mm/yyyy
+// American -> mm/dd/yyyy
+// Other    -> yyyy/mm/dd
+; nelle funzioni (5, 6, 7, 8) i valori dei date-time sono in formato testo, sia nell'immissione che nei dati ritornati
+; il formato data pieno (codice 8) è: (es. european) dd/mm/yyyy|hh:mm:ss,xxx
+; con il carattere '|' come separatore tra data e ora e le ultime tre cifre sono i millesimi di secondo.
+-----------------------
+; 9) sVisor.svLoadRecipe(pag, name)
+;10) sVisor.svSendRecipe(pag, name)
+dove pag -> nome del file della pagina ricette, name -> nome della ricetta
+-----------------------
+;11) sVisor.svCanContinue()
+;  non ha parametri e deve essere richiamata all'interno di un ciclo infinito. Torna uno se si può
+;  proseguire nel ciclo, torna zero se deve terminare (fine programma o riavvio dll)
+-----------------------
+;12) sVisor.svGetFile(tit, path, alsoDate, sortByDate, reverse)
+;  i parametri (5) sono: titolo della finestrina di scelta, percorso completo di caratteri jolly ed estensione,
+;        seguono tre flag (false/true oppure 0/1) indicanti rispettivamente:
+;        1) 0 -> visualizza solo il nome del file, 1 -> visualizza anche data-ora del file
+;        2) 0 -> ordine per nome, 1 ->ordine per data-ora
+;        3) 0 -> ordine normale, 1 -> ordine inverso
+;      se si passano solo i primi due parametri, visualizza prima la finestrina di scelta
+-----------------------
+;13) sVisor.svGetPassword()
+;  usa un solo parametro ed è il livello di password richiesto (nel caso fosse già attivo non fa comparire la richiesta)
+;  il ritorno è il livello corrispondente alla password immessa
+-----------------------
+;14) sVisor.svGetLocalString(id)
+;15) sVisor.svGetGlobalString(id)
+;16) sVisor.svGetPageString(id)
+;  prendono come parametro un numero e tornano un testo localizzato, rispettivamente, nel
+; 14) file di testo che accompagna la dll -> svActiveScriptB.txt
+; 15) file di testo std_msg.txt
+; 16) file della pagina corrente attiva
+-----------------------
+;18) svScriptGetBlock(prph, addr, numDw)
+;19) svScriptSetBlock(prph, addr, numDw, buffBlock)
+;20) svScriptFillBlock(prph, addr, numDw, value)
+; agiscono su blocchi di dati usando valori raw a 32bit
+; non eseguono alcun controllo sul tipo di dato, solo la 20, se arriva un tipo real lo trasforma in intero
+; servono per copiare blocchi di dati in modo più veloce che con cicli nello script.
+; la 20 serve in genere per azzerare una zona, ma volendo si può riempirla con qualsiasi valore. Nel caso occorra un valore float
+; si può usare una variabile d'appoggio, scriverci il valore float voluto, rileggerlo come dword per poi passarlo alla funzione
+-----------------------
+;21) svScriptSleep(msec), esegue uno sleep di msec millisecondi
+-----------------------
+;22) svEnterCriticalSection(ix)
+;23) svLeaveCriticalSection(ix)
+; poiché si possono usare più blocchi di script, ognuno su un proprio thread, se devono accedere a risorse condivise
+; che si sa non essere thread-safe e necessitano di accederci in modo esclulsivo, si può racchiudere il proprio blocco
+; di codice entro le due funzione sopra definite.
+; Per poter gestire più situazioni differenti, sono implementate fino a 10 sezioni critiche. 'ix' è l'indice della
+; sezione critica (da zero a nove)
+
+;i dati possibili da trattare solo i soliti, float, double e interi (max 32bit), testi e data-ora
+
+; N.B. il tipo data-ora se viene richiesto direttamente viene riportato come double in quanto il tipo intero
+;      a 64 bit non è gestito dal motore di scripting

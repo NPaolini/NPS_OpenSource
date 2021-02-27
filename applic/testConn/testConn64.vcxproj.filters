@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="source\mainApp.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="source\mainClient.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="source\P_Param.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="source\P_Status.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="source\PFilter.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="source\progressBar.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="include\connClass.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="source\def_mainapp.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resource\cfg.BMP">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="resource\clear.bmp">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="resource\default.BMP">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="resource\Delete.bmp">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="resource\done.BMP">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="resource\np.ico">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="resource\ok.BMP">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="resource\SAVE.BMP">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="resource\semaforo_rosso.bmp">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="resource\semaforo_verde.bmp">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="resource\send.BMP">
+      <Filter>resource</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="source">
+      <UniqueIdentifier>{ca88c53a-f47e-452c-9b6d-3b680316f0d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resource">
+      <UniqueIdentifier>{379a3377-8342-4f03-aaea-5db30ac12a00}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource\resource.h">
+      <Filter>resource</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="resource\testConn.rc">
+      <Filter>resource</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

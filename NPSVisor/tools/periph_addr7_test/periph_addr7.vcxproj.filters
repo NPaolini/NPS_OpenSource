@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="source\adrDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\common.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\def_mainapp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\fillDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\mainDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\my_opensave.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\testDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\verifyDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\winInfoList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource\resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resource\Canc.BMP">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\clear.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\copy.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\done.BMP">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\eye.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\fill.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\imageTab16-2.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\occhiali.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\ok.BMP">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\open.BMP">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\refresh.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\Save.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\siei.ICO">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\svConfig.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\write16.BMP">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="resource\pAppl.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

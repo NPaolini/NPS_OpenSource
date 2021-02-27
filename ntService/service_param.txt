@@ -1,0 +1,37 @@
+RegisterService() checks the parameterlist.
+The following parameters will be detected:
+   -i      install the service (calls
+         "InstallService()" - see below)
+
+     -l <account>
+         <account> is the name of a user,
+         under which the service shall run.
+         This option is useful with -i only.
+         <account> needs to have the advanced
+         user-right "Log on as a service"
+         (see User-Manager)
+         <account> should have the following
+         format: "<Domain>\<user>"
+         "EuroS2Team\jko" for instance.
+         The domain "." is predefined as the
+         local machine. So one might use
+         ".\jko" too.
+
+     -p <password>
+         The password of the user, under which
+         the service shall run. Only useful
+         with -i and -l together.
+
+   -u      uninstall the service (calls
+         "RemoveService()" - see below)
+
+   -d      debug the service (run as console
+         process; calls "DebugService()"
+         see below)
+
+   -e      end the service (if it is running)
+
+   -s      start the service (if it is not running)
+         (Note that *you* normally cannot start
+         an NT-service from the command-line.
+         The SCM can.)

@@ -1,0 +1,894 @@
+Tra i valori e la virgola non devono esserci spazi,
+mentre è possibile inserirli tra la virgola ed il valore successivo
+--------------------------------------------------------
+Titolo
+1,Titolo pagina
+
+,Codici pulsanti
+F1
+2,Fine programma / pagina precedente
+,14,
+
+F2
+,3,
+,15,
+
+F3
+,4,
+,16,
+
+F4
+,5,
+,17,
+
+F5
+,6,
+,18,
+
+F6
+,7,
+,19,
+
+F7
+,8,
+,20,
+
+F8
+,9,
+,21,
+
+F9
+,10,
+,22,
+
+F10
+11,
+23,
+
+F11
+,12,
+,24,
+
+F12
+13,Allarmi
+,25,
+--------------------------------------------------------
+
+--------------------------------------------------------
+codice per aggiornamento auto(1)/man(0) per i campi di edit
+26,1
+--------------------------------------------------------
+codice per non far apparire la window di attesa durante una send
+27,0
+--------------------------------------------------------
+codice offset generale (x, y)
+30,[x]
+31,[y]
+--------------------------------------------------------
+versione della pagina
+32,1,0
+--------------------------------------------------------
+codice per bitmap.
+inizio fisso a 501
+35,[n]
+formato ->id,x,y,scalaX,scalaY,flag,nome_del_file.bmp
+flag = enum fBmp {  bUSE_COORD,  bTILED,  bCENTERED,  bSCALED,  bFILLED  };
+se si somma 1000 al flag si indica sfondo trasparente.
+La trasparenza non è ammessa con flag bTILED o bFILLED
+
+Se scalaX e scalaY sono valori negativi indicano (in valore assoluto) le dimensioni
+desiderate dell'immagine (modifica a causa dei metafile che variano le loro dimensioni
+in pixel in base alla risoluzione corrente)
+
+##2001-05-04
+nel primo valore della riga del codice per la visibilità è stato messo il tick per
+il lampeggio, se diverso da zero viene attivato il lampeggio quando visibile
+--------------------------------------------------------
+codice per barGraph.
+inizio fisso a 601
+36,[n]
+formato ->id,x,y,w,h,style,Rbk,Gbk,Bbk,idMax,idVal,idAlternColor,flagRange,idBmpBar,flagBar,idBmpBkg,flagBkg
+lo stile può valere
+> 0 = nessun bordo
+> 1 = bordato nero
+> 2 = stile Up
+> 3 = stile Down
+> 4 = nessun bordo e nessun ridisegno per lo sfondo (può essere utile per
+      accoppiare due bargraph, il primo normale ed il secondo con questo stile)
+
+se si aggiunge 1000 allo stile si imposta la visualizzazione verticale
+se si aggiunge 100 allo stile si imposta la visualizzazione negativa, cioé
+la barra si muove da destra/alto verso sinistra/basso
+
+per riferirsi agli idMax e idVal bisogna prendere i valori degli id primari
+es. 3001 o 4001. idAlternColor indica se il bargraph deve cambiare colore
+quando supera certi range, il formato dell'id è il seguente:
+id,percMax,r,g,b,percMid1,r,g,b,percMid2,r,g,b,percMidn,r,g,b,...
+ad ogni cambiamento di valore si interroga l'id e si scorre nella stringa fino a
+trovare un gruppo superiore od uguale al valore corrente e si setta il colore
+corrispondente. Se idAlternColor vale zero significa che si usa il colore
+di default -> verde. Se si usa un solo colore, diverso da quello base basta
+mettere zero come percentuale e, a seguire, le componenti desiderate
+
+#12-07-2005
+aggiunto codice in fondo (dopo idAlternColor) per troncare la visualizzazione
+allo zero con indicazione se deve usare solo i valori positivi (1) o solo i
+valori negativi (-1). N.B. la troncatura allo zero avviene già, quindi ha senso
+solo il valore -1 per usare il range negativo
+
+#04-2010
+dopo il codice flagRange sono stati inserite due coppie di codici per id immagine e flag.
+L'immagine è rispettivamente per barra e per sfondo, il flag indica se stretch o tile, se
+va ruotato per seguire l'orientamento (conforme allo stile 1000 + 100).
+Il bitmap viene sempre scalato per riempire la parte indipendente dal valore (es. se è
+verticale, la larghezza viene fatta coincidere con la larghezza impostata).
+Il flag può valere:
+0 -> stretch, 1 -> tiled
++10 -> ruota se verticale
++100 -> mirror se negativa
+--------------------------------------------------------
+codice per pannelli senza testo, individua la quantità di oggetti.
+Possono esserci dei buchi in mezzo, comunque il valore che segue il codice
+deve corrispondere al valore più alto - valore di inizio + uno
+es. ultimo codice = 1123 -> (1123 - 1001 + 1) = 123 quindi -> 40,123
+inizio fisso a 1001
+40,[n]
+formato ->id,x,y,w,h,style,R,G,B
+style può essere -> 0=up, 1=dn, 2=up_fill, 3=dn_fill, 4=border, 5=border_fill, 6=fill
+
+##2001-05-04
+nel primo valore della riga del codice per la visibilità è stato messo il tick per
+il lampeggio, se diverso da zero viene attivato il lampeggio quando visibile
+--------------------------------------------------------
+codice per numero di label in rilievo/incassate per testo semplice con id
+inizio fisso a 2001
+41,[n]
+formato ->id,x,y,w,h,idfont,Rfg,Gfg,Bfg,Rbk,Gbk,Bbk,style,align(0=C,SX,DX),id_msg
+il valore tre per style indica il ridisegno dello sfondo senza bordi
+style può essere -> 0=trasp, 1=up_fill, 2=dn_fill, 3=fill, 4=up_trasp, 5=dn_trasp
+       6=border_fill, 7=border_trasp
+
+##2001-05-04
+nel primo valore della riga del codice per la visibilità è stato messo il tick per
+il lampeggio, se diverso da zero viene attivato il lampeggio quando visibile
+--------------------------------------------------------
+codice per numero di label in rilievo/incassate per testo semplice variabile
+inizio fisso a 3001, aggiungendo 300 al codice si hanno gli abbinamenti con
+le variabili
+42,[n]
+formato ->id,x,y,w,h,idfont,Rfg,Gfg,Bfg,Rbk,Gbk,Bbk,style,align(0 = C, SX, DX),idColor
+style può essere -> 0=trasp, 1=up_fill, 2=dn_fill, 3=fill, 4=up_trasp, 5=dn_trasp
+       6=border_fill, 7=border_trasp
+
+formato variabili interne
+id,perifs,addr,tipo_di_dato,id_normalizzatore,decimali_o_id_msg,##tick_lampeggio
+periferiche di default sono 1 -> memoria, 2 -> plc
+
+se il tipo di dato è un campo di bit va aggiunto 300 all'id (es. 3302 -> 3602)
+ed i primi due valori identificano rispettivamente il numero di bit e l'offset.
+
+Se il tipo di dato è compreso tra byte e dword è possibile aggiungere 300 come
+per il tipo bit ed verrà preso solo il valore mascherato dai bit e shiftato
+es. 3602,5,2 -> il valore prelevato dalla word viene shiftato a sx di due
+e poi presi i cinque bit meno significativi.
+es. val = 0x1035 > 0001 0000 0011 0101 >> 00 0100 0000 1101 >>> 0 1101 = 0x0d
+(è valido solo per la visualizzazione).
+
+(vedere prfData.h) il tipo di dato può essere:
+
+    enum tData {  tNoData,  // nessun tipo definito -  0
+                  tBitData, // campo di bit         -  1
+                  tBData,   // 8 bit -> 1 byte      -  2
+                  tWData,   // 16 bit-> 2 byte      -  3
+                  tDWData,  // 32 bit-> 4 byte      -  4
+                  tFRData,  // 32 bit float         -  5
+                  ti64Data, // 64 bit               -  6
+                  tRData,   // 64 bit float         -  7
+                  tDateHour,// 64 bit per data + ora-  8
+                  tDate,    // 64 bit per data      -  9
+                  tHour,     // 64 bit per ora      - 10
+                  // valori signed
+                  tBsData,   // 8 bit -> 1 byte     - 11
+                  tWsData,   // 16 bit-> 2 byte     - 12
+                  tDWsData,  // 32 bit-> 4 byte     - 13
+
+                  tStrData,  // stringa             - 14
+
+                  tNegative = 1 << 30, // vanno messi in or con i precedenti (1073741824)
+                  tArray = 1 << 31, // non usato
+               };
+
+Se l'id del normalizzatore è negativo, il codice seguente identifica un id di testo
+mentre se è zero implica che il valore non va normalizzato, rimane comunque
+valido il campo decimali.
+L'id del norm fa riferimento ad un vettore di 256 elementi.
+Se il tipo è stringa, il campo decimali indica la dimensione
+
+Se l'id del normalizzatore è negativo ed esiste l'idColor questi punta ad una serie di
+RGB foreground, RGB background, altrimenti punta ad una serie di valori più i colori sullo
+stile del barGraph (ma una riga per valore), i valori devono essere crescenti.
+Naturalmente il campo deve essere numerico.
+Se l'id del normalizzatore non è negativo il primo codice puntato indica
+il numero di codici che seguono.
+
+*per negativo, per default, si intende -1
+
+Se l'id del normalizzatore è minore di -1 si ottiene un misto tra i due comportamenti.
+Sia il testo che il colore dipendono dal valore della variabile. In pratica esegue lo
+stesso procedimento come se il normalizzatore fosse >= zero, solo che invece di scrivere
+il valore scrive il testo abbinato, ricavato nello stesso modo del colore.
+Il normalizzatore viene riportato in positivo, non si possono usare i valori 1 e 2 come
+normalizzatori perché riservati, il primo per il negativo di default, il secondo per gestire
+il caso di nessun normalizzatore
+
+2006-04-19 modifica per versione 4.5
+nel caso di comportamento misto (con norm < -1) se l'idColor è negativo il testo ed il colore
+vengono abbinato al valore che deve essere esattamente lo stesso. Se il valore non è presente
+viene preso il primo colore ed il primo testo.
+
+##2001-05-04
+nella riga con codice + 300 viene aggiunto in coda il tick per
+il lampeggio, se diverso da zero viene attivato il lampeggio quando visibile
+--------------------------------------------------------
+codice per numero di edit
+inizio fisso a 4001.
+Come per i testi variabili, aggiungendo 300 si abbinano i campi con i dati
+interni
+43,[n]
+formato ->id,x,y,w,h,idfont,Rfg,Gfg,Bfg,Rbk,Gbk,Bbk,lenEdit,tab_order
+
+formato variabili interne
+id,perifs,addr,tipo_di_dato,id_denormalizzatore,decimali
+Come per tutti i tipi di variabili (dove ha senso), se il tipo è stringa,
+il campo decimali indica la dimensione, indipendentemente da lenEdit (che
+dovrebbe, comunque, avere lo stesso valore)
+
+tab_order non viene più usato (dopo l'aggiunta del movimento tramite tasti frecce)
+formato id+300+300
+id,bit,offset,vsPrf,vsAddr,vsBit,vsOffs,vsNeg,pswLevel
+--------------------------------------------------------
+codice per pulsanti, la parte rimanente, dipendente dai primi dati, si trova
+aggiungendo 300 e poi ancora 300 per la seconda personalizzazione.
+Inizio fisso a 5001. I bitmap da caricare iniziano dal codice 151
+44,[n]
+
+formato -> id,x,y,w,h,typeShow,typeCommand,numBmp,idBmp1,idBmp2,ecc.
+typeShow -> [0,1,2] ->
+    (0)solo bmp,
+    (1)bmp + testo,
+    (2)pulsante normale con testo e bmp
+
+    nel caso (2) numBmp > 1 indica la possibilità di cambiare bitmap
+    indipendentemente dalla condizione di premuto o rilasciato
+
+
+numBmp -> specifica il numero di bitmap che formeranno il pulsante
+       -> 0, si usa solo il testo (solo per pulsante standard)
+       -> 1, simile ad un pulsante standard con il bitmap a sx ed il testo a dx
+       -> 2, il primo per il pulsante sollevato, il secondo per il pulsante premuto
+       -> 3, come sopra, il terzo per il focus
+       -> 4, come sopra, il terzo per il focus con pulsante sollevato, il quarto per il focus premuto
+
+
+es. solo bmp
+5001,x,y,w,h,t,t,n,151,152,...
+
+es. bmp + testo, come solo bmp, più il testo, rgb per il testo
+se id_msg1 != 0 viene usato per il pulsante rilasciato
+se id_msg2 != 0 viene usato per il pulsante premuto
+5001,x,y,w,h,t,t,n,151,152,Rfg1,Gfg1,Bfg1,Rfg2,Gfg2,Bfg2,idFont,[id_msg1 = 0],[id_msg2 = 0]
+
+
+es. pulsante normale con testo ed eventuale bmp
+    per selezionare lo sfondo trasparente porre Rbk(1 o 2),gBk,Bbk  a -1
+5001,x,y,w,h,t,t,n,[idBmp1,idBmp2,],Rbk1,Gbk1,Bbk1,Rbk2,Gbk2,Bbk2,Rfg1,Gfg1,Bfg1,Rfg2,Gfg2,Bfg2,idFont,
+[id_msg1 = 0],[id_msg2 = 0]
+
+typeCommand -> [0,1,2,3,4,5] ->
+  (0) pulsante normale, al rilascio viene eseguita la procedura abbinata
+  (1) pulsante ON/OFF singolo, commuta la stato della variabile abbinata
+  (2,3) pulsante ON/OFF di gruppo, attiva la variabile abbinata e disattiva
+      le altre del gruppo :
+      (2) -> inizio
+      (3) -> interno/fine gruppo
+      Il gruppo inizia dal codice [2] e termina quando incontra un codice
+      diverso da [3] o non trova più pulsanti.
+  (4) pulsante normale che attiva il bit alla pressione e lo disattiva al rilascio
+  (5) pulsante invisibile, viene richiamato da un tasto funzione. Per non riscrivere
+      lo stesso codice il pulsante non viene creato effettivamente, ma risponde al
+      messaggio abbinato.
+
+  (6) pulsante ON/OFF singolo, commuta la stato della variabile abbinata
+      e ci abbina l'apertura/chiusura di una finestra non modale. Il nome
+      della finestra e relativa psw di apertura sono all'offset 900.
+      es.
+      5001,x,y,w,h,bla,bla
+      5301,1,10,1,0,0
+      5601,1,5
+      5901,0,testModeless.txt
+
+Formato comando:
+es. pulsante normale, [n] = id di procedura definita nell'applicazione
+(in futuro potrà contenere un id di dll ed il nome (o un id) della procedura)
+per adesso, poiché ci sono i tasti funzione, questo tipo di pulsante probabilmente
+non viene usato, a meno di aver esaurito i tasti.
+Modificato, 0 -> periferica per abilitazione comando, n -> id di testo (vedere sotto)
+5301,0,[n]
+
+
+es. ON/OFF singolo/di gruppo
+usa variabili con il tipo di dato a campi di bit o numerico.
+Con i bit il pulsante è premuto se i corrispondenti bit sono attivi(inattivi)
+oppure lo commuta e lo invia alla periferica in risposta all'azione dell'utente.
+Con il valore numerico l'intera word deve corrispondere a mask.
+Se la mask vale zero viene creata da nbit.
+
+Neg != 0 indica che il valore è negato.
+
+5301,perifs,addr,tipo_di_dato,mask,neg
+5601,nbit,offset,vsPrf,vsAddr,vsBit,vsOffs,vsNeg,pswLevel
+N.B.
+se tipo_di_dato == bit mask indica il valore assunto dal bit abbinato (non
+può essere superiore al range di 16 bit).
+Allora nbit rappresenta il range di bit in cui solo uno può essere attivo e
+offset rappresenta l'offset del gruppo di bit.
+Es. mask = 4, nbit = 3, offs = 4, supponendo la word di 16 bit
+15 14 13 12 11 10 9 8 7 6 5 4 3 2 1 0
+ -  -  -  -  -  - - - - V x x - - - -
+ quindi il gruppo di bit è formato dai bit 6,5,4, con il bit 6 abbinato
+ al pulsante.
+ Questa configurazione viene usata principalmente in pulsanti di gruppo a selezione
+ singola, in cui un solo pulsante può essere attivo
+
+Se mask == zero i bit possono essere in or.
+
+Se al pulsante viene abbinata la periferica zero indica che può eseguire le stesse
+operazioni abbinate ai tasti funzione. In questo caso se l'indirizzo è tra uno e
+dodici compreso attiva l'operazione abbinata ai codici [2 - 13]. Se invece il suo valore
+è maggiore o uguale a centomila esegue l'operazione scritta in quel codice.
+--------------------------------------------------------
+codice per bmp di segnalazione, l'uso è simile al testo semplice variabile
+inizio fisso a 6001, aggiungendo 300 e ancora 300 si hanno
+gli abbinamenti con le variabili
+45,[n]
+formato ->id,x,y,scala,flag,idBmp1[,idBmp2],-time
+
+flag -> [0,1,2,3,4,5,6]
+        -> 0 => fixed, un solo bitmap
+        -> 1 => on_off, un bmp per bit disattivato, l'altro per il bit attivo
+        -> 2 => fixed_lamp, un solo bitmap ma lampeggiante quando attivo
+        -> 3 => dual_lamp, si alternano i bitmap quando attivo
+
+        -> 4 => sequenza di bitmap, il numero della sequenza è il valore
+                della variabile
+
+        -> 5 => bitmap per animazione sequenziale fissa
+
+        -> 6 => bitmap per animazione sequenziale abbinata a variabile
+                il bit attivo indica animazione, se spento viene visualizzato
+                il primo bitmap, altrimenti tutti gli altri (il primo non viene
+                visualizzato)
+
+        // ** aggiungendo 1000 al valore si attiva la negazione del bit,
+        // ** ANNULLATO. Per la negazione si usa lo stesso metodo dei pulsanti e viene
+        // ** attivata nell'id + 300 -> es. 6301,1,100,1,0,1
+
+        aggiungendo 100000 al valore il bit indica visibile/non visibile anziché
+        animazione/fermo, in questo caso viene visualizzato anche il primo bitmap
+        (probabilmente non ha senso eliminare la trasparenza)
+
+
+        aggiungendo 1000000 al valore si attiva la gestione del movimento.
+        In id+900 iniziano gli abbinamenti per la gestione ed il formato è:
+        id+900,x1,y1,x2,y2,code_X_min,code_Y_min,code_X_max,code_Y_max,code_X_curr,code_Y_curr,dir
+
+        dove x1,y1,x2,y2 rappresentano il rettangolo entro cui si muove,
+        code_?_??? rapresenta un id simile ai campi di edit o testo abbinato a variabile,
+        si può scrivere per es. 4010 e in 4310 immettere i valori di periferica,indirizzo ecc.
+        Non c'è bisogno di attivare il codice 4010 se non necessario, basta che sia presente
+        il codice 4310.
+
+        dir indica la direzione degli assi, in pratica indica da dove parte il valore minimo e vale
+        -> 0 = left-top
+        -> 1 = right-top
+        -> 2 = left-bottom
+        -> 3 = right-bottom
+        Il movimento dall'origine verso il lato opposto viene considerato sempre positivo
+
+        La gestione normale resta in tutto e per tutto uguale, compresi i codici id+300, id+600.
+
+
+        Aggiungendo 10000 si elimina la trasparenza. N.B. se si elimina la trasparenza non è
+        possibile nascondere il bitmap
+
+i bitmap fanno parte del gruppo di quelli per i pulsanti ed iniziano a 151
+formato variabili interne
+
+in coda viene aggiunto un valore, negativo per interrompere la lista degli id validi, che rappresenta
+il tempo di lampeggio. Naturalmente, se è inferiore al tick dell'applicazione, è ininfluente
+
+id+300,perifs,addr,tipo_di_dato,mask,neg
+id+600,nbit,offset,vsPrf,vsAddr,vsBit,vsOffs,vsNeg,pswLevel
+
+Se scala é un valore negativo indica (in valore assoluto) la dimensione in x e la scala
+viene calcolata dalle dimensioni dell'immagine. Vedere la specifica per il codice 35.
+--------------------------------------------------------
+codice per segnalazione numero sotto forma di led, l'uso è simile al codice per
+bitmap di segnalazione. Impostato a virgola fissa
+Inizio fisso a 7001, aggiungendo 300 si hanno i bitmap per i numeri (0-9), il punto
+ed il segno meno, aggiungendo ancora 300 si hanno gli abbinamenti con le variabili.
+I bitmap devono avere tutti la stessa dimensione, ad eccezione del punto che può
+variare la sua larghezza. Il primo bitmap deve essere lo zero, a seguire tutte le
+altre cifre, poi il segno ed infine il punto.
+46,[n]
+formato -> id,x,y,w,h,numero_cifre,numero_decimali,style,rBkg,gBkg,bBkg
+
+style -> 0 => senza bordo
+      -> 1 => bordo normale
+      -> 2 => up
+      -> 4 => down
+      -> 8 => indica riempimento
+      -> 8 + 1 => normale + fill
+      -> 8 + 2 => up + fill
+      -> 8 + 4 => down + fill
+r,g,b -> colore di sfondo, se non è attivo lo style di riempimento viene ignorato
+--------------------------------------------------------
+codice per disegno diametri.
+inizio fisso a 8001
+47,[n]
+formato ->id,x,y,w,h,style1,style2,idMin,idMax,idVal,idTypeColor
+
+lo stile1 può valere
+> 0 = nessun bordo
+> 1 = bordato nero  \
+> 2 = stile Up       - Nessuno sfondo (quindi nessun ridisegno)
+> 3 = stile Down    /
+
+> 4 = nessun bordo
+> 5 = bordato nero  \
+> 6 = stile Up       - sfondo trasparente
+> 7 = stile Down    /
+
+> 8 = nessun bordo
+> 9 = bordato nero \
+> 10 = stile Up     -  sfondo colorato
+> 11 = stile Down  /
+
+lo stile2 può valere
+> 0 = disegna solo la superficie della corona circolare
+> 1 = disegna anche gli assi
+> 2 = se lo sfondo è trasparente, lo è anche il perno centrale
+> 4 = disegna anche il diametro max
+> 8 = inverte la direzione del disegno
+o una combinazione (somma) dei valori
+
+l'inversione della direzione del disegno vale solo se sia lo sfondo che il perno
+sono trasparenti, altrimenti viene ignorata
+
+per l'uso degli idMin/Max/Val riferirsi al barGraph. Se non esiste idMin o si passa zero
+il diametro minimo vale zero
+
+idTypeColor = 0 indica che il colore è fisso, allora nell'id + 300 sono
+memorizzati i colori come Rf,Gf,Bf,Rp,Gp,Bp,Ra,Ga,Ba,Rb,Gb,Bb. (corona, perno, assi, sfondo)
+
+Se è diverso da zero, indica la variabile da cui leggere l'indice di riferimento
+che parte dal codice scritto nell'id + 300. Il primo valore indica il numero di codici
+che segue.
+
+Il colore non usato viene ignorato
+es. con idTypeColor == 0
+>47,1
+>8001,10,10,110,110,4,0,4001,4002,4003,0
+>8301,0,0,255,0,0,0,0,0,0,0,0,0
+es. con idTypeColor != 0
+>8001,10,10,110,110,4,1,4001,4002,4003,4004
+>8301,7,8800
+>8800,0,0,255,0,0,0,0,0,0,0,0,0
+>8801,0,255,255,0,0,0,0,0,0,0,0,0
+>8802,255,0,255,0,0,0,0,0,0,0,0,0
+>8803,0,255,0,0,0,0,0,0,0,0,0,0
+>8804,255,0,0,0,0,0,0,0,0,0,0,0
+>8805,255,255,0,0,0,0,0,0,0,0,0,0
+>8806,255,255,255,0,0,0,0,0,0,0,0,0
+--------------------------------------------------------
+codice per listBox
+inizio fisso a 9001
+48,[n]
+formato ->id,x,y,w,h,style
+dove style può valere una combinazione dei seguenti valori:
+> 0 = stile standard (disegnata dal controllo standard)
+> 1 = disegno manuale
+> 2 = lista ordinata
+
+aggiungendo 300 al codice si hanno gli abbinamenti con i colori, naturalmente
+solo se lo stile del disegno è manuale
+
+E' solo un segnaposto per una listbox, non viene implemantato alcun riempimento.
+Ha però la comodità di poter essere inclusa nei movimenti con i tasti direzionali.
+es.
+9001,32,42,736,246,1
+9301,0,0,128,207,255,239,239,239,239,0,128,207
+--------------------------------------------------------
+codice per scelta opzione
+inizio fisso a 10001
+49,[n]
+formato ->id,x,y,w,h,idfont,Rfg,Gfg,Bfg,Rbk,Gbk,Bbk,style,align(0 = C, SX, DX),idColor
+Il formato è identico a quello per il testo semplice abbinato a variabile, solo che
+l'oggetto è attivo e deve avere sempre il codice per il normalizzatore negativo.
+Alla pressione del tasto di invio o spazio si apre una lista di nomi da cui scegliere.
+Alla variabile associata verrà inviato il valore corrispondente alla scelta fatta.
+Nel caso di campo di bit la scelta indica la posizione del bit (ora è valida anche per
+il testo semplice).
+Aggiungendo 900 all'id si personalizzano i colori per la listbox
+--------------------------------------------------------
+codice per oggetto curva
+inizio fisso a 11001
+50,[n]
+formato ->id,x,y,w,h,Rfg,Gfg,Bfg,Rbk,Gbk,Bbk,style,numPoints,perc1stSpace,nPoint1stSpace,readOnly
+id + 300 -> id,perifs,addr,tipo_di_dato,id_normalizzatore
+id + 600 -> valori standard (non vengono usati bit e offset)
+id + 900 -> se presente indica nRighe (def. 10), colore pallino(def. giallo),
+colore griglia (def. grigio), colore asse intermedio (def. rosso), valore Max per ascissa, colore
+linea visualizzazione e nome del file da cui leggere i dati
+
+Gli ultimi tre dati possono essere omessi e servono per visualizzare, sovrapposta con la curva
+impostata, una curva di un andamento reale i cui dati sono salvati su file.
+Il valore max serve per scalare i valori del file e adattarli all'ascissa. I record nel file devono
+avere la forma: dword per valore in x, float per valore in y. Il valore in y deve essere
+denormalilzzato (deve avere il valore effettivo così come visualizzato nei campi di edit
+associati ai punti della curva), l'oggetto lo normalizza e lo usa col range da zero a cento.
+
+il primo colore nell'id principale è il colore della linea, il secondo quello dello sfondo
+lo style può valere:
+    0=noBorder, 1=up, 2=dn, 3=border
+
+perc1stSpace e nPoint1stSpace si usano per avere due aree con una percentuale di punti diversa.
+perc1stSpace indica quanta parte della curva va riservata per la prima zona, nPoint1stSpace sono
+i punti utilizzati in quella zona. Se uno dei due valori è zero si usa una sola area.
+
+il valore sulla Y va da 0 a 100, per adattarlo alle varie situazioni è possibile usare
+il normalizzatore. Es. se la curva ha un massimo di 2000 va usato un normalizzatore
+con valore 0.05
+
+la periferica e l'indirizzo indicano il primo dato, gli altri devono essere consecutivi.
+Se uguale a uno, readOnly implica che non è possibile modificare la curva con il mouse
+(eventualmente solo con campi di edit), se uguale a due, oltre ad essere a sola lettura
+non visualizza il pallino (può essere antiestetico se i dati sono molti e ravvicinati).
+Se la periferica è zero viene usato come semplice visualizzatore di grafico.
+In caso di visualizzazione file non ha senso la doppia area, comunque non viene effettuato
+nessun controllo.
+--------------------------------------------------------
+codice per oggetto XMeter
+inizio fisso a 12001
+51,[n]
+formato ->id,x,y,w,h,idImage,offsX,offsY,initAngle,ampiezza,clockwise,granularity,idMin,idMax
+id+300,prf,addr,type,norm
+
+l'immagine per la lancetta va disegnata sempre con il perno a sx e la punta rivolta
+a dx, indicante zero gradi.
+
+w e h indicano le dimensioni desiderate della lancetta, indipendentemente dalle dimensioni
+del bitmap usato (l'immagine viene stretchata).
+
+idImage è l'id del bitmap e fa parte di quelli usati per i pulsanti o bitmap di segnalazione
+
+l'offset per il centro di rotazione è relativo all'angolo superiore sinistro (x, y).
+
+granularity indica lo step minimo di cui muoversi (in gradi).
+es. con granularity = 5, se il valore precedente è 50 e il nuovo 54 la lancetta rimane
+nello stato precedente. Se il nuovo valore è 55 allora si sposta
+
+per riferirsi agli idMin e idMax bisogna prendere i valori degli id primari (come nel barGraph)
+es. 3001 o 4001.
+--------------------------------------------------------
+codice per oggetto cam
+inizio fisso a 480
+52,[n]
+formato ->id,x,y,w,h,perif,addr,objName
+il tipo di dato è sempre DWDATA (32bit) ed è usato a bit
+il significato dei bit è il seguente:
+bit - azione
+ 0 -> stop (idem se nessun bit è attivo), ferma qualunque azione
+ 1 -> setup capture, apre dialoghi di setup
+ 2 -> preview (on/off)
+ 3 -> capture (on/off) crea in automatico, nella cartella exRep, una cartella
+      col nome della pagina ed un file dal nome aaaammdd_hhmmss.avi
+ 4 -> capture, richiede il nome del file
+ 5 -> play    (on/off)
+ 6 -> avvia il player di default di window
+ 7 -> connesso/non connesso
+
+il file di setup viene creato da objName con estensione .dat nella directory
+del programma. Se [objName] viene omesso, al suo posto viene utilizzato il nome
+della pagina.
+** Nuova specifica.
+Se objName fa parte di una lista di nomi presenti in std_msg l'oggetto non è
+locale alla pagina ma diventa globale e viene mantenuto anche uscendo dalla pagina.
+addr è il primo di 5 DWDATA in cui il primo è usato per i bit di cui sopra,
+i due successivi per il time di durata della registrazione, i due successivi
+per il time effettivo di registrazione (di sola lettura)
+--------------------------------------------------------
+codice per oggetto XScope (Ver. 4.5)
+inizio fisso a 13001
+53,[n]
+formato ->id,x,y,w,h,flag,idColors,numRow,idNumBlock,idMaxNumData,idMinVal,idMaxVal,idEnbleRead,addrReadyPos,readOnlyOne,variableX,idAxesX,addrReadyPos2
+id+300 periferica, indirizzo, ecc. del primo dato della serie
+id+600 -> dati standard
+
+flag indica lo stile del riquadro, in pratica lo stesso del Panel con l'aggiunta del codice 7 per indicare
+  di non usare alcun pannello di sfondo
+può essere -> 0=up, 1=dn, 2=up_fill, 3=dn_fill, 4=border, 5=border_fill, 6=fill, 7=nessun pannello
+
+idColors punta ad una serie di colori, rispettivamente, per:
+    Bkg
+    grid
+    axe
+    lineShow1
+    lineShow2
+
+numRow sono le righe per la griglia
+
+idNumBlock punta ad una variabile che contiene il numero di blocchi in cui è suddivisa la lettura
+
+idMaxNumData punta ad una variabile che contiene il numero max di dati, deve essere un multiplo di idNumBlock
+
+idEnbleRead punta a una variabile che abilita la lettura
+
+addrReadyPos è l'indirizzo (la periferica è la stessa di lettura dati) con cui gestire
+    la comunicazione con la periferica per sapere quale blocco è pronto per essere letto
+    è a sola lettura e scritta dalla periferica. Poiché i dati non sono messi in lettura
+    continua, quando si verifica un cambiamento in questa variabile, si invia alla periferica la
+    richiesta di lettura dei blocchi corrispondenti ai bit attivi.
+
+readOnlyOne indica se è un solo dato che scorre nell'array
+
+#14-03-2011 nuove specifiche
+
+variableX è formata da bit, il bit zero indica che si usa un asse X variabile, il bit uno che i valori sono relativi
+    (cioè vanno sommati) oppure assoluti, il terzo bit indica se i dati sono comprensivi del primo valore X (zero)
+    oppure se si parte dal primo (quindi di dati in X ne sono uno in meno rispetto alla Y).
+    Se il bit zero è zero oppure non esiste l'id l'oggetto viene gestito come precedentemente
+
+idAxesX punta alla variabile di inizio dei dati della X
+
+addrReadyPos2 punta alla variabile che contiene la posizione corrente. Il valore non corrisponde necessariamente ad un punto
+    nell'asse X dei dati, ma è proporzionale a tutta la lunghezza e potrebbe non essere un intero
+--------------------------------------------------------
+codici per font
+formato -> altezza,larghezza,flag,nome
+il flag può essere una combinazione di
+fITALIC     1
+fBOLD       2
+fUNDERLINED 4
+fLIGHT      8
+naturalmente se è bold non può essere light
+es.
+100,16,0,0,arial
+101,48,0,1,times new roman
+102,18,0,2,ms sans serif
+--------------------------------------------------------
+codici per bitmap per pulsanti, bitmap di segnalazione, bitmap per led
+formato
+151,[nome_del_file.bmp]
+152,[nome_del_file.bmp] ecc.
+--------------------------------------------------------
+--------------------------------------------------------
+Specifiche per pagina P_DefBody,
+--------------------------------------------------------
+Il menù per la pagina inizia dal codice due. Dal codice quattordici (2 + 12)
+iniziano i codici abbinati per azioni di default:
+-> 1 -> apre nuova pagina, segue valore psw, segue id (0 per pagine generiche),
+        infine il nome del file descrittore
+        se non è una pagina generica NON deve seguire il nome del file.
+-> 2 -> spedisce tutti i dati, segue valore psw, segue id della periferica
+-> 3 -> rilegge tutti i dati, come [2]
+-> 4 -> esegue l'export dei dati, segue valore psw, segue zero per dati correnti,
+        diverso da zero per storico
+-> 5 -> Spedisce un valore, segue valore psw, segue id di un pulsante. Il pulsante
+        può anche essere non visibile usando il tipo comando [5] della specifica dei pulsanti
+-> 6 -> Apre una pagina di trend, segue valore psw, infine il nome del file descrittore
+-> 7 -> Apre una pagina di ricette da file, segue valore psw, infine il nome del file descrittore
+        Tra la psw e il nome del file è possibile inserire un offset (per ora solo 1) che permette
+        di aprire un tipo di ricette con listBox di scelta.
+-> 8 -> Apre una pagina di righe di ricette, segue valore psw, infine il nome del file descrittore
+-> 9 -> Apre un body modale, segue valore psw, infine il nome del file descrittore
+->10 -> Cambia la password per operatore e/ capoOperatore
+
+->11 -> Apre un body non modale, segue valore psw, infine il nome del file descrittore
+        La finestra non modale è abbinata ad un bit, non può essere aperta da tasto funzione.
+        La finestra può anche essere chiusa da sola, tramite pulsante abbinato al bit
+        di chiusura (o tasto F1 (quando ha il focus) [eliminato]).
+
+Il valore psw può essere:
+  -> 0 => ignora psw
+  -> 1, 2, 3 => richiesta psw per livello operatore, capo reparto, supervisore
+  -> gli stessi valori ma negativi => nell'apertura della nuova pagina, indica
+          che se la psw non corrisponde la pagina è solo in lettura, negli altri
+          casi indica che la psw viene resettata
+
+Il codice 26 indica se i dati (dei campi di edit) devono essere spediti subito (!= 0)
+oppure (0) tramite pulsante abbinato a [2]. Se non è presente equivale a diverso da zero.
+Naturalmente, se si preferisce che i dati vengano spediti subito (all'uscita dal controllo)
+è inutile usare il codice 26 ed un pulsante apposito.
+
+Il codice 27 indica se durante l'invio semplice alla periferica deve essere
+visualizzata la finestra di attesa. Se zero o non esistente viene visualizzata.
+
+--------------------------------------------------------
+per dati custom dipendenti dalla pagina usare codici a partire
+da 1000000 (un milione) in su
+--------------------------------------------------------
+Cifratura pagine di testo.
+
+Tutte le pagine di testo, ad esclusione di quella degli allarmi, possono essere
+cifrate (incluse std_msg.txt e config.txt).
+Le pagine devono essere formate da due file, uno sempre in chiaro ed ha il nome
+standard (es. ricette.txt), l'altro, che può essere cifrato, è nella forma
+#nome.txt (es. #ricette.txt). Per l'apertura di una pagina da menù deve essere
+specificato il nome normale, è il programma che antepone il '#' per caricare
+entrambi i file.
+--------------------------------------------------------
+--------------------------------------------------------
+Specifiche per pagina P_ModalBody,
+--------------------------------------------------------
+--------------------------------------------------------
+Titolo
+1,Titolo dialogo
+
+I pulsanti non sono abbinati al footer e quindi non ha senso il testo abbinato.
+Per riferirsi alle azioni occorre creare dei pulsanti standard con il typeCommand
+uguale a zero, la periferica abbinata deve essere zero e l'indirizzo compreso tra uno e dodici.
+Usando l'indirizzo uno l'azione predefinita è la chiusura del dialogo.
+I codici da due a tredici non sono usati (servivano per attivare il pulsante visualizzando il testo)
+I codici da quattordici(riservato) a venticinque hanno le stesse funzionalità del body standard.
+Se il pulsante ha un indirizzo superiore o uguale a 100000 questi è un id simile a quelli per
+i tasti funzione, con la differenza che l'id identifica esattamente la stringa da caricare.
+
+(es. abbinato a F2 -> addr = 2 => l'azione è descritta nel codice 15)
+(es. 15,2,0,2)
+
+(es. abbinato a 100002 -> addr = 100002 => l'azione è descritta nel codice 100002)
+(es. 100002,2,0,2)
+
+,Codici pulsanti
+F1
+,2,Chiusura dialogo (riservato)
+,14,
+
+...
+
+F12
+,13,
+,25,
+--------------------------------------------------------
+--------------------------------------------------------
+posizione e dimensione del dialogo. Se non presente tutti i valori valgono -1.
+Se un valore è minore di zero viene ricavato dagli oggetti presenti nel dialogo.
+Se la posizione deve essere calcolata il dialogo verrà centrato, se è la dimensione
+viene calcolato l'ingombro degli oggetti e ridimensionato di conseguenza.
+id,x,y,w,h
+33,-1,-1,-1,-1
+--------------------------------------------------------
+Tutti gli oggetti si comportano come nel body standard.
+Non si può richiamare una pagina di testo standard tramite pulsante, ma è possibile
+aprire più dialoghi in cascata.
+
+--------- 01 - 06 - 2003 -------------------------------
+nuove specifiche
+--------------------------------------------------------
+aggiunto codice typeCommand 6 (simile al 1) ai pulsanti per l'apertura di una finestra modeless.
+(Se fosse necessario si potrebbero aggiungere codici per funzionamento simile ai codici 2-3).
+Per la natura delle finestre non modali è obbligatorio l'uso del mouse per poter passare
+il focus tra le varie modali ed il body. Le modeless si possono attivare solo da pulsanti
+ON/OFF e possono essere attivate solo dal body, mentre possono essere disattivate anche
+da se stesse o da un'altra modeless/modal (possono però aprire finestre modali).
+Le finestre non modali ricordano l'ultima posizione e vi si ripristinano al rientro
+(ogni finestra ha un solo punto, quindi se viene aperta in pagine diverse vale l'ultima posizione).
+Le coordinate e le dimensioni si possono fissare, come nelle modali dal codice 33, mentre nel
+codice 34 vi è un flag per disattivare la memorizzazione della posizione.
+Se il codice 34 è presente e diverso da zero la non modale verrà sempre aperta alle coordinate
+impostate nel codice 33 (centrata se valgono -1).
+La memorizzazione è valida solo nella sessione corrente.
+
+Aggiunta la possibilità di passaggio tra pagine anche da pulsanti normali non abbinati a
+tasti funzione. Il funzionamento è simile alle azioni già presenti (periferica 0) ma il codice
+che segue deve essere >= 110000.
+
+--------- 11 - 06 - 2003 -------------------------------
+nuove specifiche
+aggiunto codice 28 per caricamento pagina con offset.
+es.
+cod,offset_addr,link_page
+28,12,pagina_da_caricare.txt
+Se esistono molte pagine simili da caricare in cui l'unica cosa che cambia sono gli indirizzi
+delle variabili, è possibile creare una pagina base che può essere richiamata dalla pagina in cui
+è presente il codice 28. In questa pagina possono essere presenti altri codici ma non devono
+generare conflitto con quelli della pagina base. In pratica è conveniente inserire solo il
+codice 28 con l'offset e la pagina da linkare.
+N.B. L'offset vale per tutti gli indirizzi, ad eccezione della periferica memoria ad indirizzi
+zero e uno i quali vengono preservati. L'indirizzo uno è usato per i massimi dei barGraph/diametri,
+l'indirizzo zero non dovrebbe essere mai usato. L'eccezione riguarda anche la periferica zero.
+Per differenziare l'azione abbinata alla periferica zero basta copiare dalla pagina base il codice
+puntato dal pulsante (quello > 100000) e metterlo nelle altre pagine modificandolo opportunamente.
+
+--------- 06 - 07 - 2003 -------------------------------
+nuove specifiche
+aggiunto codice 99, tipo di riferimento per coordinate e dimensioni (risoluzione)
+es.
+99,x
+il valore può essere:
+-> -1 = 640x480
+->  0 = 800x600 (default se non presente)
+->  1 = 1024x768
+->  2 = 1280x1024
+Il codice indica la risoluzione con cui è stata realizzata la pagina. Ora non si esegue
+la conversione sempre in base 800x600, ma dipende dal codice 99. Quindi disegnando a 1024x768
+e rivisualizzando alla stessa risoluzione non si verifica il problema dovuto all'arrotondamento.
+Usando svMaker la trasformazione è trasparente, basta salvare la pagina e questa viene convertita
+con la nuova specifica.
+---------------------------------
+nuovo formato per id +300+300
+id,bit,offset,vsPrf,vsAddr,vsBit,vsOffs,vsNeg,pswLevel
+
+con vsXXXX si identifica la variabile da cui leggere per impostare lo stato di visibilità.
+
+pswLevel imposta il livello di password richiesta per inviare il valore (valida solo nei
+campi di edit, pulsanti e lista di scelta)
+
+L'impostazione della visibilità non è ancora implementata nel sVisor.
+--------- 05 - 04 - 2004 -------------------------------
+nuove specifiche
+aggiunto codice 29 per caricamento pagina con rilocazione id degli oggetti automatica.
+Non ci si può riferire, tramite dll o codice interno, agli id presi dal file di testo,
+es. se nella pagina base ci sono due edit (4001 e 4002) l'id 4001 della pagina linkata
+diventa 4003.
+
+es.
+cod,offsetX,offsetY,link_page
+29,12,25,pagina_da_caricare.txt
+
+Se nella pagina da linkare ci sono codici custom (con valori >= 1000000) questi, se non esistono
+già nella pagina principale, vengono copiati senza modifica.
+Lo stesso avviene per i tasti funzione (codici da 2 a 25).
+---------------------------------
+enum pageTypeCode
+{
+  ptcStandard,
+  ptcRecipe,
+  ptcRecipeListbox,
+  ptcRecipeRow,
+  ptcGraphTrend,
+  ptcMaint,
+};
+enum pageHideCode
+{
+  phcShowAll,
+  phcHideHeader,
+  phcHideFooter,
+  phcHideAll,
+};
+
+codice 999999,pagetype,pagehide
+--------------------------------------------------------
+comportamento pulsanti per pulsantiera estesa
+codice 999998,
+--------- 21 - 05 - 2008 -------------------------------
+implementazione apertura finestra di scelta pagina da caricare
+può essere a lista semplice o treeview
+per il richiamo viene utilizzato il codice simulato da pulsante con
+id = max - 1 (120000 - 1)
+allocando nel body corrente, in quell'id, la stringa necessaria a
+caricare la nuova pagina. Si fa la verifica se la pagina è standard
+o predefinita.
+Per ora viene eseguita solo dai tasti CTRL+2 e CTRL+3 rispettivamente
+per lista e treeview, successivamente sarà aggiunta come funzione ai pulsanti
+Nelle finestre di scelta c'è un pulsante per il refresh delle pagine,
+non conviene farlo ogni volta ed il refresh è necessario solo durante
+la creazione delle pagine.
+--------- 12 - 06 - 2008 -------------------------------
+aggiunti codici per scrittura serie di variabili
+i dati da immettere sono: prph,addr,type,nbit,offs,norm,value,prph,type,nbit,offs,norm,value,ecc.
+all'apertura
+999996,1,100,4,0,0,0,512
+alla chiusura
+999997,1,100,4,0,0,0,256,1,101,5,0,0,4,12.5

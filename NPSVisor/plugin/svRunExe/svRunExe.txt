@@ -1,0 +1,54 @@
+
+------------   svRunExe.DLL    ---------------
+----------------------------------------------
+
+Funzioni Gestite:
+1 - lancio di eseguibile esterno
+
+----------------------------------------------
+
+--- Cumulativo indirizzi variabili in PRPH1 (per checkAddr)
+
+prph,ind_iniziale-ind_finale,type,nBit,Offset
+2000000,1,400-449,4,0,0
+__________________________________________________________________
+__________________________________________________________________
+__________________________________________________________________
+
+-----   lancio eseguibile   ------
+----------------------------------
+
+ESEGUIBILE 1
+variabile contenente i bit di attivazione 
+viene lanciato l'eseguibile nella DIR di progetto
+periferica,ind (tipo sempre 4)
+200,1,430,0
+nome eseguibile (presente nella dir di progetto)
+201,make_export.exe
+
+ESEGUIBILE 2
+variabile contenente i bit di attivazione 
+viene lanciato l'eseguibile nella DIR di progetto
+periferica,ind (tipo sempre 4)
+,210,
+nome eseguibile (presente nella dir di progetto)
+,211,
+
+ESEGUIBILE 3
+variabile contenente i bit di attivazione 
+viene lanciato l'eseguibile nella DIR di progetto
+periferica,ind (tipo sempre 4)
+,220,
+nome eseguibile (presente nella dir di progetto)
+,221,
+
+etc
+
+ESEGUIBILE 10 (max)
+variabile contenente i bit di attivazione 
+viene lanciato l'eseguibile nella DIR di progetto
+periferica,ind (tipo sempre 4)
+,290,
+nome eseguibile (presente nella dir di progetto)
+,291,
+

@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="source\allPages.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="source\allVars.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="source\allVarNorm.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="source\checkAddr.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="source\def_mainapp.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="source\imgeList.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="source\mainDlg.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pageList.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="source\test_Addr.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="source\warnObj.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="source\manageCryptPage.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource\svMkVersion.h">
+      <Filter>resource</Filter>
+    </ClInclude>
+    <ClInclude Include="resource\svMkVersionL.h">
+      <Filter>resource</Filter>
+    </ClInclude>
+    <ClInclude Include="resource\svMkVersionM.h">
+      <Filter>resource</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="resource\version.rc">
+      <Filter>resource</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="resource\pAppl.rc">
+      <Filter>resource</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="source">
+      <UniqueIdentifier>{569225bc-ba88-4de5-9037-39d9311f4c16}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resource">
+      <UniqueIdentifier>{e48c3f7b-8b5a-48a9-9daa-db7fb655cd30}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

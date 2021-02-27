@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "prf_S7_Libnodave_cl", "s7_libnodave_cl.vcxproj", "{0C891B66-B22D-451C-9DE2-DAAA80010CFF}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "prf_S7_Libnodave_svr", "s7_libnodave_svr.vcxproj", "{7FEFBA9B-777D-4FA4-9053-EE5115C42881}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0C891B66-B22D-451C-9DE2-DAAA80010CFF}.Debug|Win32.ActiveCfg = Debug|Win32
+		{0C891B66-B22D-451C-9DE2-DAAA80010CFF}.Debug|Win32.Build.0 = Debug|Win32
+		{0C891B66-B22D-451C-9DE2-DAAA80010CFF}.Release|Win32.ActiveCfg = Release|Win32
+		{0C891B66-B22D-451C-9DE2-DAAA80010CFF}.Release|Win32.Build.0 = Release|Win32
+		{7FEFBA9B-777D-4FA4-9053-EE5115C42881}.Debug|Win32.ActiveCfg = Debug|Win32
+		{7FEFBA9B-777D-4FA4-9053-EE5115C42881}.Debug|Win32.Build.0 = Debug|Win32
+		{7FEFBA9B-777D-4FA4-9053-EE5115C42881}.Release|Win32.ActiveCfg = Release|Win32
+		{7FEFBA9B-777D-4FA4-9053-EE5115C42881}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

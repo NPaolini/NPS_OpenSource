@@ -1,0 +1,177 @@
+;Impostazioni lingua per svLang, il default è italiano e corrisponde alla riga commentata
+
+1,Done
+;1,Finito
+
+2,Update
+;2,Aggiorna
+
+3,Browse...
+;3,Sfoglia...
+
+4,Save
+;4,Salva
+
+5,Export
+;5,Esporta
+
+6,Import
+;6,Importa
+
+7,Unicode
+;7,Unicode
+
+8,Code
+;8,Codice
+
+9,<< [F2] Previous
+;9,<< [F2] Precedente
+
+10,>> [F3] Next
+;10,>> [F3] Successivo
+
+11,[F5] Lang. name edit
+;11,[F5] Edita Nome lingua
+
+12,[F5] - Lang. name Lock
+;12,[F5] - Blocca Nome lingua
+
+13,None language enabled
+;13,Nessuna Lingua abilitata
+
+14,Import from %s
+;14,Importa da %s
+
+15,Reading pages ...
+;15,Lettura pagine ...
+
+16,Export to %s
+;16,Esporta in %s
+
+17,Writing pages ...
+;17,Scrittura pagine ...
+
+18,Success
+;18,Successo
+
+19,Error
+;19,Errore
+
+20,Export done
+;20,Export terminato
+
+21,Export aborted
+;21,Export terminato prematuramente
+
+22,Import done
+;22,Import terminato
+
+23,Import aborted
+;23,Import terminato prematuramente
+
+24,Wait please, may need some time ...
+;24,Attendere, potrebbero volerci alcuni minuti ...
+
+25,Saving pages ...
+;25,Salvataggio pagine ...
+
+26,Do you want to stop the elaboration?
+;26,Terminare l'elaborazione?
+
+27,Warning
+;27,Attenzione
+
+28,Cancel
+;28,Annulla
+
+29,It's not possible to start the worker thread
+;29,Impossibile avviare il thread di lavoro
+
+30,Error
+;30,Errore
+
+31,Loading file ...
+;31,Caricamento file ...
+
+32,Beginning to write pages
+;32,Inizio scrittura pagine
+
+33,Saving to file ...
+;33,Salvataggio su file ...
+
+34,Start
+;34,Avvia
+
+36,Project folder
+;36,Cartella progetto
+
+37,No changes were made
+;37,Nessuna modifica apportata
+
+38,Needless to save
+;38,Inutile salvare
+
+39,Error when saving!
+;39,Errore nel salvataggio!
+
+40,Successful save
+;40,Salvataggio riuscito
+
+41,Saving file
+;41,Salvataggio file
+
+42,Do you want to save the current data?
+;42,Salvare le modifiche correnti?
+
+43,There are data not saved
+;43,Ci sono dati non salvati
+
+44,Error when saving!\nDo you want to continue anyway?
+;44,Errore nel salvataggio!\nVuoi continuare lo stesso?
+
+45,Lang %d
+;45,Lang %d
+
+50,The svMaker is on execution,\nsince it can interfere with this program\nit's preferible to have only one on execution,\nor does not work in the same project.
+;50,Il programma svMaker è in esecuzione,\npoiché può interferire col svLang è\npreferibile non averli entrambi in funzione,\no almeno che non lavorino sullo stesso progetto.
+
+51,One or more files have been modified\nDo you want to save the project before continuing?
+;51,Uno o più file sono stati modificati\nVuoi salvare il progetto prima di proseguire?
+
+52,Source
+;52,Sorgente
+
+53,Target
+;53,Destinazione
+
+54,Overwrite
+;54,Sovrascrivi
+
+55,Current row only
+;55,Solo riga attiva
+
+56,All Rows
+;56,Tutto il file
+
+70,All Files
+;70,Tutti i files
+
+57,Fill
+;57,Riempi
+
+58,OK
+;58,Ok
+
+59,[F4] Fill
+;59,[F4] Riempi
+
+60,Choosing export file
+;60,Scelta file da esportare
+
+61,Existing files
+;61,File esistenti
+
+62,Files to Export
+;62,File da esportare
+
+;70 -> già definito sopra

@@ -1,0 +1,291 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>npsvMakerU_V7</ProjectName>
+    <ProjectGuid>{05E0B7D1-248F-453E-A225-EBAF5A2CD50B}</ProjectGuid>
+    <RootNamespace>svMakerV7</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v140_xp</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v140_xp</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\SVisor\svisor\include;..\..\..\NPfw\fw\include;..\..\..\NPfw\various\include;.\;.\resource;.\source\;.\source\pObject;.\source\pProperty;.\source\pStdMsg;.\source\pStdPage;source\pAlarm;..\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;noCHECK_MEMORY_LEAK;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <StructMemberAlignment>8Bytes</StructMemberAlignment>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>precHeader.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>.\resource;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>fw.lib;various.lib;shlwapi.lib;Winmm.lib;comctl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>..\..\..\NPfw\fw\$(Configuration);..\..\..\NPfw\various\$(Configuration);..\..\SVisor\svisor\$(Configuration);</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+    <Manifest>
+      <AdditionalManifestFiles>%(AdditionalManifestFiles)</AdditionalManifestFiles>
+    </Manifest>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>Full</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <AdditionalIncludeDirectories>..\..\SVisor\svisor\include;..\..\..\NPfw\fw\include;..\..\..\NPfw\various\include;.\;.\resource;.\source\;.\source\pObject;.\source\pProperty;.\source\pStdMsg;.\source\pStdPage;source\pAlarm;..\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <StructMemberAlignment>8Bytes</StructMemberAlignment>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeaderFile>precHeader.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+    </ClCompile>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>.\;.\resource;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>fw.lib;various.lib;shlwapi.lib;Winmm.lib;comctl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(ProjectName).exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>..\..\..\NPfw\fw\$(Configuration);..\..\..\NPfw\various\$(Configuration);..\..\SVisor\svisor\$(Configuration);</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+    <Manifest>
+      <AdditionalManifestFiles>%(AdditionalManifestFiles)</AdditionalManifestFiles>
+    </Manifest>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\SVisor\svisor\source\sizer.cpp" />
+    <ClCompile Include="source\common.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="source\common_color.cpp" />
+    <ClCompile Include="source\DChoosePath.cpp" />
+    <ClCompile Include="source\DOpenSource.cpp" />
+    <ClCompile Include="source\mainMaker.cpp" />
+    <ClCompile Include="source\PDiagAd4.cpp" />
+    <ClCompile Include="source\PDiagCheckaddr.cpp" />
+    <ClCompile Include="source\PDiagMirror.cpp" />
+    <ClCompile Include="source\PDiagOffset.cpp" />
+    <ClCompile Include="source\pObject\svmObjSlider.cpp" />
+    <ClCompile Include="source\pProperty\svmPropertySlider.cpp" />
+    <ClCompile Include="source\svmBase.cpp" />
+    <ClCompile Include="source\svmMainClient.cpp" />
+    <ClCompile Include="source\svmManZoom.cpp" />
+    <ClCompile Include="source\svmNormal.cpp" />
+    <ClCompile Include="source\pProperty\advBtnDlgImpl.cpp" />
+    <ClCompile Include="source\pProperty\baseAdvBtnDlg.cpp" />
+    <ClCompile Include="source\pProperty\svmMoveInfo.cpp" />
+    <ClCompile Include="source\pProperty\svmPagePropAction.cpp" />
+    <ClCompile Include="source\pProperty\svmPageProperty.cpp" />
+    <ClCompile Include="source\pProperty\svmProperty.cpp" />
+    <ClCompile Include="source\pProperty\svmPropertyAlarm.cpp" />
+    <ClCompile Include="source\pProperty\svmPropertyBarGraph.cpp" />
+    <ClCompile Include="source\pProperty\svmPropertyBmp.cpp" />
+    <ClCompile Include="source\pProperty\svmPropertyBtn.cpp" />
+    <ClCompile Include="source\pProperty\svmPropertyCam.cpp" />
+    <ClCompile Include="source\pProperty\svmPropertyChoose.cpp" />
+    <ClCompile Include="source\pProperty\svmPropertyCurve.cpp" />
+    <ClCompile Include="source\pProperty\svmPropertyDiam.cpp" />
+    <ClCompile Include="source\pProperty\svmPropertyEdit.cpp" />
+    <ClCompile Include="source\pProperty\svmPropertyLed.cpp" />
+    <ClCompile Include="source\pProperty\svmPropertyListBox.cpp" />
+    <ClCompile Include="source\pProperty\svmPropertyPanel.cpp" />
+    <ClCompile Include="source\pProperty\svmPropertyPlotXY.cpp" />
+    <ClCompile Include="source\pProperty\svmPropertySimpleBmp.cpp" />
+    <ClCompile Include="source\pProperty\svmPropertySpin.cpp" />
+    <ClCompile Include="source\pProperty\svmPropertyTableInfo.cpp" />
+    <ClCompile Include="source\pProperty\svmPropertyTblFirstCol.cpp" />
+    <ClCompile Include="source\pProperty\svmPropertyTblHeader.cpp" />
+    <ClCompile Include="source\pProperty\svmPropertyTblRows.cpp" />
+    <ClCompile Include="source\pProperty\svmPropertyText.cpp" />
+    <ClCompile Include="source\pProperty\svmPropertyTrend.cpp" />
+    <ClCompile Include="source\pProperty\svmPropertyTrendColor.cpp" />
+    <ClCompile Include="source\pProperty\svmPropertyXMeter.cpp" />
+    <ClCompile Include="source\pProperty\svmPropertyXScope.cpp" />
+    <ClCompile Include="source\pProperty\svmSendVarByPage.cpp" />
+    <ClCompile Include="source\pObject\groupObject.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="source\pObject\svmHistory.cpp" />
+    <ClCompile Include="source\pObject\svmObjAlarm.cpp" />
+    <ClCompile Include="source\pObject\svmObjBarGraph.cpp" />
+    <ClCompile Include="source\pObject\svmObjBmp.cpp" />
+    <ClCompile Include="source\pObject\svmObjButton.cpp" />
+    <ClCompile Include="source\pObject\svmObjCam.cpp" />
+    <ClCompile Include="source\pObject\svmObjChoose.cpp" />
+    <ClCompile Include="source\pObject\svmObjCurve.cpp" />
+    <ClCompile Include="source\pObject\svmObjDiam.cpp" />
+    <ClCompile Include="source\pObject\svmObject.cpp" />
+    <ClCompile Include="source\pObject\svmObjEdit.cpp" />
+    <ClCompile Include="source\pObject\svmObjLed.cpp" />
+    <ClCompile Include="source\pObject\svmObjListBox.cpp" />
+    <ClCompile Include="source\pObject\svmObjPanel.cpp" />
+    <ClCompile Include="source\pObject\svmObjPlotXY.cpp" />
+    <ClCompile Include="source\pObject\svmObjSimpleBmp.cpp" />
+    <ClCompile Include="source\pObject\svmObjSpin.cpp" />
+    <ClCompile Include="source\pObject\svmObjTableInfo.cpp" />
+    <ClCompile Include="source\pObject\svmObjText.cpp" />
+    <ClCompile Include="source\pObject\svmObjTrend.cpp" />
+    <ClCompile Include="source\pObject\svmObjXMeter.cpp" />
+    <ClCompile Include="source\pObject\svmObjXScope.cpp" />
+    <ClCompile Include="source\pStdMsg\alarm.cpp" />
+    <ClCompile Include="source\pStdMsg\cause_stop.cpp" />
+    <ClCompile Include="source\pStdMsg\dManageStdMsg.cpp" />
+    <ClCompile Include="source\pStdMsg\infoText.cpp" />
+    <ClCompile Include="source\pStdMsg\language.cpp" />
+    <ClCompile Include="source\pStdMsg\language_util.cpp" />
+    <ClCompile Include="source\pStdMsg\print_1.cpp" />
+    <ClCompile Include="source\pStdMsg\print_2.cpp" />
+    <ClCompile Include="source\pStdMsg\std_mntnce.cpp" />
+    <ClCompile Include="source\pStdMsg\trend.cpp" />
+    <ClCompile Include="source\pStdMsg\various_1.cpp" />
+    <ClCompile Include="source\pStdMsg\various_2.cpp" />
+    <ClCompile Include="source\pStdMsg\various_3.cpp" />
+    <ClCompile Include="source\pStdPage\cust_gen.cpp" />
+    <ClCompile Include="source\pStdPage\cust_graph.cpp" />
+    <ClCompile Include="source\pStdPage\cust_recipe.cpp" />
+    <ClCompile Include="source\pStdPage\cust_reciperow.cpp" />
+    <ClCompile Include="source\pStdPage\PwizardChild.cpp" />
+    <ClCompile Include="source\pStdPage\PwizardChild1.cpp" />
+    <ClCompile Include="source\pStdPage\PwizardChild2.cpp" />
+    <ClCompile Include="source\pStdPage\PwizardChild3.cpp" />
+    <ClCompile Include="source\pStdPage\PwizardChild4.cpp" />
+    <ClCompile Include="source\pStdPage\PwizardChild5.cpp" />
+    <ClCompile Include="source\pStdPage\wizardDlg.cpp" />
+    <ClCompile Include="source\pAlarm\alarm_file_Dlg.cpp" />
+    <ClCompile Include="source\pAlarm\alarmDlg.cpp" />
+    <ClCompile Include="source\pAlarm\alarmEditorDlg.cpp" />
+    <ClCompile Include="source\pAlarm\assocDlg.cpp" />
+    <ClCompile Include="source\pAlarm\baseDlg.cpp" />
+    <ClCompile Include="source\pAlarm\fillAlarmAssoc.cpp" />
+    <ClCompile Include="source\pAlarm\pal_common.cpp" />
+    <ClCompile Include="source\pAlarm\show_edit.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource\resource.h" />
+    <ClInclude Include="resource\svMkVersion.h" />
+    <ClInclude Include="resource\svMkVersionL.h" />
+    <ClInclude Include="resource\svMkVersionM.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resource\actionBar-20.bmp" />
+    <None Include="resource\actionBar.bmp" />
+    <None Include="resource\alarm.ico" />
+    <None Include="resource\all_ok.ico" />
+    <None Include="resource\Back.bmp" />
+    <None Include="resource\Canc.BMP" />
+    <None Include="resource\chgPageBar-20.bmp" />
+    <None Include="resource\chgPageBar.bmp" />
+    <None Include="resource\chgPageBar2.bmp" />
+    <None Include="resource\clear.bmp" />
+    <None Include="resource\copy.bmp" />
+    <None Include="resource\done.BMP" />
+    <None Include="resource\fill.bmp" />
+    <None Include="resource\flag-italian.ico" />
+    <None Include="resource\folder.bmp" />
+    <None Include="resource\full_addrObjl.bmp" />
+    <None Include="resource\Graph01.ico" />
+    <None Include="..\..\..\..\WINDOWS\Cursors\hmove.cur" />
+    <None Include="resource\logo.jpg.bin" />
+    <None Include="resource\logs.ico" />
+    <None Include="resource\Note16.ico" />
+    <None Include="resource\ok.BMP" />
+    <None Include="resource\Pan.cur" />
+    <None Include="resource\PanMove.cur" />
+    <None Include="resource\pompiere.bmp" />
+    <None Include="resource\PRINT.ico" />
+    <None Include="resource\PRINT2.ico" />
+    <None Include="resource\projectBar-20.bmp" />
+    <None Include="resource\projectBar.bmp" />
+    <None Include="resource\prop.ico" />
+    <None Include="resource\SAVE.BMP" />
+    <None Include="resource\siei.ICO" />
+    <None Include="resource\siei_m3.ico" />
+    <None Include="resource\spin.bmp" />
+    <None Include="resource\svMaker.ico" />
+    <None Include="resource\toolBar-20.bmp" />
+    <None Include="resource\toolBar.bmp" />
+    <None Include="resource\Wrench.ico" />
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="resource\maker.rc" />
+    <ResourceCompile Include="resource\maker_cust.rc" />
+    <ResourceCompile Include="resource\version.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="resource\bar.bmp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

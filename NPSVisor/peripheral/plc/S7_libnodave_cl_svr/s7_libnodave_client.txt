@@ -1,0 +1,8 @@
+;client
+id,port_server,code,name_server
+l'ip del server è sempre 127.0.0.1 (localhost)
+port_server -> es. 3100
+code -> codice di riconoscimento (non deve contenere virgole)
+name_server -> libnodave_server.exe
+es.
+1,3100,progetto_uno,prph_S7_Libnodave_svr.exe

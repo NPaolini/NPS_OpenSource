@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Static_Release|Win32">
+      <Configuration>Static_Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>fw</ProjectName>
+    <ProjectGuid>{CDC874E2-2EDB-4586-A1C2-8553C8B056F3}</ProjectGuid>
+    <RootNamespace>fw_A</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140_xp</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Static_Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140_xp</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140_xp</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Static_Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)_A\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Static_Release|Win32'">$(Configuration)_A\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)_A\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Static_Release|Win32'">$(Configuration)_A\</IntDir>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Static_Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Static_Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Static_Release|Win32'" />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(Configuration)_A\</OutDir>
+    <IntDir>$(Configuration)_A\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>.\resource;.\include;..\various\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <StructMemberAlignment>8Bytes</StructMemberAlignment>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <PrecompiledHeaderFile>precHeader.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+    <Lib>
+      <AdditionalDependencies>Msimg32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <AdditionalIncludeDirectories>.\resource;.\include;..\various\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <StructMemberAlignment>8Bytes</StructMemberAlignment>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <PrecompiledHeaderFile>precHeader.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
+    </ClCompile>
+    <Lib>
+      <AdditionalDependencies>Msimg32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Static_Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <AdditionalIncludeDirectories>.\resource;.\include;..\various\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <StructMemberAlignment>8Bytes</StructMemberAlignment>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <PrecompiledHeaderFile>precHeader.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <EnableEnhancedInstructionSet>NoExtensions</EnableEnhancedInstructionSet>
+    </ClCompile>
+    <Lib>
+      <AdditionalDependencies>Msimg32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="source\clipboard_control.cpp" />
+    <ClCompile Include="source\pAppl.cpp" />
+    <ClCompile Include="source\pAviCap.cpp" />
+    <ClCompile Include="source\pBitmap.cpp" />
+    <ClCompile Include="source\pCom.cpp" />
+    <ClCompile Include="source\pCommonFilter.cpp" />
+    <ClCompile Include="source\pControl.cpp" />
+    <ClCompile Include="source\PCustomListView.cpp" />
+    <ClCompile Include="source\PCustomListViewFullEdit.cpp" />
+    <ClCompile Include="source\pDialog.cpp" />
+    <ClCompile Include="source\pEdit.cpp" />
+    <ClCompile Include="source\pGraph.cpp" />
+    <ClCompile Include="source\pGraphBmp.cpp" />
+    <ClCompile Include="source\pListbox.cpp" />
+    <ClCompile Include="source\pListbox_sort.cpp" />
+    <ClCompile Include="source\pmanageBtnSwitch.cpp" />
+    <ClCompile Include="source\pMDC_custom.cpp" />
+    <ClCompile Include="source\pminiat.cpp" />
+    <ClCompile Include="source\pModDialog.cpp" />
+    <ClCompile Include="source\pOpenedcom.cpp" />
+    <ClCompile Include="source\pOpensave.cpp" />
+    <ClCompile Include="source\pOwnBtn.cpp" />
+    <ClCompile Include="source\pOwnBtnImage.cpp" />
+    <ClCompile Include="source\pOwnBtnImageStd.cpp" />
+    <ClCompile Include="source\pOwnBtnSelect.cpp" />
+    <ClCompile Include="source\pOwnBtnStdSwitch.cpp" />
+    <ClCompile Include="source\pOwnBtnSwitch.cpp" />
+    <ClCompile Include="source\pOwnWin.cpp" />
+    <ClCompile Include="source\pPanel.cpp" />
+    <ClCompile Include="source\pPrinter.cpp" />
+    <ClCompile Include="source\pPrintPage.cpp" />
+    <ClCompile Include="source\PRegistry.cpp" />
+    <ClCompile Include="source\pRollTraspBitmap.cpp" />
+    <ClCompile Include="source\pScrollContainer.cpp" />
+    <ClCompile Include="source\pSeqTraspBitmap.cpp" />
+    <ClCompile Include="source\PSplitter.cpp" />
+    <ClCompile Include="source\PSplitWin.cpp" />
+    <ClCompile Include="source\pTextPanel.cpp" />
+    <ClCompile Include="source\PTextPanelStatic.cpp" />
+    <ClCompile Include="source\pToolBar.cpp" />
+    <ClCompile Include="source\pTraspBitmap.cpp" />
+    <ClCompile Include="source\pVisualTextEdit.cpp" />
+    <ClCompile Include="source\pWin.cpp" />
+    <ClCompile Include="source\pWinTool.cpp" />
+    <ClCompile Include="source\pWinToolBase.cpp" />
+    <ClCompile Include="source\winList.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\headerMsg.h" />
+    <ClInclude Include="include\macro_utils.h" />
+    <ClInclude Include="include\pAppl.h" />
+    <ClInclude Include="include\paramcom.h" />
+    <ClInclude Include="include\pAviCap.h" />
+    <ClInclude Include="include\pBitmap.h" />
+    <ClInclude Include="include\pButton.h" />
+    <ClInclude Include="include\pCheckBox.h" />
+    <ClInclude Include="include\pCom.h" />
+    <ClInclude Include="include\pCom_bs.h" />
+    <ClInclude Include="include\pCombobox.h" />
+    <ClInclude Include="include\pCommonFilter.h" />
+    <ClInclude Include="include\pControl.h" />
+    <ClInclude Include="include\pDef.h" />
+    <ClInclude Include="include\pDialog.h" />
+    <ClInclude Include="include\pEdit.h" />
+    <ClInclude Include="include\pGraph.h" />
+    <ClInclude Include="include\pListbox.h" />
+    <ClInclude Include="include\pMemo.h" />
+    <ClInclude Include="include\pminiat.h" />
+    <ClInclude Include="include\pModDialog.h" />
+    <ClInclude Include="include\pOpenedCom.h" />
+    <ClInclude Include="include\pOpensave.h" />
+    <ClInclude Include="include\pOwnBtn.h" />
+    <ClInclude Include="include\pOwnBtnImage.h" />
+    <ClInclude Include="include\pOwnBtnSelect.h" />
+    <ClInclude Include="include\pOwnBtnSwitch.h" />
+    <ClInclude Include="include\pOwnWin.h" />
+    <ClInclude Include="include\pPanel.h" />
+    <ClInclude Include="include\pPrinter.h" />
+    <ClInclude Include="include\pPrintPage.h" />
+    <ClInclude Include="include\pProgress.h" />
+    <ClInclude Include="include\pRadioBtn.h" />
+    <ClInclude Include="include\precHeader.h" />
+    <ClInclude Include="include\pRect.h" />
+    <ClInclude Include="include\pRectCtrl.h" />
+    <ClInclude Include="include\PRegistry.h" />
+    <ClInclude Include="include\pRollTraspBitmap.h" />
+    <ClInclude Include="include\pScrollContainer.h" />
+    <ClInclude Include="include\pSeqTraspBitmap.h" />
+    <ClInclude Include="include\pStatic.h" />
+    <ClInclude Include="include\pTextPanel.h" />
+    <ClInclude Include="include\pToolBar.h" />
+    <ClInclude Include="include\pTraspBitmap.h" />
+    <ClInclude Include="include\PTreeView.h" />
+    <ClInclude Include="include\pWin.h" />
+    <ClInclude Include="include\pWinTool.h" />
+    <ClInclude Include="..\resource\resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

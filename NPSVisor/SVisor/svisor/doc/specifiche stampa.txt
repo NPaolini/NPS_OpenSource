@@ -1,0 +1,225 @@
+Specifiche file descrittore di stampa (template)
+
+le righe significative sono solo quelle che iniziano con un numero,
+le altre sono considerate commento. L'ordine di stampa segue la posizione nel file.
+
+Le coordinate/dimensioni sono in decimi di millimetro.
+Le dimensioni dei font sono in punti.
+
+codici da usare:
+
+-----------------------------------------------------------
+testo semplice
+1,X,Y,testo
+-----------------------------------------------------------
+linea semplice
+2,X1,Y1,X2,Y2
+-----------------------------------------------------------
+polilinea
+3,nlinee, Xiniz,Yiniz,X1,Y1,X2,Y2,..Xn,Yn
+-----------------------------------------------------------
+rettangolo
+4,X,Y,W,H
+-----------------------------------------------------------
+bitmap
+5,X,Y,W,H,nome_file_BMP
+-----------------------------------------------------------
+imposta font
+6,H,L,Flag (&1->Italic, &2->Bold, &4->Underlined), nome del font ('*' -> default)
+-----------------------------------------------------------
+imposta font 2
+7,H,L,angolo,Flag,nome del font ('*' -> default)
+-----------------------------------------------------------
+colore linee - testo
+8,R,G,B
+-----------------------------------------------------------
+colore sfondo
+9,r,g,b
+-----------------------------------------------------------
+allineamento testo
+/* Text Alignment Options */
+#define TA_LEFT                      0
+#define TA_RIGHT                     2
+#define TA_CENTER                    6
+
+#define TA_TOP                       0
+#define TA_BOTTOM                    8
+#define TA_BASELINE                  24
+
+10,ALIGN_HORZ,ALIGN_VERT
+-----------------------------------------------------------
+imposta bkg mode
+/* Background Modes */
+#define TRANSPARENT         1
+#define OPAQUE              2
+
+11,mode
+-----------------------------------------------------------
+imposta penna
+#define PS_SOLID            0
+#define PS_DASH             1       /* -------  */
+#define PS_DOT              2       /* .......  */
+#define PS_DASHDOT          3       /* _._._._  */
+#define PS_DASHDOTDOT       4       /* _.._.._  */
+#define PS_NULL             5       /*          */
+
+12,color, width, style
+-----------------------------------------------------------
+imposta pennello 1
+13,color
+-----------------------------------------------------------
+imposta pennello 2
+/* Hatch Styles */
+#define HS_HORIZONTAL       0       /* ----- */
+#define HS_VERTICAL         1       /* ||||| */
+#define HS_FDIAGONAL        2       /* \\\\\ */
+#define HS_BDIAGONAL        3       /* ///// */
+#define HS_CROSS            4       /* +++++ */
+#define HS_DIAGCROSS        5       /* xxxxx */
+
+14,color,style
+-----------------------------------------------------------
+imposta pennello 3
+15,bitmap
+-----------------------------------------------------------
+disegna rettangolo pieno
+16,X,Y,W,H
+-----------------------------------------------------------
+disegna ovale
+17,X,Y,W,H,filled
+-----------------------------------------------------------
+scrive testo all'interno del rettangolo
+ * DrawText() Format Flags
+ */
+#define DT_TOP              0x00000000
+#define DT_LEFT             0x00000000
+#define DT_CENTER           0x00000001
+#define DT_RIGHT            0x00000002
+#define DT_VCENTER          0x00000004
+#define DT_BOTTOM           0x00000008
+#define DT_WORDBREAK        0x00000010
+#define DT_SINGLELINE       0x00000020
+#define DT_EXPANDTABS       0x00000040
+
+18,X,Y,W,H,align,testo
+-----------------------------------------------------------
+imposta pennello nullo (per figure che normalmente riempiono l'area occupata)
+(il parametro successivo è ignorato)
+19,0
+-----------------------------------------------------------
+disegna rettangolo con bordi arrotondati
+
+20,X,Y,W,H,cx,cy
+-----------------------------------------------------------
+testo con valore da variabile
+51,X,Y,variabile
+-----------------------------------------------------------
+testo all'interno del rettangolo con valore da variabile
+52,X,Y,W,H,align,variabile
+-----------------------------------------------------------
+bitmap abbinato a variabile
+ ** non implementato **
+//53,X,Y,W,H,variabile
+-----------------------------------------------------------
+testo abbinato a variabile
+ ** non implementato **
+ //54,X,Y,variabile
+-----------------------------------------------------------
+testo all'interno del rettangolo abbinato a variabile
+ ** non implementato **
+//55,X,Y,W,H,align,variabile
+-----------------------------------------------------------
+testo all'interno del rettangolo arrotondato con valore da variabile
+ ** non implementato **
+//56,X,Y,W,H,cx,cy,align,variabile
+-----------------------------------------------------------
+testo all'interno del rettangolo arrotondato abbinato a variabile
+ ** non implementato **
+//57,X,Y,W,H,cx,cy,align,variabile
+-----------------------------------------------------------
+esegue salto pagina
+100
+-----------------------------------------------------------
+-----------------------------------------------------------
+-----------------------------------------------------------
+specifiche per il file std_msg.txt
+
+nel codice ID_PRINT_DATA_VAR ci sono i codici da cui prendere le info
+   es. ID_PRINT_DATA_VAR,12345,15555
+
+   dal codice (es. 12345) in successione ci sono le info per la variabile da controllare
+   per avviare la stampa, seguono:
+   nome del file di set da caricare
+   nome del file template per il modello di stampa
+   codice presenti all'interno del file di set che identificano
+      1) periferiche
+      2) indirizzi
+      3) tipi di dati
+      4) numero di decimali o lunghezza per tipo stringa o offset per bit/word
+      5) normalizzatori o id per testo bit/word (*)
+      6-7)seguono due codici per la scelta del preview e del setup
+
+   es. 12345,prf,addr,offset (si usa un solo bit per attivare la stampa)
+       12346,inforicetta.txt
+       12347,templatericetta.txt
+       12348,2000,2001,2002,2003,2004,1,1
+
+       poi all'interno di inforicetta.txt
+          2000,1,1,1,1
+          2001,100,101,102,103
+          2002,4,4,5,1
+          2003,1,0,2,0
+          2004,12,0,0,10000
+          10000,non attivo,attivo
+
+       il file inforicetta.txt può essere una pagina usata per un body o un semplice
+       file creato appositamente per la stampa.
+       Si possono raggruppare più info su un solo file, basta usare altri codici.
+
+  variabile bit
+  5) (*) se il normalizzatore è >= zero indica che il testo è abbinato ad un solo bit (on/off),
+     e se > zero l'id indica il testo abbinato, altrimenti si usa '0' e '1'
+         altrimenti nell'id indicato dal -normalizzatore il primo valore indica il numero di bit
+         usati ed il testo per nessun bit attivo, a seguire i testi abbinati alla posizione
+         dei bit
+  variabile word
+  5) (*) se il normalizzatore è >= zero indica che il testo è il valore della variabile
+     eventualmente normalizzato
+         altrimenti nell'id indicato dal -normalizzatore il valore indica il numero di bit
+         usati (se zero usa tutta la word), a seguire i testi abbinati al valore della
+         variabile (N.B. deve essere di tipo intero, es. word o dword)
+
+-----------------------------------------------------------
+std_msg per i file di esempio allegati
+-----------------------------------------------------------
+Stampa dati
+600,300110
+300110,1,50,0
+300111,prova-info.txt
+300112,template-prova.txt
+300113,2000,2001,2002,2003,2004,1,0
+-----------------------------------------------------------
+esempio per testi abbinati a bit
+2000,1
+2001,100
+2002,1
+2003,2
+2004,-3100
+
+3100,3,nessun bit attivo
+3101,primo(terzo) bit
+3102,secondo bit
+3103,terzo bit
+-----------------------------------------------------------
+esempio per testi abbinati a word
+2000,1
+2001,100
+2002,4
+2003,0
+2003,-3100
+
+3100,2
+3101,valore 0
+3102,valore 1
+3103,valore 2
+3104,valore 3

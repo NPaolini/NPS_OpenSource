@@ -1,0 +1,68 @@
+<VARS>
+$v1=1
+$v2=1
+$v3=1
+$v4=1
+
+</VARS>
+<FUNCT>
+@double_sum(@var1, @var2)
+{
+; just to use a local variable
+  @t = @var1+@var2
+  @double_sum=multiplication(@t, 2)
+}
+;---------------------------------------
+@multiplication(@var1, @var2)
+{
+; example of reuse of a parameter as lValue
+  @var1= @var1*@var2
+  @multiplication=@var1
+}
+;---------------------------------------
+@division(@var1, @var2)
+{
+; only for example of jumps, the function below is the one to be preferred
+  @_skip = if(@var2, null, #end)
+  @t = @var1/@var2
+  @_skip=#end2
+  #end
+  @t = @var1
+  #end2
+  @division=@t
+}
+;---------------------------------------
+@division2(@var1, @var2)
+{
+  @division2=if(@var2, @var1/@var2, @var1)
+}
+;---------------------------------------
+; the first bracket, which is indicates the beginning of the function block
+; can also stand on the same line of the function declaration, instead the
+; closing brace must be on a single line
+@muldiv(@val, @mul, @div) {
+  @muldiv=if(@div, @val * @mul / @div, @val * @mul)
+}
+;---------------------------------------
+; function without parameters, note that should be invoked without the parentheses
+@getdate()
+{
+; example of a global variable call (with the initial character $)
+  return $v1 + month * 100 + year * 10000
+}
+
+</FUNCT>
+<CALC>
+$v2=double_sum(day,2)
+$v3 = double_sum($v2, -3)
+$v2=division($v3, 0)
+$v2=division($v3,3)
+$v2=division2($v3, 0)
+$v2=division2($v3,3)
+$v2=multiplication(division2($v3,3), 4)
+$v2=muldiv($v3, 4, 3)
+$v2=muldiv($v3, 4, 0)
+$v1 = day
+$v2 = getdate
+
+</CALC>

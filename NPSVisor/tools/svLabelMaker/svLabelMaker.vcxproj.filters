@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{f92d4416-d7f5-43fd-8421-19d0b8e4fb17}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{9282255c-20a4-40fb-8834-952f61716ee0}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{4e69b29b-5b1e-44e7-a2ec-8854eb386e1b}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+    <Filter Include="property">
+      <UniqueIdentifier>{d94439b0-dc2e-4218-af5d-7c177b5b047e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="object">
+      <UniqueIdentifier>{0a36b358-8ccd-47c1-89b5-caefb3877e55}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="source\common.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\mainMaker.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\svmBase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\svmCalibrate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\svmDataProject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\svmDialogVariable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\svmMainClient.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\svmMainWorkArea.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\svmManZoom.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\svmRule.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pProperty\svmBitmapProperty.cpp">
+      <Filter>property</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pProperty\svmDrawProperty.cpp">
+      <Filter>property</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pProperty\svmImgProperty.cpp">
+      <Filter>property</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pProperty\svmLineProperty.cpp">
+      <Filter>property</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pProperty\svmProperty.cpp">
+      <Filter>property</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pProperty\svmRectProperty.cpp">
+      <Filter>property</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pProperty\svmTextProperty.cpp">
+      <Filter>property</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pObject\lineEquation.cpp">
+      <Filter>object</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pObject\svmHistory.cpp">
+      <Filter>object</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pObject\svmObjBitmap.cpp">
+      <Filter>object</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pObject\svmObject.cpp">
+      <Filter>object</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pObject\svmObjEllipse.cpp">
+      <Filter>object</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pObject\svmObjLine.cpp">
+      <Filter>object</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pObject\svmObjRect.cpp">
+      <Filter>object</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pObject\svmObjText.cpp">
+      <Filter>object</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource\resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource\svMkVersion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource\svMkVersionL.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource\svMkVersionM.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resource\actionBar.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\Back.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\canc.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\chgPageBar.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\ok.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\Pan.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\PanMove.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\projectBar.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\save.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\svMaker.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\toolBar.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="resource\maker.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="resource\version.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

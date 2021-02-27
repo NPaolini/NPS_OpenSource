@@ -1,0 +1,40 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "nps_conn_U", "conn_dll2.vcxproj", "{2C4151B3-A1AE-4521-916D-A911D225319D}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testConn", "testConn.vcxproj", "{44624FDF-1972-442E-B540-7F6043B9BD05}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "nps_conn", "conn_dll.vcxproj", "{A4FD692C-0D0A-4CF9-8A88-B976360CC838}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+		static_release|Win32 = static_release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2C4151B3-A1AE-4521-916D-A911D225319D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{2C4151B3-A1AE-4521-916D-A911D225319D}.Debug|Win32.Build.0 = Debug|Win32
+		{2C4151B3-A1AE-4521-916D-A911D225319D}.Release|Win32.ActiveCfg = Release|Win32
+		{2C4151B3-A1AE-4521-916D-A911D225319D}.Release|Win32.Build.0 = Release|Win32
+		{2C4151B3-A1AE-4521-916D-A911D225319D}.static_release|Win32.ActiveCfg = static_release|Win32
+		{2C4151B3-A1AE-4521-916D-A911D225319D}.static_release|Win32.Build.0 = static_release|Win32
+		{44624FDF-1972-442E-B540-7F6043B9BD05}.Debug|Win32.ActiveCfg = Debug|Win32
+		{44624FDF-1972-442E-B540-7F6043B9BD05}.Debug|Win32.Build.0 = Debug|Win32
+		{44624FDF-1972-442E-B540-7F6043B9BD05}.Release|Win32.ActiveCfg = Release|Win32
+		{44624FDF-1972-442E-B540-7F6043B9BD05}.Release|Win32.Build.0 = Release|Win32
+		{44624FDF-1972-442E-B540-7F6043B9BD05}.static_release|Win32.ActiveCfg = static_release|Win32
+		{44624FDF-1972-442E-B540-7F6043B9BD05}.static_release|Win32.Build.0 = static_release|Win32
+		{A4FD692C-0D0A-4CF9-8A88-B976360CC838}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A4FD692C-0D0A-4CF9-8A88-B976360CC838}.Debug|Win32.Build.0 = Debug|Win32
+		{A4FD692C-0D0A-4CF9-8A88-B976360CC838}.Release|Win32.ActiveCfg = Release|Win32
+		{A4FD692C-0D0A-4CF9-8A88-B976360CC838}.Release|Win32.Build.0 = Release|Win32
+		{A4FD692C-0D0A-4CF9-8A88-B976360CC838}.static_release|Win32.ActiveCfg = static_release|Win32
+		{A4FD692C-0D0A-4CF9-8A88-B976360CC838}.static_release|Win32.Build.0 = static_release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

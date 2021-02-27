@@ -1,0 +1,61 @@
+<VARS>
+$test_addr=0
+$test_result1=0
+$test_result2=0
+$test_result3=0
+$test_result4=0
+$test_result5=0
+$test_fill=1
+$test_count=1
+$ix=1
+$upLimit=0
+$dnLimit=0
+
+</VARS>
+<INIT>
+$test_count=10
+$test_fill=1
+$upLimit=180.0
+$dnLimit=140.0
+
+</INIT>
+<FUNCT>
+; giusto un paio di funzioni per far vedere come vanno scritte
+;-----------------
+@rnd(@min,@max) {
+  return randminmax(@min, @max) / 100.0
+}
+;-----------------
+@nextData(@upLimit, @dnLimit) {
+  ; un intervallo più ristretto
+  @max = @upLimit * 85
+  @min = @dnLimit * 115
+  ; se zero, l'intervallo completo
+  @_skip = if(randminmax(0,2), #exec, null)
+  @max = @upLimit * 100
+  @min = @dnLimit * 100
+#exec  
+  return rnd(@min, @max)
+}
+;-----------------
+
+</FUNCT>
+<CALC>
+;per non cambiare più i dati
+;$test_fill=0
+$_skip=if($test_fill, null,#filled)
+$test_fill=0
+$ix=0
+#init
+$test_addr[$ix] = nextData($upLimit, $dnLimit)
+$ix = $ix + 1
+$_skip=if($ix < $test_count,#init,null)
+
+#filled
+$test_result1=blksum($test_addr, $test_count, 1)
+$test_result2=blkavr($test_addr, $test_count, 1)
+$test_result3=blkdevstd($test_addr, $test_count, 1)
+$test_result4=blk_cmk($test_addr, $test_count, 1, $upLimit, $dnLimit)
+$test_result5=blk_cpk($test_addr, $test_count, 1, $upLimit, $dnLimit)
+
+</CALC>

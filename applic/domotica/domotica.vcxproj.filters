@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="File di origine">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="File di intestazione">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="File di risorse">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="source\P_Param.cpp">
+      <Filter>File di origine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\testConn\include\connClass.cpp">
+      <Filter>File di origine</Filter>
+    </ClCompile>
+    <ClCompile Include="source\def_mainapp.cpp">
+      <Filter>File di origine</Filter>
+    </ClCompile>
+    <ClCompile Include="source\mainApp.cpp">
+      <Filter>File di origine</Filter>
+    </ClCompile>
+    <ClCompile Include="source\mainClient.cpp">
+      <Filter>File di origine</Filter>
+    </ClCompile>
+    <ClCompile Include="source\P_Lan.cpp">
+      <Filter>File di origine</Filter>
+    </ClCompile>
+    <ClCompile Include="source\P_BaseCommon.cpp">
+      <Filter>File di origine</Filter>
+    </ClCompile>
+    <ClCompile Include="source\P_backup.cpp">
+      <Filter>File di origine</Filter>
+    </ClCompile>
+    <ClCompile Include="source\progressBar.cpp">
+      <Filter>File di origine</Filter>
+    </ClCompile>
+    <ClCompile Include="source\P_Timing.cpp">
+      <Filter>File di origine</Filter>
+    </ClCompile>
+    <ClCompile Include="source\P_Email.cpp">
+      <Filter>File di origine</Filter>
+    </ClCompile>
+    <ClCompile Include="source\P_User.cpp">
+      <Filter>File di origine</Filter>
+    </ClCompile>
+    <ClCompile Include="source\P_Log.cpp">
+      <Filter>File di origine</Filter>
+    </ClCompile>
+    <ClCompile Include="source\P_Site.cpp">
+      <Filter>File di origine</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="resource\resource.rc">
+      <Filter>File di risorse</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="resource\done.BMP">
+      <Filter>File di risorse</Filter>
+    </Image>
+    <Image Include="resource\cfg.BMP">
+      <Filter>File di risorse</Filter>
+    </Image>
+    <Image Include="resource\Delete.bmp">
+      <Filter>File di risorse</Filter>
+    </Image>
+    <Image Include="resource\ok.BMP">
+      <Filter>File di risorse</Filter>
+    </Image>
+    <Image Include="resource\default.BMP">
+      <Filter>File di risorse</Filter>
+    </Image>
+    <Image Include="resource\clear.bmp">
+      <Filter>File di risorse</Filter>
+    </Image>
+    <Image Include="resource\semaforo_rosso.bmp">
+      <Filter>File di risorse</Filter>
+    </Image>
+    <Image Include="resource\semaforo_verde.bmp">
+      <Filter>File di risorse</Filter>
+    </Image>
+    <Image Include="resource\reset.bmp">
+      <Filter>File di risorse</Filter>
+    </Image>
+    <Image Include="resource\np.ico">
+      <Filter>File di risorse</Filter>
+    </Image>
+    <Image Include="resource\network-wired.png">
+      <Filter>File di risorse</Filter>
+    </Image>
+    <Image Include="resource\download.png">
+      <Filter>File di risorse</Filter>
+    </Image>
+    <Image Include="resource\system_preferences.png">
+      <Filter>File di risorse</Filter>
+    </Image>
+    <Image Include="resource\network.png">
+      <Filter>File di risorse</Filter>
+    </Image>
+    <Image Include="resource\backup.png">
+      <Filter>File di risorse</Filter>
+    </Image>
+    <Image Include="resource\setup.png">
+      <Filter>File di risorse</Filter>
+    </Image>
+    <Image Include="resource\email.png">
+      <Filter>File di risorse</Filter>
+    </Image>
+    <Image Include="resource\log.png">
+      <Filter>File di risorse</Filter>
+    </Image>
+    <Image Include="resource\users.png">
+      <Filter>File di risorse</Filter>
+    </Image>
+    <Image Include="resource\done.png">
+      <Filter>File di risorse</Filter>
+    </Image>
+    <Image Include="resource\semaforo-rosso.png">
+      <Filter>File di risorse</Filter>
+    </Image>
+    <Image Include="resource\semaforo-verde.png">
+      <Filter>File di risorse</Filter>
+    </Image>
+    <Image Include="resource\send.bmp">
+      <Filter>File di risorse</Filter>
+    </Image>
+    <Image Include="resource\timing.png">
+      <Filter>File di risorse</Filter>
+    </Image>
+    <Image Include="resource\load.bmp">
+      <Filter>File di risorse</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource\resource.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+  </ItemGroup>
+</Project>

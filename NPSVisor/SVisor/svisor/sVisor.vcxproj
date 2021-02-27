@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{97B34CCB-5515-4C99-8E86-43573DA4D3E7}</ProjectGuid>
+    <RootNamespace>sVisor</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v140_xp</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v140_xp</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Debug\</IntDir>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\..\NPfw\fw\include;..\..\..\NPfw\various\include;..\reader\;..\svisor\include\;..\common\;..\resource;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>USE_SV_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <StructMemberAlignment>8Bytes</StructMemberAlignment>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>precHeader.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>Full</Optimization>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <AdditionalIncludeDirectories>..\..\..\NPfw\fw\include;..\..\..\NPfw\various\include;..\reader\;..\svisor\include\;..\common\;..\resource;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>USE_SV_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <StructMemberAlignment>8Bytes</StructMemberAlignment>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>precHeader.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="source\currAlrm.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="source\D_Alarm.cpp" />
+    <ClCompile Include="source\D_EMPTY.cpp" />
+    <ClCompile Include="source\D_Psw.cpp" />
+    <ClCompile Include="source\d_svdFl.cpp" />
+    <ClCompile Include="source\D_Wait.cpp" />
+    <ClCompile Include="source\DChooseResolution.cpp" />
+    <ClCompile Include="source\DChoosNm.cpp" />
+    <ClCompile Include="source\def_dir.cpp" />
+    <ClCompile Include="source\DInputDt.cpp" />
+    <ClCompile Include="source\DSerchFl.cpp" />
+    <ClCompile Include="source\DSetTime.cpp" />
+    <ClCompile Include="source\DSimpleEditor.cpp" />
+    <ClCompile Include="source\DTurnOvr.cpp" />
+    <ClCompile Include="source\Footer.cpp" />
+    <ClCompile Include="source\gen_lnk_body.cpp" />
+    <ClCompile Include="source\gestPrf.cpp" />
+    <ClCompile Include="source\Header.cpp" />
+    <ClCompile Include="source\language.cpp" />
+    <ClCompile Include="source\loadPage.cpp" />
+    <ClCompile Include="source\log_alrm.cpp" />
+    <ClCompile Include="source\log_stat.cpp" />
+    <ClCompile Include="source\mainClient.cpp" />
+    <ClCompile Include="source\manageSplashScreen.cpp" />
+    <ClCompile Include="source\newNormal.cpp" />
+    <ClCompile Include="source\pVarSlider.cpp" />
+    <ClCompile Include="source\p_base.cpp" />
+    <ClCompile Include="source\P_BaseBody.cpp" />
+    <ClCompile Include="source\P_BaseObj.cpp" />
+    <ClCompile Include="source\P_Body.cpp" />
+    <ClCompile Include="source\P_DefBody.cpp" />
+    <ClCompile Include="source\p_ManDynaBody.cpp" />
+    <ClCompile Include="source\P_ModalBody.cpp" />
+    <ClCompile Include="source\p_name.cpp" />
+    <ClCompile Include="source\P_Param.cpp" />
+    <ClCompile Include="source\password.cpp" />
+    <ClCompile Include="source\pBaseListAlarm.cpp" />
+    <ClCompile Include="source\pFullView.cpp" />
+    <ClCompile Include="source\pInfoMoveObj.cpp" />
+    <ClCompile Include="source\prfData.cpp" />
+    <ClCompile Include="source\printGeneric.cpp" />
+    <ClCompile Include="source\PShowValueWin.cpp" />
+    <ClCompile Include="source\pSimpleBmp.cpp" />
+    <ClCompile Include="source\pSimplePanel.cpp" />
+    <ClCompile Include="source\pSimpleText.cpp" />
+    <ClCompile Include="source\PSliderWin.cpp" />
+    <ClCompile Include="source\pTouchKeyb.cpp" />
+    <ClCompile Include="source\PVarBmp.cpp" />
+    <ClCompile Include="source\PVarBtn.cpp" />
+    <ClCompile Include="source\PVarBtnStd.cpp" />
+    <ClCompile Include="source\pVarCam.cpp" />
+    <ClCompile Include="source\PVarChoose.cpp" />
+    <ClCompile Include="source\PVarCurve.cpp" />
+    <ClCompile Include="source\PVarDiam.cpp" />
+    <ClCompile Include="source\PVarEdit.cpp" />
+    <ClCompile Include="source\pVarGraph.cpp" />
+    <ClCompile Include="source\PVarLed.cpp" />
+    <ClCompile Include="source\pVarListAlarm.cpp" />
+    <ClCompile Include="source\PVarListBox.cpp" />
+    <ClCompile Include="source\pVarListBoxAlarm.cpp" />
+    <ClCompile Include="source\PVarListView.cpp" />
+    <ClCompile Include="source\pVarListViewAlarm.cpp" />
+    <ClCompile Include="source\pVarPlotXY.cpp" />
+    <ClCompile Include="source\PVarScope.cpp" />
+    <ClCompile Include="source\pVarSpin.cpp" />
+    <ClCompile Include="source\pVarTableInfo.cpp" />
+    <ClCompile Include="source\pVarText.cpp" />
+    <ClCompile Include="source\PVarTrend.cpp" />
+    <ClCompile Include="source\PVarXMeter.cpp" />
+    <ClCompile Include="source\sizer.cpp" />
+    <ClCompile Include="source\sv_dll.cpp">
+      <FavorSizeOrSpeed Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Neither</FavorSizeOrSpeed>
+    </ClCompile>
+    <ClCompile Include="source\svDialog.cpp" />
+    <ClCompile Include="source\svEdit.cpp" />
+    <ClCompile Include="source\svPrinter.cpp" />
+    <ClCompile Include="source\svsrapp.cpp" />
+    <ClCompile Include="source\svVisualTextEdit.cpp" />
+    <ClCompile Include="source\systray.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\1.h" />
+    <ClInclude Include="include\config.h" />
+    <ClInclude Include="include\currAlrm.h" />
+    <ClInclude Include="include\D_Alarm.h" />
+    <ClInclude Include="include\D_EMPTY.h" />
+    <ClInclude Include="include\d_mntnce.h" />
+    <ClInclude Include="include\D_Psw.h" />
+    <ClInclude Include="include\d_svdfl.h" />
+    <ClInclude Include="include\D_Wait.h" />
+    <ClInclude Include="include\DChoosNm.h" />
+    <ClInclude Include="include\def_dir.h" />
+    <ClInclude Include="include\defgPerif.h" />
+    <ClInclude Include="include\DInputDt.h" />
+    <ClInclude Include="include\DSerchFl.h" />
+    <ClInclude Include="include\DSetTime.h" />
+    <ClInclude Include="include\DTurnOvr.h" />
+    <ClInclude Include="include\Footer.h" />
+    <ClInclude Include="include\gestPrf.h" />
+    <ClInclude Include="include\hdrmsg.h" />
+    <ClInclude Include="include\Header.h" />
+    <ClInclude Include="include\id_btn.h" />
+    <ClInclude Include="include\imntnce.h" />
+    <ClInclude Include="include\lnk_body.h" />
+    <ClInclude Include="include\log_alrm.h" />
+    <ClInclude Include="include\log_stat.h" />
+    <ClInclude Include="include\mainApp.h" />
+    <ClInclude Include="include\mainClient.h" />
+    <ClInclude Include="include\mntnce.h" />
+    <ClInclude Include="include\newNormal.h" />
+    <ClInclude Include="include\p_base.h" />
+    <ClInclude Include="include\p_BaseBody.h" />
+    <ClInclude Include="include\p_BaseObj.h" />
+    <ClInclude Include="include\p_Body.h" />
+    <ClInclude Include="include\p_DefBody.h" />
+    <ClInclude Include="include\p_ModalBody.h" />
+    <ClInclude Include="include\p_name.h" />
+    <ClInclude Include="include\P_Param.h" />
+    <ClInclude Include="include\pAllObj.h" />
+    <ClInclude Include="include\pAllObj_f_d.h" />
+    <ClInclude Include="include\password.h" />
+    <ClInclude Include="include\prfData.h" />
+    <ClInclude Include="include\printAlarm.h" />
+    <ClInclude Include="include\printDataPage.h" />
+    <ClInclude Include="include\printDataVar.h" />
+    <ClInclude Include="include\printGeneric.h" />
+    <ClInclude Include="include\printGraph.h" />
+    <ClInclude Include="include\pVarBmp.h" />
+    <ClInclude Include="include\pVarBtn.h" />
+    <ClInclude Include="include\pVarCam.h" />
+    <ClInclude Include="include\pVarChoose.h" />
+    <ClInclude Include="include\pVarCurve.h" />
+    <ClInclude Include="include\PVarDiam.h" />
+    <ClInclude Include="include\pVarEdit.h" />
+    <ClInclude Include="include\pVarGraph.h" />
+    <ClInclude Include="include\pVarLed.h" />
+    <ClInclude Include="include\pVarListBox.h" />
+    <ClInclude Include="include\pVarText.h" />
+    <ClInclude Include="..\resource\resource.h" />
+    <ClInclude Include="include\sizer.h" />
+    <ClInclude Include="include\sv_dll.h" />
+    <ClInclude Include="include\svDialog.h" />
+    <ClInclude Include="include\svPrinter.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="..\resource\resource.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

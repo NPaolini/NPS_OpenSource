@@ -1,0 +1,67 @@
+<VARS>
+$grfx_point=1
+$grfx_init=0
+$grfx_min=0
+$grfx_max=0
+$grfx_num=1
+$grfx_num_block=1
+$grfx_freq=0
+$grfx_ampl=0
+$grfx_cursor_s=1
+$grfx_step=1
+$grfx_cursor=1
+$grfx_cursor_step=1
+
+$x_meter_add=1
+$x_meter_point=1
+
+</VARS>
+<INIT>
+$grfx_cursor=-1
+$x_meter_add=1
+$x_meter_point=$grfx_point
+
+</INIT>
+<FUNCT>
+@fz(@angle, @max, @min, @ampl) {
+  @max = (@max - @min) / 2
+  @angle = rad(@angle % (360 * 3))
+;  @v= sin(@angle) * @max * @ampl
+  @v= sin(@angle) * cos(@angle * @angle) * @max * @ampl
+  return @v + @max + @min
+}
+
+</FUNCT>
+<CALC>
+$_skip=if(!$grfx_num || $grfx_num > 360, null, #init_grfx)
+$grfx_num=360
+$grfx_point=0
+$grfx_freq=1.0
+$grfx_ampl=1.0
+$grfx_step=1
+$x_meter_point=0
+$_skip=if(!($grfx_max - $grfx_min), null, #ok_range)
+$grfx_max = 100299
+$grfx_min=0
+#ok_range
+$_skip=if(!$grfx_num_block || $grfx_num_block > 10, null, #init_grfx)
+$grfx_num_block=10
+#init_grfx
+$grfx_cursor_step = $grfx_step
+#cycle_grfx
+;$_skip=if($x_meter_point + $x_meter_add > $grfx_num || $x_meter_point + $x_meter_add < 0, null, #skip_change)
+;$x_meter_add = -$x_meter_add
+#skip_change
+;$x_meter_point = $x_meter_point + $x_meter_add
+
+$grfx_point = ($grfx_point + 1) % $grfx_num
+$grfx_init[$grfx_point]=fz($grfx_cursor * $grfx_freq, $grfx_max, $grfx_min, $grfx_ampl)
+$grfx_cursor = $grfx_cursor + 1
+$grfx_cursor_s = $grfx_cursor % 360
+$grfx_cursor_step = $grfx_cursor_step - 1
+
+$x_meter_point=$grfx_init[$grfx_point]
+
+$_skip=if($grfx_cursor_step > 0, #cycle_grfx, null)
+
+</CALC>

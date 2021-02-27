@@ -1,0 +1,28 @@
+
+nome del file contenente le espressioni da valutare
+,10,testCANOpen.svx
+10,prova_expr.svx
+variabile che attiva il ricaricamento del file delle espressioni
+andrebbe usato solo durante il test
+11,9,110,1,1,0,0
+
+valore di precisione per il controllo di uguaglianza nei valori reali.
+[Valori che dovrebbero essere uguali, ma ottenuti da calcoli diversi ]
+[presentano un errore di precisione che fa assumere che i valori non ]
+[siano uguali. Ciò comporta un continuo refresh dei dati. Troncandoli]
+[al valore di precisione si evitano questi errori.]
+se non presente assume il valore di default di 0.00001
+12,0.00001
+
+titolo per finestra di errore con uscita dall'esecuzione dello script
+N.B. se non presenti assumono questi valori
+;20,Script Error - Express dll
+
+e relativo messaggio
+;21,There are some errors on the source script or on some variables or the script file is not valid
+
+dall'id 51 al 60 è possibile aggiungere altri script che verranno eseguiti sequenzialmente
+;51,secondo.svx
+;52,terzo,svx
+; ...
+;60,ultimo.svx

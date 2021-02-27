@@ -1,0 +1,16 @@
+il file è unico per tutti i driver remoti
+
+id_prph,id_prph_richiesta,ip_server,porta_server,password(max 15 caratteri)
+2,0,192.168.0.50,3000,pswServer
+
+la periferica richiesta può essere messa a zero se equivale alla propria
+
+N.B. nel setup del sVisor, nel campo usato per immettere il valore da inviare
+     al driver, occorre specificare qual'è il passo di incremento delle variabili.
+     Si può lasciare a zero se l'indirizzamento è a byte[1] (es. nel plc siemens),
+     mentre è necessario impostare a uno se gli indirizzi sono consecutivi[2] per
+     il tipo base (es. lettori laser) (non è ancora implementato l'uso diverso dai
+     due casi sopra citati)
+
+     [1] es. word x -> 234, word successiva -> 236
+     [2] es. dword x -> 24, dword successiva -> 25

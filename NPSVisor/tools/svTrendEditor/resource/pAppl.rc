@@ -1,0 +1,280 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Italiano (Italia) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ITA)
+#ifdef _WIN32
+LANGUAGE LANG_ITALIAN, SUBLANG_ITALIAN
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+1 VERSIONINFO
+ FILEVERSION 7,0,0,1
+ PRODUCTVERSION 7,0,0,0
+ FILEFLAGSMASK 0x0L
+#ifdef _DEBUG
+ FILEFLAGS 0x3fL
+#else
+ FILEFLAGS 0x3eL
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041004b0"
+        BEGIN
+            VALUE "Comments", "Licenced by NPS"
+            VALUE "CompanyName", "NPS"
+            VALUE "FileDescription", "NpSvTrend Editor"
+            VALUE "FileVersion", "7, 0, 0, 1"
+            VALUE "InternalName", "Appl (by NPS)"
+            VALUE "LegalCopyright", "Copyright © 2001-2015. All Rights Reserved"
+            VALUE "LegalTrademarks", "Windows(TM) is a trademark of Microsoft Corporation"
+            VALUE "OriginalFilename", "svTrendEditor.exe"
+            VALUE "PrivateBuild", " "
+            VALUE "ProductName", "NpSvTrend Editor"
+            VALUE "ProductVersion", "7, 0, 0, 0"
+            VALUE "SpecialBuild", " "
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x410, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_ICON1               ICON                    "edit.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_CURS_HAND           CURSOR                  "hand_p.cur"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BITMAP_M_DONE       BITMAP                  "done.bmp"
+IDB_BITMAP_M_DONE2      BITMAP                  "done2.bmp"
+IDB_BITMAP_M_UPD        BITMAP                  "update.bmp"
+IDB_BITMAP_M_UPD2       BITMAP                  "update2.bmp"
+IDB_BITMAP_M_SAVE       BITMAP                  "save.bmp"
+IDB_BITMAP_M_SAVE2      BITMAP                  "save2.bmp"
+IDB_BITMAP_M_FOLDER     BITMAP                  "folder.bmp"
+IDB_BITMAP_M_FOLDER2    BITMAP                  "folder2.bmp"
+IDB_BITMAP_M_ADD        BITMAP                  "add.bmp"
+IDB_BITMAP_M_ADD2       BITMAP                  "add2.bmp"
+IDB_BITMAP_M_REM        BITMAP                  "rem.bmp"
+IDB_BITMAP_M_REM2       BITMAP                  "rem2.bmp"
+IDB_BITMAP_M_COPY       BITMAP                  "copy.bmp"
+IDB_BITMAP_M_COPY2      BITMAP                  "copy2.bmp"
+IDB_BITMAP_M_PASTE      BITMAP                  "paste.bmp"
+IDB_BITMAP_M_PASTE2     BITMAP                  "paste2.bmp"
+IDB_BITMAP_M_EXPORT     BITMAP                  "export.bmp"
+IDB_BITMAP_M_EXPORT2    BITMAP                  "export2.bmp"
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DIALOG_IMP_EXP DIALOGEX 0, 0, 268, 81
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTERMOUSE | WS_POPUP | WS_CAPTION
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "Avvia",IDOK,108,63,50,14
+    CTEXT           "..",IDC_STATIC_INFO_FILE,5,24,257,11,SS_PATHELLIPSIS
+    CONTROL         "",IDC_PROGRESSBAR,"msctls_progress32",0x1,5,43,257,14
+    CTEXT           "..",IDC_STATIC_INFO,5,2,257,16,SS_PATHELLIPSIS
+END
+
+IDD_DIALOG_CHECK_N_COL DIALOGEX 0, 0, 204, 79
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Gestione colonne"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,144,41,50,14
+    PUSHBUTTON      "Annulla",IDCANCEL,144,58,50,14
+    CTEXT           "Num. colonne (esclusa data-ora)",IDC_STATIC_NCOL,3,39,75,28
+    EDITTEXT        IDC_EDIT_NUM_COL,84,42,40,14,ES_CENTER | ES_AUTOHSCROLL | ES_NUMBER
+    PUSHBUTTON      "test auto check",IDC_BUTTON_AUTOCHECK,132,7,63,14
+    CTEXT           "Timer salvataggio (msec)",IDC_STATIC_TIMER,4,6,74,19
+    EDITTEXT        IDC_EDIT_TIMER,84,7,40,14,ES_CENTER | ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,7,33,188,1
+END
+
+IDD_DIALOG_ADD_COLUMN DIALOGEX 0, 0, 171, 58
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION
+CAPTION "Aggiungi colonna"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "Dopo ...",IDC_RADIO_AFTER_,"Button",BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,9,7,43,10
+    CONTROL         "Primo",IDC_RADIO_FIRST,"Button",BS_AUTORADIOBUTTON,9,23,33,10
+    CONTROL         "Ultimo",IDC_RADIO_LAST,"Button",BS_AUTORADIOBUTTON,9,39,35,10
+    EDITTEXT        IDC_EDIT_AFTER,55,4,40,14,ES_RIGHT | ES_AUTOHSCROLL | ES_NUMBER | WS_DISABLED
+    DEFPUSHBUTTON   "OK",IDOK,112,4,50,14
+    PUSHBUTTON      "Annulla",IDCANCEL,112,22,50,14
+END
+
+IDD_DIALOG_PASTE DIALOGEX 0, 0, 160, 131
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION
+CAPTION "Incolla"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "Dopo ...",IDC_RADIO_AFTER_,"Button",BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,8,61,43,10
+    CONTROL         "Primo",IDC_RADIO_FIRST,"Button",BS_AUTORADIOBUTTON,8,77,33,10
+    CONTROL         "Ultimo",IDC_RADIO_LAST,"Button",BS_AUTORADIOBUTTON,8,93,35,10
+    EDITTEXT        IDC_EDIT_AFTER,54,59,40,14,ES_RIGHT | ES_AUTOHSCROLL | ES_NUMBER | WS_DISABLED
+    DEFPUSHBUTTON   "OK",IDOK,99,82,50,14
+    PUSHBUTTON      "Annulla",IDCANCEL,99,100,50,14
+    CONTROL         "Per righe",IDC_RADIO_BY_ROWS,"Button",BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,14,9,45,10
+    CONTROL         "Per colonne",IDC_RADIO_BY_COL,"Button",BS_AUTORADIOBUTTON,14,26,53,10
+    CONTROL         "Sovrascrivi",IDC_CHECK_OVERWRITE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,8,112,51,10
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,7,45,141,1
+    EDITTEXT        IDC_EDIT_AFTER_ROW,110,23,36,14,ES_RIGHT | ES_AUTOHSCROLL | ES_NUMBER | WS_DISABLED
+    LTEXT           "Dopo riga",IDC_STATIC_PASTE_AFTER,74,26,32,8
+END
+
+IDD_DIALOG_EXPORT DIALOGEX 0, 0, 271, 210
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_VISIBLE | WS_CAPTION
+CAPTION "Esporta"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "File corrente",IDC_RADIO_CURR_FILE,"Button",BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,12,36,67,10
+    CONTROL         "Più file",IDC_RADIO_FILES,"Button",BS_AUTORADIOBUTTON,12,54,67,10
+    DEFPUSHBUTTON   "Ok",IDOK,159,10,50,14
+    PUSHBUTTON      "Annulla",IDCANCEL,211,10,50,14
+    CONTROL         "Formato Tab",IDC_RADIO_TABBED,"Button",BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,14,9,66,10
+    CONTROL         "Formato SQL",IDC_RADIO_SQL,"Button",BS_AUTORADIOBUTTON,90,10,66,10
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,7,28,140,1
+    CONTROL         "Unico file destinazione",IDC_CHECK_UNIQUE_TARGET,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,144,54,108,10
+    PUSHBUTTON      "+",IDC_BUTTON_CHOOSE_FILE,84,51,20,14
+    LISTBOX         IDC_LIST_FILE,8,72,253,134,LBS_SORT | LBS_EXTENDEDSEL | WS_VSCROLL | WS_HSCROLL | WS_TABSTOP
+    PUSHBUTTON      "-",IDC_BUTTON_CHOOSE_FILE_REM,109,51,20,14
+    CONTROL         "Solo selezione",IDC_CHECK_SAVE_SEL,"Button",BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,85,36,89,10
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_DIALOG_IMP_EXP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 261
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 74
+    END
+
+    IDD_DIALOG_CHECK_N_COL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 197
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 72
+    END
+
+    IDD_DIALOG_ADD_COLUMN, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 164
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 51
+    END
+
+    IDD_DIALOG_PASTE, DIALOG
+    BEGIN
+        RIGHTMARGIN, 64
+        BOTTOMMARGIN, 110
+    END
+
+    IDD_DIALOG_EXPORT, DIALOG
+    BEGIN
+        RIGHTMARGIN, 261
+        BOTTOMMARGIN, 194
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Italiano (Italia) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -1,0 +1,27 @@
+immagine per lo splashScreen.
+Se in formato BMP rende trasparente tutta la zona con il colore del primo pixel
+in alto a sx.
+Altrimenti (se non esiste il codice 2) esegue solo un arrotondamento degli spigoli
+1,image\\logo.jpg
+,1,image\\logo.bmp
+
+tolleranza per trasparenza (max 300). Se presente viene utilizzata la trasparenza
+anche per immagini non bmp. Segue flag per usare il formato HSV(1)(più lento)
+anziché RGB(0) nel calcolo della tolleranza.
+
+se si immette -1 come tolleranza viene eliminata la trasparenza
+2,-1,-1
+,2,32,0
+
+coordinate e dimensioni per la zona dei testi di info
+10,30,30,500,300
+
+colore per il testo
+11,0,0,0
+
+secondi di attesa prima del timeout
+,12,30
+12,5
+
+Poiché lo splashScreen resta sempre in primo piano e si potrebbe avere la necessità
+di vedere sotto, è possibile muoverlo semplicemente trascinandolo

@@ -1,0 +1,41 @@
+#	WELCOME TO SQUID
+#	----------------------------
+http_port 8080
+icp_port 0
+
+auth_param negotiate program /usr/bin/wrap negotiate 192.168.1.250 2000
+#auth_param negotiate program /usr/bin/python3 -u /etc/squid/helpers/negotiate_helper.py
+auth_param negotiate children 25 startup=2 idle=1
+auth_param negotiate keep_alive on
+
+#auth_param ntlm program /usr/bin/wrap ntlm 192.168.1.250 2000
+#auth_param ntlm program /usr/bin/python3 -u /etc/squid/helpers/ntlm_helper.py
+#auth_param ntlm children 25 startup=2 idle=1
+#auth_param ntlm keep_alive on
+
+
+auth_param basic program /usr/bin/wrap basic 192.168.1.250 2000
+#auth_param basic program /usr/bin/python3 -u /etc/squid/helpers/basic_helper.py
+auth_param basic children 25 startup=2 idle=1
+auth_param basic realm Squid proxy-caching web server
+auth_param basic credentialsttl 2 hours
+auth_param basic casesensitive off
+
+#...........
+#...........
+#...........
+
+acl Authenticated proxy_auth REQUIRED
+
+external_acl_type win_domain_group ttl=120 children-max=25  %LOGIN  /usr/bin/wrap external 192.168.1.250 2000
+
+acl InetAllow external win_domain_group liceo\Abilitati_Internet
+acl InetAllow external win_domain_group liceo\docenti
+acl InetAllow external win_domain_group liceo\Tecnici
+acl InetAllow external win_domain_group liceo\corsi
+
+http_access allow locallan InetAllow
+
+#...........
+#...........
+#...........

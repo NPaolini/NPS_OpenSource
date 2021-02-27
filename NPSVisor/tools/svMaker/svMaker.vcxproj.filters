@@ -1,0 +1,487 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{1bbea1b2-ab8b-4018-817e-1f9273ed0b0c}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{19dccb37-4bd8-4a32-839b-3ea12ba8d810}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{c1a3dfeb-55ef-4447-9869-607f10d24a74}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+    <Filter Include="property">
+      <UniqueIdentifier>{3016700b-88f1-420c-9383-78985e524aab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="object">
+      <UniqueIdentifier>{e7417186-8c29-4aa9-9b65-a59f8eef09ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="stdMsg">
+      <UniqueIdentifier>{2c6e860d-46d8-4dbc-8bf5-d4e4bfaf82aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="standardPage">
+      <UniqueIdentifier>{af73319a-51a3-48db-9d2e-a64d922e65b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="pAlarm">
+      <UniqueIdentifier>{15a2cddf-a373-4da6-9f9a-ff70389d5d4c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="source\common.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\common_color.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\DChoosePath.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\mainMaker.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\PDiagAd4.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\PDiagCheckaddr.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\PDiagMirror.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\PDiagOffset.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\svmBase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\svmMainClient.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\svmManZoom.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\svmNormal.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pProperty\advBtnDlgImpl.cpp">
+      <Filter>property</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pProperty\baseAdvBtnDlg.cpp">
+      <Filter>property</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pProperty\svmMoveInfo.cpp">
+      <Filter>property</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pProperty\svmPagePropAction.cpp">
+      <Filter>property</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pProperty\svmPageProperty.cpp">
+      <Filter>property</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pProperty\svmProperty.cpp">
+      <Filter>property</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pProperty\svmPropertyAlarm.cpp">
+      <Filter>property</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pProperty\svmPropertyBarGraph.cpp">
+      <Filter>property</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pProperty\svmPropertyBmp.cpp">
+      <Filter>property</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pProperty\svmPropertyBtn.cpp">
+      <Filter>property</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pProperty\svmPropertyCam.cpp">
+      <Filter>property</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pProperty\svmPropertyChoose.cpp">
+      <Filter>property</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pProperty\svmPropertyCurve.cpp">
+      <Filter>property</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pProperty\svmPropertyDiam.cpp">
+      <Filter>property</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pProperty\svmPropertyEdit.cpp">
+      <Filter>property</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pProperty\svmPropertyLed.cpp">
+      <Filter>property</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pProperty\svmPropertyListBox.cpp">
+      <Filter>property</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pProperty\svmPropertyPanel.cpp">
+      <Filter>property</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pProperty\svmPropertyPlotXY.cpp">
+      <Filter>property</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pProperty\svmPropertySimpleBmp.cpp">
+      <Filter>property</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pProperty\svmPropertySpin.cpp">
+      <Filter>property</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pProperty\svmPropertyTableInfo.cpp">
+      <Filter>property</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pProperty\svmPropertyTblFirstCol.cpp">
+      <Filter>property</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pProperty\svmPropertyTblHeader.cpp">
+      <Filter>property</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pProperty\svmPropertyTblRows.cpp">
+      <Filter>property</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pProperty\svmPropertyText.cpp">
+      <Filter>property</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pProperty\svmPropertyTrend.cpp">
+      <Filter>property</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pProperty\svmPropertyTrendColor.cpp">
+      <Filter>property</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pProperty\svmPropertyXMeter.cpp">
+      <Filter>property</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pProperty\svmPropertyXScope.cpp">
+      <Filter>property</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pProperty\svmSendVarByPage.cpp">
+      <Filter>property</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pObject\groupObject.cpp">
+      <Filter>object</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pObject\svmHistory.cpp">
+      <Filter>object</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pObject\svmObjAlarm.cpp">
+      <Filter>object</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pObject\svmObjBarGraph.cpp">
+      <Filter>object</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pObject\svmObjBmp.cpp">
+      <Filter>object</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pObject\svmObjButton.cpp">
+      <Filter>object</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pObject\svmObjCam.cpp">
+      <Filter>object</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pObject\svmObjChoose.cpp">
+      <Filter>object</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pObject\svmObjCurve.cpp">
+      <Filter>object</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pObject\svmObjDiam.cpp">
+      <Filter>object</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pObject\svmObject.cpp">
+      <Filter>object</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pObject\svmObjEdit.cpp">
+      <Filter>object</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pObject\svmObjLed.cpp">
+      <Filter>object</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pObject\svmObjListBox.cpp">
+      <Filter>object</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pObject\svmObjPanel.cpp">
+      <Filter>object</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pObject\svmObjPlotXY.cpp">
+      <Filter>object</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pObject\svmObjSimpleBmp.cpp">
+      <Filter>object</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pObject\svmObjSpin.cpp">
+      <Filter>object</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pObject\svmObjTableInfo.cpp">
+      <Filter>object</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pObject\svmObjText.cpp">
+      <Filter>object</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pObject\svmObjTrend.cpp">
+      <Filter>object</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pObject\svmObjXMeter.cpp">
+      <Filter>object</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pObject\svmObjXScope.cpp">
+      <Filter>object</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pStdMsg\alarm.cpp">
+      <Filter>stdMsg</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pStdMsg\cause_stop.cpp">
+      <Filter>stdMsg</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pStdMsg\dManageStdMsg.cpp">
+      <Filter>stdMsg</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pStdMsg\infoText.cpp">
+      <Filter>stdMsg</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pStdMsg\language.cpp">
+      <Filter>stdMsg</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pStdMsg\language_util.cpp">
+      <Filter>stdMsg</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pStdMsg\print_1.cpp">
+      <Filter>stdMsg</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pStdMsg\print_2.cpp">
+      <Filter>stdMsg</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pStdMsg\std_mntnce.cpp">
+      <Filter>stdMsg</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pStdMsg\trend.cpp">
+      <Filter>stdMsg</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pStdMsg\various_1.cpp">
+      <Filter>stdMsg</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pStdMsg\various_2.cpp">
+      <Filter>stdMsg</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pStdMsg\various_3.cpp">
+      <Filter>stdMsg</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pStdPage\cust_gen.cpp">
+      <Filter>standardPage</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pStdPage\cust_graph.cpp">
+      <Filter>standardPage</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pStdPage\cust_recipe.cpp">
+      <Filter>standardPage</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pStdPage\cust_reciperow.cpp">
+      <Filter>standardPage</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pStdPage\PwizardChild.cpp">
+      <Filter>standardPage</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pStdPage\PwizardChild1.cpp">
+      <Filter>standardPage</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pStdPage\PwizardChild2.cpp">
+      <Filter>standardPage</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pStdPage\PwizardChild3.cpp">
+      <Filter>standardPage</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pStdPage\PwizardChild4.cpp">
+      <Filter>standardPage</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pStdPage\PwizardChild5.cpp">
+      <Filter>standardPage</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pStdPage\wizardDlg.cpp">
+      <Filter>standardPage</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pAlarm\alarm_file_Dlg.cpp">
+      <Filter>pAlarm</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pAlarm\alarmDlg.cpp">
+      <Filter>pAlarm</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pAlarm\alarmEditorDlg.cpp">
+      <Filter>pAlarm</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pAlarm\assocDlg.cpp">
+      <Filter>pAlarm</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pAlarm\baseDlg.cpp">
+      <Filter>pAlarm</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pAlarm\fillAlarmAssoc.cpp">
+      <Filter>pAlarm</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pAlarm\pal_common.cpp">
+      <Filter>pAlarm</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pAlarm\show_edit.cpp">
+      <Filter>pAlarm</Filter>
+    </ClCompile>
+    <ClCompile Include="source\DOpenSource.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pProperty\svmPropertySlider.cpp">
+      <Filter>property</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pObject\svmObjSlider.cpp">
+      <Filter>object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SVisor\svisor\source\sizer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource\resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource\svMkVersion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource\svMkVersionL.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource\svMkVersionM.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resource\actionBar-20.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\actionBar.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\alarm.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\all_ok.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\Back.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\Canc.BMP">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\chgPageBar-20.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\chgPageBar.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\chgPageBar2.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\clear.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\copy.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\done.BMP">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\fill.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\flag-italian.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\folder.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\full_addrObjl.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\Graph01.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\..\WINDOWS\Cursors\hmove.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\logo.jpg.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\logs.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\Note16.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\ok.BMP">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\Pan.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\PanMove.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\pompiere.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\PRINT.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\PRINT2.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\projectBar-20.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\projectBar.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\prop.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\SAVE.BMP">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\siei.ICO">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\siei_m3.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\spin.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\svMaker.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\toolBar-20.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\toolBar.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\Wrench.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="resource\maker.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="resource\maker_cust.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="resource\version.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="resource\bar.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,37 @@
+
+----------------   DLL_EXCLUDE_MODBUS   -----------------
+---------------------------------------------------------
+Gestisce una periferica con più utenze attaccate, ognuna delle quali
+è disattivabile singolarmente (es 101550: più pannelli ESA, ognuno
+collegato ad una linea separata dalle altre, con identificativo
+dato dall'indirizzo modbus, gestite in unica PRF.
+
+Con questa DLL si disattiva la chiamata ad un indirizzo modbus,
+se tale indirizzo è disabilitato.
+---------------------------------------------------------
+---------------------------------------------------------
+
+CUMULATIVO INDIRIZZI (per lettura da CHECK_ADDR)
+------------------------------------------------
+
+2000001,1,1800,4,0,0
+2000002,1,1801,4,0,0
+
+INDIRIZZI
+---------
+id = indirizzo parametri interno alla lettura da DLL.
+idDriver = numero della periferica da controllare.
+idPrph, addr, numdw = prf e ind della variabile di abilitazione (sempre tipo 4) e numero di dword da utilizzare
+
+Se all'interno della PRF2 ho N nodi da controllare, dati dal numero sulla colonna DB e
+corrispondenti ai rispettivi indirizzi modbus, nella variabile di abilitazione ho che
+genericamente il bit M-1 corrisponde al nodo M tra i vari nodi N.
+Per es: bit offset = 0 -> valore DB = 1
+  bit offset = 1 -> valore DB = 2
+  bit offset = 2 -> valore DB = 3
+
+id,idDriver,idPrph,addr
+
+10,2,1,1800,1
+11,3,1,1801,2
+

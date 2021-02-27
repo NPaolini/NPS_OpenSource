@@ -1,0 +1,62 @@
+porta di ascolto
+10,3000
+
+nome del server (opzionale, non viene utilizzato)
+11,svServer
+
+password di connessione (max 15 caratteri)
+12,pswServer
+
+tempo di attesa per il pacchetto di acknoledge, se non arriva
+entro questo tempo (in msec) la connessione viene chiusa
+13,60000
+
+in caso di connessione internet e ip dinamico è possibile collegarsi ad un server
+con ip statico (che fa da ponte) a cui questo server comunica il proprio ip.
+;14,ip,porta,time_ping_minute
+
+elenco di periferiche in sola lettura
+15,2,4
+
+
+nuove specifiche per ridondanza server
+a partire da 101 e per un max di venti ci sono porta e ip di un altro server, con lo scopo di comunicare
+tra loro per bilanciare il carico dei client, se un server ha almeno due client in più di un altro server
+comunica ad uno dei suoi client di collegarsi col server che ne ha di meno.
+Il client ha comunque una lista di server a cui collegarsi, nel caso uno diventi non disponibile prova con gli altri.
+la porta all'id 100 è quella di ascolto, deve essere diversa da quella riservata ai client
+la richiesta agli altri server avviene ogni tot di tempo variabile in modo casuale tra due minuti e dieci minuti
+il server, anche se non ha una lista di altri server, apre comunque la porta di ascolto se è presente il codice 100
+
+100,3001
+
+101,3001,192.168.0.51
+102,3001,192.168.0.52
+....
+;120,...
+
+La gestione delle periferiche in sola lettura è troppo restringente, es. potrebbe esserci un pc che deve agire su una
+linea lunga e deve poter scrivere, mentre un pc in ufficio deve solo leggere.
+Quindi viene aggiunta nel driver la gestione della sola lettura
+
+il server controlla se la periferica fisica a cui è collegato funziona regolarmente; in caso la periferica non risponda,
+interroga gli altri server per sapere se hanno la stessa periferica e che sia funzionante.
+In caso affermativo, verificare se conviene che il server faccia da client per quella periferica oppure se reindirizzare
+il proprio client verso l'altro server.
+
+enum remoteState {ersNone, ersActive, ersInactive, ersError };
+struct infoServer
+{
+  FILETIME ft; // ultimo check effettuato
+  DWORD ip;
+  DWORD port;
+  uint numClient;
+  uint state;
+  infoServer() : MKi64(ft)(0), ip(0), port(0), numClient(0), state(ersNone) {}
+};
+struct infoServerList
+{
+  FILETIME ft; // ultimo check globale effettuato
+  PVect<infoServer> iServer;
+};
+

@@ -1,0 +1,250 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="static_release|Win32">
+      <Configuration>static_release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{44624FDF-1972-442E-B540-7F6043B9BD05}</ProjectGuid>
+    <RootNamespace>ER</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v140_xp</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='static_release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v140_xp</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v140_xp</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='static_release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='static_release|Win32'">false</LinkIncremental>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='static_release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='static_release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='static_release|Win32'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>.\source;.\resource;..\;..\..\NPfw\fw\include;..\..\NPfw\various\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>precHeader.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>fw.lib;various.lib;comctl32.lib;Ws2_32.lib;Vfw32.Lib;Winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(projectname).exe</OutputFile>
+      <AdditionalLibraryDirectories>..\..\NPfw\fw\$(Configuration);..\..\NPfw\various\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)vdrProxyUI.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+    <Manifest>
+      <AdditionalManifestFiles>..\manifest.exe.xml;%(AdditionalManifestFiles)</AdditionalManifestFiles>
+    </Manifest>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>.\source;.\resource;..\;..\..\NPfw\fw\include;..\..\NPfw\various\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>precHeader.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>fw.lib;various.lib;comctl32.lib;Ws2_32.lib;Vfw32.Lib;Winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(projectname).exe</OutputFile>
+      <AdditionalLibraryDirectories>..\..\NPfw\fw\$(Configuration);..\..\NPfw\various\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+    <Manifest>
+      <AdditionalManifestFiles>..\manifest.exe.xml;%(AdditionalManifestFiles)</AdditionalManifestFiles>
+    </Manifest>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='static_release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>.\source;.\resource;..\;..\..\NPfw\fw\include;..\..\NPfw\various\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>precHeader.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>fw.lib;various.lib;comctl32.lib;Ws2_32.lib;Vfw32.Lib;Winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(projectname).exe</OutputFile>
+      <AdditionalLibraryDirectories>..\..\NPfw\fw\$(Configuration);..\..\NPfw\various\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+    <Manifest>
+      <AdditionalManifestFiles>..\manifest.exe.xml;%(AdditionalManifestFiles)</AdditionalManifestFiles>
+    </Manifest>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="source\audio_dll.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='static_release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="source\clientWin.cpp" />
+    <ClCompile Include="source\def_mainapp.cpp" />
+    <ClCompile Include="source\extMonitor.cpp" />
+    <ClCompile Include="source\fullView.cpp" />
+    <ClCompile Include="source\fv_miniat_images.cpp" />
+    <ClCompile Include="source\mainWin.cpp" />
+    <ClCompile Include="source\manage_audio.cpp" />
+    <ClCompile Include="source\pManTimer.cpp" />
+    <ClCompile Include="source\pMenuBtn.cpp" />
+    <ClCompile Include="source\pNumberImg.cpp" />
+    <ClCompile Include="source\PSliderWin.cpp" />
+    <ClCompile Include="source\P_Info.cpp" />
+    <ClCompile Include="source\P_Setup.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource\resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="resource\resource.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="resource\add.bmp" />
+    <Image Include="resource\add2.bmp" />
+    <Image Include="resource\alert.bmp" />
+    <Image Include="resource\alert2.bmp" />
+    <Image Include="resource\color.bmp" />
+    <Image Include="resource\copy.bmp" />
+    <Image Include="resource\copy2.bmp" />
+    <Image Include="resource\delete.bmp" />
+    <Image Include="resource\done.bmp" />
+    <Image Include="resource\done2.bmp" />
+    <Image Include="resource\edit.ico" />
+    <Image Include="resource\escape.ico" />
+    <Image Include="resource\export.bmp" />
+    <Image Include="resource\export2.bmp" />
+    <Image Include="resource\folder.bmp" />
+    <Image Include="resource\folder2.bmp" />
+    <Image Include="resource\font.bmp" />
+    <Image Include="resource\full_screen.bmp" />
+    <Image Include="resource\full_screen2.bmp" />
+    <Image Include="resource\info.bmp" />
+    <Image Include="resource\info2.bmp" />
+    <Image Include="resource\info_set.bmp" />
+    <Image Include="resource\info_set2.bmp" />
+    <Image Include="resource\mod.bmp" />
+    <Image Include="resource\move.bmp" />
+    <Image Include="resource\move2.bmp" />
+    <Image Include="resource\num_led\led0.bmp" />
+    <Image Include="resource\num_led\led1.bmp" />
+    <Image Include="resource\num_led\led2.bmp" />
+    <Image Include="resource\num_led\led3.bmp" />
+    <Image Include="resource\num_led\led4.bmp" />
+    <Image Include="resource\num_led\led5.bmp" />
+    <Image Include="resource\num_led\led6.bmp" />
+    <Image Include="resource\num_led\led7.bmp" />
+    <Image Include="resource\num_led\led8.bmp" />
+    <Image Include="resource\num_led\led9.bmp" />
+    <Image Include="resource\num_led\ledPoint.bmp" />
+    <Image Include="resource\num_led\ledSign.bmp" />
+    <Image Include="resource\ok.bmp" />
+    <Image Include="resource\open_folder.bmp" />
+    <Image Include="resource\paste.bmp" />
+    <Image Include="resource\paste2.bmp" />
+    <Image Include="resource\pausa.bmp" />
+    <Image Include="resource\pausa2.bmp" />
+    <Image Include="resource\rem.bmp" />
+    <Image Include="resource\rem2.bmp" />
+    <Image Include="resource\save.bmp" />
+    <Image Include="resource\save2.bmp" />
+    <Image Include="resource\setup.bmp" />
+    <Image Include="resource\setup2.bmp" />
+    <Image Include="resource\skin_slider.bmp" />
+    <Image Include="resource\slider.bmp" />
+    <Image Include="resource\slider_dx.bmp" />
+    <Image Include="resource\slider_sx.bmp" />
+    <Image Include="resource\sound.bmp" />
+    <Image Include="resource\sound2.bmp" />
+    <Image Include="resource\timer.bmp" />
+    <Image Include="resource\timer2.bmp" />
+    <Image Include="resource\update.bmp" />
+    <Image Include="resource\update2.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resource\hand_p.cur" />
+    <None Include="resource\harrow.cur" />
+    <None Include="resource\hnesw.cur" />
+    <None Include="resource\hnwse.cur" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

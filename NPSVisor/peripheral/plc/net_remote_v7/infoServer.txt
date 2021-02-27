@@ -1,0 +1,22 @@
+; prph,prph_alternativa,ip,porta,psw,flag_sola_lettura,flag_passo_incremento
+2,0,192.168.0.253,3200,pswServer,0,1
+
+; id per proxy in caso di server con ip dinamico
+102,svServer,pippo,password
+
+; indirizzo in cui verrà scritto l'ip del server in formato testo
+202,500
+
+; server alternativi (solo se non c'è il proxy)
+;2001,192.168.0.10
+;2002,192.168.0.11
+
+
+;prph -> il proprio id
+;prph_alternativa, prph da richiedre, zero indica la stessa di prph
+;ip, porta -> server
+;psw -> password di connessione al server
+;flag per sola lettura -> zero = scrittura abilitata
+;flag per passo di incremento -> 0/1, era scritto nel campo data del setup del svisor,
+;   per facilità di copiatura è stato aggiunto anche qui, l'altro è ancora valido e, tra i due,
+;   ha sempre la precedenza il valore uno, indipendentemente da dove è stato inserito

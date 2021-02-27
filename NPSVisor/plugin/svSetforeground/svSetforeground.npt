@@ -1,0 +1,52 @@
+
+--------   DLL_setForeground.txt -------------
+----------------------------------------------
+codice per ricaricare questo testo
+id, prph, addr, type, nbit, offs
+10,1,99,4,1,0
+----------------------------------------------
+codice che apre la finestra per la scelta del programma da mettere in foreground
+11,1,99,4,1,1
+----------------------------------------------
+personalizzazioni per la listbox
+
+colori per righe normali, testo e sfondo (fr,fg,fb,br,bg,bb)
+12,0,0,0,255,255,255
+
+colori per riga selezionata, testo e sfondo (fr,fg,fb,br,bg,bb)
+13,110,0,0,255,255,50
+
+font, h, flag, nome del font
+14,25,0,comic sans ms
+
+il flag può essere zero o una combinazione di questi valori
+#define fITALIC     1
+#define fBOLD       2
+#define fUNDERLINED 4
+i seguenti sono in alternativa a fBOLD
+#define fLIGHT      8
+#define fTHIN      16
+
+flag che identifica cosa va scritto nella listbox, 
+zero -> [exe] - title
+uno  -> title
+due  -> exe
+15,0
+----------------------------------------------
+testi personalizzabili
+
+titolo finestra
+20,Scelta Applicazione
+
+pulsante F1
+21,F1 - Attiva
+
+pulsante F2
+22,F2 - Annulla
+
+font per pulsanti
+30,20,0,comic sans ms
+----------------------------------------------
+filtro per programmi permessi, se non presente abilita tutto,
+non va messa l'estensione ed il nome deve essere uguale a quello dell'eseguibile, non sono ammessi caratteri jolly
+50,explorer,textpad,firefox,emule

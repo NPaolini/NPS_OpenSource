@@ -1,0 +1,34 @@
+// da ridefinire
+
+#define ID_CHOOSE_INFO_TREE_TITLE 2040
+
+#define ID_BTN_ADD_DATE_TREE      2041
+#define ID_BTN_REM_DATE_TREE      2042
+
+#define ID_BTN_ADD_OPER_TREE      2043
+#define ID_BTN_ADDALL_OPER_TREE   2044
+#define ID_BTN_REM_OPER_TREE      2045
+#define ID_BTN_REMALL_OPER_TREE   2046
+
+
+#define ID_TXT_TITLE_OPER_TREE    2047
+#define ID_TXT_DATE_FROM_TREE     2048
+#define ID_TXT_DATE_TO_TREE       2049
+
+#define ID_GBOX_AVAILABLE_TREE    2050
+#define ID_GBOX_CHOOSED_TREE      2051
+#define ID_GBOX_DATE_TREE         2052
+#define ID_GBOX_CHOOSE_REPORT     2053
+
+#define ID_RBN_OPERATOR           2054
+#define ID_RBN_CAUSE              2055
+
+#define ID_TREE_INFO_TITLE_OPER   2058
+#define ID_TREE_INFO_TITLE_CAUSE  2059
+
+#define ID_TREE_INFO_NAME_AND_TIME 2060
+#define ID_TREE_INFO_TOT          2061
+
+#define ID_TREE_INFO_TIME_TITLE   2062
+#define ID_TREE_INFO_TIME         2063
+

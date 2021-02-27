@@ -1,0 +1,442 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Italiano (Italia) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ITA)
+LANGUAGE LANG_ITALIAN, SUBLANG_ITALIAN
+#pragma code_page(1252)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_CLIENT DIALOGEX 9, 7, 423, 226
+STYLE DS_SETFONT | DS_3DLOOK | WS_CHILD | WS_VISIBLE
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    PUSHBUTTON      "",IDC_BUTTONOPEN_COM,8,12,100,100,BS_CENTER
+    PUSHBUTTON      "",IDC_BUTTON_TIMING,110,12,100,100,BS_CENTER
+    PUSHBUTTON      "",IDC_BUTTON_LAN,212,12,100,100,BS_CENTER
+    PUSHBUTTON      "",IDC_BUTTON_BACKUP,313,12,100,49,BS_CENTER
+    PUSHBUTTON      "",IDC_BUTTON_EMAIL,8,115,100,100,BS_CENTER
+    PUSHBUTTON      "",IDC_BUTTON_LOG,110,115,100,100,BS_CENTER
+    PUSHBUTTON      "",IDC_BUTTON_USERS,212,115,100,100,BS_CENTER
+    PUSHBUTTON      "",IDC_BUTTON_SETUP,313,115,100,49,BS_CENTER
+    PUSHBUTTON      "",IDCANCEL,313,166,100,49,BS_CENTER
+    PUSHBUTTON      "",IDC_BUTTON_BACKUP_SITE,313,63,100,49,BS_CENTER
+END
+
+IDD_PARAM DIALOGEX 0, 0, 317, 170
+STYLE DS_SETFONT | DS_MODALFRAME | DS_3DLOOK | DS_CENTERMOUSE | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Communication Setting"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    CONTROL         "",IDC_STATICFRAME_PARAM,"Static",SS_ETCHEDFRAME,4,4,308,67
+    CTEXT           "Com Port",IDC_STATICTEXT_COM_PORT,9,9,73,10,SS_SUNKEN | NOT WS_GROUP
+    COMBOBOX        IDC_COMBOBOX_COM_PORT,9,21,73,105,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CTEXT           "Baud Rate",IDC_STATICTEXT_BAUDRATE,84,9,73,10,SS_SUNKEN | NOT WS_GROUP
+    COMBOBOX        IDC_COMBOBOX_BAUDRATE,84,21,73,105,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CTEXT           "Data Len",IDC_STATICTEXT_DATALEN,159,9,73,10,SS_SUNKEN | NOT WS_GROUP
+    COMBOBOX        IDC_COMBOBOX_DATA_LEN,159,21,73,80,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CTEXT           "Parity",IDC_STATICTEXT_PARITY,234,9,73,10,SS_SUNKEN | NOT WS_GROUP
+    COMBOBOX        IDC_COMBOBOX_PARITY,234,21,73,83,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CTEXT           "Bit Stop",IDC_STATICTEXT_BITSTOP,9,42,73,10,SS_SUNKEN | NOT WS_GROUP
+    COMBOBOX        IDC_COMBOBOX_BITSTOP,9,54,73,80,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CTEXT           "DTR-DSR",IDC_STATICTEXT_BITSTOP2,84,42,73,10,SS_SUNKEN | NOT WS_GROUP
+    COMBOBOX        IDC_COMBOBOX_DTR_DSR,84,54,73,80,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CTEXT           "RTS-CTS",IDC_STATICTEXT_BITSTOP3,159,42,73,10,SS_SUNKEN | NOT WS_GROUP
+    COMBOBOX        IDC_COMBOBOX_RTS_CTS,159,54,73,80,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CTEXT           "XON-XOFF",IDC_STATICTEXT_BITSTOP4,234,42,73,10,SS_SUNKEN | NOT WS_GROUP
+    COMBOBOX        IDC_COMBOBOX_XON_XOFF,234,54,73,80,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Header (3 char.)",IDC_STATIC,12,106,56,28
+    EDITTEXT        IDC_EDIT_HEADER,26,116,29,14,ES_CENTER
+    GROUPBOX        "Space for User Id (10 char./num.)",IDC_STATIC,78,106,127,28
+    EDITTEXT        IDC_EDIT_CODE,82,116,114,14,ES_CENTER | ES_READONLY
+    GROUPBOX        "Version (3 num.)",IDC_STATIC,220,106,65,28
+    EDITTEXT        IDC_EDIT_VER,239,116,29,14,ES_CENTER | ES_NUMBER
+    GROUPBOX        "Card data format",IDC_STATIC,4,98,308,40
+    PUSHBUTTON      "&Default Setting",IDC_BUTTON_DEFAULT,7,74,76,18,BS_CENTER
+    PUSHBUTTON      "&OK",IDOK,216,145,44,18,BS_CENTER
+    PUSHBUTTON      "&Cancel",IDCANCEL,264,145,44,18,BS_CENTER
+    RTEXT           "Delay on send (ms)",IDC_STATIC,7,148,61,8
+    EDITTEXT        IDC_EDIT_DELAY,71,146,40,14,ES_AUTOHSCROLL
+    RTEXT           "Packet dim.",IDC_STATIC,117,149,45,8
+    EDITTEXT        IDC_EDIT_PACKET,165,147,40,14,ES_AUTOHSCROLL
+    CONTROL         "Use WiFi",IDC_CHECK_WIFI,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,255,81,45,10
+END
+
+IDD_DIALOG_LAN DIALOGEX 0, 0, 281, 164
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Lan Setting"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "Send",IDOK,165,142,50,14
+    PUSHBUTTON      "Done",IDCANCEL,219,142,50,14
+    LTEXT           "IP",IDC_STATIC,19,14,8,8
+    CONTROL         "",IDC_IPADDRESS,"SysIPAddress32",WS_TABSTOP,52,10,100,15
+    LTEXT           "DNS",IDC_STATIC,19,34,14,8
+    CONTROL         "",IDC_IPADDRESS_DNS,"SysIPAddress32",WS_TABSTOP,52,30,100,15
+    LTEXT           "Gateway",IDC_STATIC,19,54,30,8
+    CONTROL         "",IDC_IPADDRESS_GATEWAY,"SysIPAddress32",WS_TABSTOP,52,50,100,15
+    LTEXT           "Listen to port",IDC_STATIC,163,14,44,8
+    EDITTEXT        IDC_EDIT_PORT,214,12,40,14,ES_AUTOHSCROLL
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME | WS_BORDER,17,75,245,1
+    LTEXT           "Ping name",IDC_STATIC,19,118,34,8
+    EDITTEXT        IDC_EDIT_PING,57,116,72,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_PING_64,131,116,139,14,ES_AUTOHSCROLL | ES_READONLY | NOT WS_TABSTOP
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME | WS_BORDER,17,110,245,1
+    LTEXT           "SSID",IDC_STATIC,16,88,16,8
+    EDITTEXT        IDC_EDIT_SSID,36,86,90,14,ES_AUTOHSCROLL
+    LTEXT           "Password",IDC_STATIC,140,88,32,8
+    EDITTEXT        IDC_EDIT_WIFI_PSW,178,86,90,14,ES_AUTOHSCROLL
+END
+
+IDD_DIALOG_BACKUP DIALOGEX 0, 0, 281, 107
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Backup/Restore"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "Backup",ID_RADIO_BACKUP,"Button",BS_AUTORADIOBUTTON,20,16,39,10
+    CONTROL         "Restore",ID_RADIO_RESTORE,"Button",BS_AUTORADIOBUTTON,20,31,41,10
+    LTEXT           "Password to encrypt/decrypt file",IDC_STATIC,125,15,106,8
+    EDITTEXT        IDC_EDIT_PSW,113,25,142,14,ES_AUTOHSCROLL
+    LTEXT           "Filename",IDC_STATIC,12,45,29,8
+    EDITTEXT        IDC_EDIT_FILE,8,57,240,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_BUTTON_SEARCH,249,57,19,14
+    PUSHBUTTON      "Start",IDOK,163,80,50,14
+    PUSHBUTTON      "Done",IDCANCEL,217,80,50,14
+END
+
+IDD_PROGRESS DIALOG 6, 15, 150, 50
+STYLE DS_ABSALIGN | DS_SETFONT | DS_MODALFRAME | DS_3DLOOK | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_BORDER
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "ProgressBar1",IDC_PROGRESSBAR_COMM,"msctls_progress32",PBS_SMOOTH | WS_BORDER,12,32,128,8
+    CTEXT           "",IDC_STATICTEXT_PROGRESS,12,8,88,16,NOT WS_GROUP
+    PUSHBUTTON      "&Abort",IDC_BUTTON_ABORT_COMM,104,10,38,18,BS_CENTER
+END
+
+IDD_DIALOG_TIMING DIALOGEX 0, 0, 295, 136
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION
+CAPTION "Timing"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "Send",IDOK,185,110,50,14
+    PUSHBUTTON      "done",IDCANCEL,239,110,50,14
+    PUSHBUTTON      "Current Date-Time",IDC_BUTTON_CURR_TIME,2,16,80,14
+    EDITTEXT        IDC_EDIT_CURR_TIME,85,16,134,14,ES_CENTER | ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "Synchronizes",IDC_BUTTON_SYNC_TIME,223,16,67,14
+    GROUPBOX        "Alarms (times in seconds)",IDC_STATIC,15,38,273,59
+    RTEXT           "Active Alarm",IDC_STATIC,25,52,63,8
+    EDITTEXT        IDC_EDIT_AL_TIME_1,97,49,40,14,ES_AUTOHSCROLL
+    RTEXT           "Inactive Alarm",IDC_STATIC,159,52,63,8
+    EDITTEXT        IDC_EDIT_AL_TIME_2,231,49,40,14,ES_AUTOHSCROLL
+    RTEXT           "Inactive Alarm\nafter ACK",IDC_STATIC,25,70,63,19
+    EDITTEXT        IDC_EDIT_AL_TIME_3,97,71,40,14,ES_AUTOHSCROLL
+    RTEXT           "Activation delay\nfirst alarm",IDC_STATIC,159,70,63,18
+    EDITTEXT        IDC_EDIT_AL_TIME_4,231,71,40,14,ES_AUTOHSCROLL
+    RTEXT           "Waiting time for end run",IDC_STATIC,11,113,101,8
+    EDITTEXT        IDC_EDIT_ENDRUN_TIME,117,110,40,14,ES_AUTOHSCROLL
+END
+
+IDD_DIALOG_EMAIL DIALOGEX 0, 0, 309, 116
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION
+CAPTION "Email setting"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    RTEXT           "Username",IDC_STATIC,3,11,37,8
+    EDITTEXT        IDC_EDIT_EMAIL_USER,47,8,98,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_EMAIL_USER_64,147,8,152,14,ES_AUTOHSCROLL | ES_READONLY
+    RTEXT           "Password",IDC_STATIC,3,28,37,8
+    EDITTEXT        IDC_EDIT_EMAIL_PSW,47,25,98,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_EMAIL_PSW_64,147,25,152,14,ES_AUTOHSCROLL | ES_READONLY
+    RTEXT           "Smtp",IDC_STATIC,3,49,37,8
+    EDITTEXT        IDC_EDIT_SMTP,48,46,141,14,ES_AUTOHSCROLL
+    RTEXT           "Port",IDC_STATIC,3,65,37,8
+    EDITTEXT        IDC_EDIT_EMAIL_PORT,48,62,42,14,ES_AUTOHSCROLL
+    RTEXT           "From",IDC_STATIC,3,80,37,8
+    EDITTEXT        IDC_EDIT_EMAIL_FROM,48,77,141,14,ES_AUTOHSCROLL
+    RTEXT           "To",IDC_STATIC,3,96,37,8
+    EDITTEXT        IDC_EDIT_EMAIL_TO,48,93,141,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "Send",IDOK,198,93,50,14
+    PUSHBUTTON      "Done",IDCANCEL,252,93,50,14
+END
+
+IDD_DIALOG_USER DIALOGEX 0, 0, 289, 175
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION
+CAPTION "Users"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "Send",IDOK,178,158,50,14
+    PUSHBUTTON      "Done",IDCANCEL,232,158,50,14
+    CONTROL         "",IDC_LIST_USER,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_EDITLABELS | LVS_ALIGNLEFT | LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,3,4,281,146,WS_EX_CLIENTEDGE
+END
+
+IDD_DIALOG_LOG DIALOGEX 0, 0, 427, 349
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION
+CAPTION "Log management"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "Done",IDCANCEL,366,10,50,14
+    CONTROL         "",IDC_EDIT_REC,"RICHEDIT",TCS_HOTTRACK | TCS_VERTICAL | TCS_RAGGEDRIGHT | TCS_MULTISELECT | WS_VSCROLL | WS_HSCROLL | WS_THICKFRAME | WS_TABSTOP,5,28,417,316
+    CONTROL         "Email",IDC_RADIO_EMAIL,"Button",BS_AUTORADIOBUTTON,17,10,32,10
+    CONTROL         "Access",IDC_RADIO_ACCESS,"Button",BS_AUTORADIOBUTTON,55,10,38,10
+    CONTROL         "Alarm",IDC_RADIO_ALARM,"Button",BS_AUTORADIOBUTTON,99,10,34,10
+    PUSHBUTTON      "Load",IDC_BUTTON_LOAD,153,8,50,14
+    PUSHBUTTON      "Delete",IDC_BUTTON_DELETE,205,8,50,14
+END
+
+IDD_DIALOG_SITE DIALOGEX 0, 0, 309, 172
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION
+CAPTION "Site files management"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LISTBOX         IDC_LIST_FILES,1,16,110,148,LBS_OWNERDRAWFIXED | LBS_HASSTRINGS | LBS_NOINTEGRALHEIGHT | LBS_EXTENDEDSEL | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Upload",IDC_STATIC,114,7,191,69
+    LTEXT           "Filename (only 8.3 DOS style)",IDC_STATIC,125,22,96,8
+    EDITTEXT        IDC_EDIT_UPLOAD,117,34,184,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_BUTTON_UPLOAD_FILE,279,21,20,11
+    PUSHBUTTON      "Upload",IDC_BUTTON_UPLOAD,251,54,50,14
+    GROUPBOX        "Download",IDC_STATIC,114,76,191,69
+    LTEXT           "Folder for download",IDC_STATIC,125,90,65,8
+    EDITTEXT        IDC_EDIT_DOWNLOAD,117,102,184,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_BUTTON_DOWNLOAD_PATH,279,90,20,11
+    PUSHBUTTON      "Download",IDC_BUTTON_DOWNLOAD,251,123,50,14
+    PUSHBUTTON      "Done",IDCANCEL,252,150,50,14
+    CTEXT           "Existing files",IDC_STATIC,1,4,93,11,WS_BORDER
+    PUSHBUTTON      "Reload",IDC_BUTTON_RELOAD,124,150,50,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+1 VERSIONINFO
+ FILEVERSION 1,0,0,2
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x0L
+#ifdef _DEBUG
+ FILEFLAGS 0x3fL
+#else
+ FILEFLAGS 0x3eL
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041004b0"
+        BEGIN
+            VALUE "Comments", "Licenced by NPS"
+            VALUE "CompanyName", "NPS"
+            VALUE "FileDescription", "Home Automation Manage for Windows"
+            VALUE "FileVersion", "1, 0, 0, 2"
+            VALUE "InternalName", "pAppl (by NPS)"
+            VALUE "LegalCopyright", "Copyright © 2001-2016. All Rights Reserved"
+            VALUE "LegalTrademarks", "Windows(TM) is a trademark of Microsoft Corporation"
+            VALUE "OriginalFilename", "domotica.exe"
+            VALUE "PrivateBuild", " "
+            VALUE "ProductName", "Home Automation"
+            VALUE "ProductVersion", "1, 0, 0, 1"
+            VALUE "SpecialBuild", " "
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x410, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BITMAP_DONE         BITMAP                  "done.BMP"
+
+IDB_BITMAP_CANC         BITMAP                  "Delete.bmp"
+
+IDB_BITMAP_OK           BITMAP                  "ok.BMP"
+
+IDB_BITMAP_DEF          BITMAP                  "default.BMP"
+
+IDB_BITMAP_SEND         BITMAP                  "send.bmp"
+
+IDB_BITMAP_LOAD         BITMAP                  "load.bmp"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_ICON1               ICON                    "np.ico"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// RCDATA
+//
+
+ID_IMAGE_LAN            RCDATA                  "network.png"
+
+ID_IMAGE_SAVE           RCDATA                  "backup.png"
+
+ID_IMAGE_SETUP          RCDATA                  "setup.png"
+
+ID_IMAGE_EMAIL          RCDATA                  "email.png"
+
+ID_IMAGE_LOG            RCDATA                  "log.png"
+
+ID_IMAGE_USERS          RCDATA                  "users.png"
+
+ID_IMAGE_DONE           RCDATA                  "done.png"
+
+ID_IMAGE_RED_SEM        RCDATA                  "semaforo-rosso.png"
+
+ID_IMAGE_GREEN_SEM      RCDATA                  "semaforo-verde.png"
+
+ID_IMAGE_TIMING         RCDATA                  "timing.png"
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_CLIENT, DIALOG
+    BEGIN
+        RIGHTMARGIN, 410
+        BOTTOMMARGIN, 216
+    END
+
+    IDD_PARAM, DIALOG
+    BEGIN
+        RIGHTMARGIN, 309
+        BOTTOMMARGIN, 166
+    END
+
+    IDD_DIALOG_LAN, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 274
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 157
+    END
+
+    IDD_DIALOG_BACKUP, DIALOG
+    BEGIN
+    END
+
+    IDD_DIALOG_TIMING, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 288
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 129
+    END
+
+    IDD_DIALOG_EMAIL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 302
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 109
+    END
+
+    IDD_DIALOG_USER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 282
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 168
+    END
+
+    IDD_DIALOG_LOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 420
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 342
+    END
+
+    IDD_DIALOG_SITE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 302
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 165
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Italiano (Italia) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

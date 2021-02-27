@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="source-dll\conn_dll.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="source-dll\pCom.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="source-dll\pLanComm.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="source-dll\pModemCom.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="source-dll\SocketUtil.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="source">
+      <UniqueIdentifier>{1e7c0432-3012-43df-a055-13fe11c1db95}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resource">
+      <UniqueIdentifier>{21a09527-041d-4a02-88c1-ee8384a5f98e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="resource\version.rc">
+      <Filter>resource</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,741 @@
+Le righe che non iniziano con un numero sono
+ignorate dal programma.
+E' possibile, nei controlli che lo prevedono, inserire
+un [a capo] o un [tab] usando, rispettivamente [\n] e [\t].
+Es. xxx,a\ncapo
+Es. xxx,un\ttab
+
+Titolo Finestra principale
+1,Siei SuperVisor Program
+
+percorso di rete per macchina client, se omesso indica macchina in locale
+se attivo non esegue il salvataggio del trend
+,2,\\\\Np2\\D\\MYPROG\\SIEI\\Siei_2\\Applic\\Trefolo\\
+
+Il codice 3 indica se i file di testo per le pagine vengono sempre caricati in locale (!= 0)
+oppure (0 o non presente) se usa il path standard (locale se server, remoto se client)
+,3,1
+
+Timer per l'applicazione, time per lampeggio
+4,250,400
+
+codice per separatore per esportazione
+5,\t
+
+In Excel il punto viene considerato separatore delle migliaia,
+mentre è la virgola quello per i decimali
+separatore per decimali nell'esportazione
+6,,
+------------------------------------------------
+codice per nascondere header e/o footer, 1 -> header, 2 -> footer, 3 -> entrambi
+7,3
+in caso di header nascosto questo codice indica se si deve comunque vedere il time
+in alto a dx (non è possibile spostarlo). Non presente o zero viene visualizzato,
+diverso da zero è nascosto
+8,1
+------------------------------------------------
+timer per reset edit, se non presente il valore di default è trenta secondi
+9,10
+------- Messaggi da Password -------------------
+titolo messaggio di ritorno
+10,Conferma PassWord
+messaggio
+11,Accesso di %d° livello ai dati
+
+titolo finestra di immissione
+12,Immissione PassWord
+
+codice per programma in modalità solo lettura, deve essere abbinato al
+codice 2 per il percorso da cui leggere i dati
+13,0
+
+nome del file di testo per header
+14,header3.txt
+------ Messaggio attesa trasmissione/ricezione dati --------------
+15,In trasmissione, attendere..
+16,In ricezione, attendere..
+
+// titolo per Messagebox
+17,Errore
+
+18,Trasmissione
+19,Ricezione
+
+20,Timeout
+21,Errore
+
+comportamento per pulsanti F1 e F12 se non presente o zero non vengono
+controllati per uso di default, altrimenti se = uno il tasto F1 fa tornare
+alla pagina precedente o fine programma. Se = due il tasto F12 apre la
+finestra degli allarmi. Se = tre entrambi
+N.B. nei dialoghi modali si esce sempre con F1
+22,0
+
+--------------------------------------------------------------
+flag per forzare risoluzione base del programma
+valori -> 0 = ignora, 1 = 640x480, 2 = 800x600, 3 = 1024x768, 4 = 1280x1024
+
+se la risoluzione è superiore a quella effettiva viene ignorato
+
+segue valore che indica la gestione monitor multipli
+valori attuali sono
+: 0-10-mancante -> primo o unico monitor
+: 20 -> secondo monitor (a dx del primo)
+: 30 -> terzo monitor (a dx del secondo)
+: 40 -> quarto monitor (a dx del terzo)
+: 130 -> terzo monitor (sotto al primo)
+: 140 -> quarto monitor (sotto al secondo)
+segue valore che indica se l'offset è relativo alle dimensioni dello schermo primario
+o alle dimensioni del sVisor (il secondo caso principalmente per test)
+: 0-mancante -> relativo allo schermo
+: != 0 -> relativo al sVisor
+23,2,0,0
+--------------------------------------------------------------
+gestione lingua, se non presente (o zero) non viene gestita
+il formato è:
+id,indice lingua(base 1),lingua1,lingua2,ecc.
+24,1,italiano,inglese,francese
+
+N.B. i testi abbinati alla lingua sono separati non da una virgola ma da uno
+     dei seguenti caratteri '§' '|'. Il carattere separatore viene posto anche
+     all'inizio, prima del primo testo e serve per identificarlo come separatore.
+     Si usano più separatori perché uno potrebbe capitare di averlo all'interno del
+     testo, allora si usa l'altro. Se entrambi i separatori fossero all'interno
+     del testo si invalida il testo immesso (nel svMaker).
+     Se si usa la lingua ma il testo interessato non ha uno dei separatori come
+     primo carattere viene preso il testo intero senza nessuna elaborazione.
+     Se il testo nella lingua selezionata non esiste viene preso quello della lingua
+     uno (default italiano)
+
+i codici nello std_msg interessati alla lingua sono:
+# 1, 10-12, 15-21, 26-29, 35, 36, 40-43, 50, 51, 54, 55, 70-75, 80, 85, 86,
+# 100-111, 120-128, 140-146, 151, 152, 165-168, 170-185, 190-199, 209-217,
+# 220-226, 230-232, 400-479, 493, 496-500, 541-544, 551-554, 5510-5512,
+# 5990, 6001, 6002, 6011-26
+# i codici per label export trend sono dinamici
+-----------------------------------------------------
+Impostazione dati e periferica per gestione cause di STOP
+prf
+6400,5
+Testi per operatore non definito
+6401,Operatore non definito.
+6402,Attenzione
+--------------------------------------------------------------
+nome delle dll da caricare all'avvio, separate da una virgola
+25,sieidll.dll
+
+26,Impossibile aprire file per comunicazione
+27,Forzare l'apertura?
+
+per richiesta di invio dato su password con livello 1000
+non viene richiesta password, solo la conferma per l'invio
+28,Invio dato
+29,Confermi l'invio?
+
+ritardo nell'avvio tra le periferiche
+30,100
+//30,Routine già in esecuzione
+//31,Attendere la risposta
+
+#define ID_ADDR_CURRENT_DATETIME 31
+#define ID_ADDR_ALTERNATE_INPUT_CAUSE 32
+--------------------------------------------------------------
+nome dell'oggetto cam che diventa globale anziché locale alla pagina.
+Quando viene aperta una pagina che richiede la connessione alla cam viene
+controllato se l'oggetto è già esistente, in caso negativo viene controllata
+questa lista e se presente viene creato l'oggetto globale, altrimenti l'oggetto
+è locale alla pagina e viene distrutto all'uscita
+33,cam1,cam2
+
+tempo in secondi di ulteriore registrazione dopo l'uscita dalla pagina.
+Vale naturalmente se si sta salvando la cattura su file (per evitare dimenticanze).
+Se si rientra e poi si esce di nuovo il timer riparte da zero
+34,3000
+--------------------------------------------------------------
+35,Periferica non pronta
+36,Attendere il completamento\ndell'inizializzazione e riprovare
+--------------------------------------------------------------
+flag per nascondere la barra del titolo. presente e valore uno -> nasconde
+37,1
+--------------------------------------------------------------
+flag per visualizzazione allarmi non più attivi
+se omesso o zero non vengono visualizzati
+38,1
+
+--------------------------------------------------------------
+flag per visualizzazione colonna tipo allarme
+se omesso o zero viene visualizzata
+segue flag per ordine di visualizzazione, se omesso o 1 il più recente è in testa
+segue flag per impostazione predefinita finestrina di impostazione refresh, se omesso
+il predefinito è uno.
+I valori possono essere 0 = Alla prima occasione appare la finestrina, 1 = refresh senza
+richiesta, -1 = refresh disabilitato. Premendo il tasto F11 si attiva la condizione 0
+
+#25-10-2007 aggiunto flag per visualizzazione data, 1 -> visualizza, 0 (o assente) non visualizza
+39,1,1,1
+--------------------------------------------------------------
+------- Messaggio per macchina non in emergenza -------------
+40,Premere l'apposito pulsante
+41,La macchina deve essere in emergenza
+---------------------------------------------------------
+Conferma per termine programma
+titolo
+42,Fine Programma
+messaggio
+43,Confermi l'uscita?
+livello password per uscita programma
+44,0
+--------------------------------------------------------------
+flag per uso tastiera estesa, se zero o non presente usa tastiera standard (F1-F12)
+altrimenti i tasti funzione sono
+[F1-F12]
+[F13-(F18-S1)-S4] -> [F1-F12] + Shift
+[S5-S16] -> [F1-F12] + Ctrl
+45,0
+flag per aggiungere prefisso F? al testo
+46,0
+--------------------------------------------------------------
+uso di touch screen, segue pagine per tastiera di default
+47,0,keyb.txt
+tastiera usata con campo solo numerico (opzionale
+,48,
+--------------------------------------------------------------
+in caso di lettura da remoto del jobfile queste sono le dword che vengono
+sempre lette e salvate in locale (solo se è attivo il flag di sola lettura, cod. 13)
+49,2,3,4,5,..
+--------------------------------------------------------------
+50,Il file esiste,\nSovrascrivere?
+51,Attenzione
+--------------------------------------------------------------
+52,Attenzione!
+53,Non tutte le periferiche sono state caricate\r\nVuoi continuare comunque?
+--------------------------------------------------------------
+54,File salvato con successo\npremere un tasto...
+55,Errore nel salvataggio del file\npremere un tasto...
+--------------------------------------------------------------
+56,Export normale
+57,Export binario
+
+--------------------------------------------------------------
+toolbar alternativa per preview di stampa.
+N.B. deve essere in formato tabella di colori (16-4bit o 256-8bit) ed il colore di sfondo
+deve essere l'ottavo della tabella. Deve contenere lo stesso numero di immagini della
+toolbar originale (unica striscia con i bitmap affiancati).
+Se non impostato usa comunque un toolbar più ingrandita in caso di touch-screen.
+,58,image\\toolBar.bmp
+--------------------------------------------------------------
+messaggio sulla barra di stato
+60,Errore negli Azionamenti
+
+ritardo nell'avvio in autorun, in secondi
+61,300
+
+titolo e prompt per impostazione timer per trend (da oggetto)
+62,Set Tempo Campionamento
+63,mSec
+
+titolo e prompt per impostazione pagine di stampa per trend (da oggetto)
+64,Print Trend
+65,Pag.
+
+70,Scelta
+71,Da
+72,A
+73,Max
+74,[F1] Ok
+75,[F2] Annulla
+
+i due sopra sono usati anche per la finestra di scelta pagina
+seguono questi sotto
+76,[F3] Refresh
+titolo finestra
+77,Scelta Pagina
+
+Testo e tipo di data
+la data può essere nel formato europeo [dd/mm/yyyy] -> 1,
+oppure americano [mm/dd/yyyy] -> 2, oppure altro [yyyy/mm/dd] -> 3
+se nessuno dei tre, viene utilizzato il formato europeo
+80,Data
+81,1
+
+;testi per input date
+85,Dal
+86,Al
+
+;titolo e testi per input time
+87,Filtro orario
+88,Da
+89,A
+------- Codici per Header di default e varie -------------------
+Codifica Mese per data
+100,Gen
+101,Feb
+102,Mar
+103,Apr
+104,Mag
+105,Giu
+106,Lug
+107,Ago
+108,Set
+109,Ott
+110,Nov
+111,Dic
+-------- Gestione Coda cambio Pagina
+Se non presente o uguale a 0, funziona in modo standard
+Se presente, con F1 si torna sempre alla pagina principale (page1.txt)
+112,0
+------------------------------------------------------------------
+testo per indicatore allarme
+vale anche per la finestra degli allarmi
+120,Allarme
+
+testo per la finestra degli allarmi
+121,Lista Allarmi ed Eventi
+
+codice tipo allarme
+122,Evento generale
+123,Allarmi generali
+124,Avaria elettrica
+125,Rottura filo
+126,Sovratemperatura
+127,Avaria meccanica
+128,Avaria idraulica
+
+dimensione, nome del font e dimensione fissa per carattere (opzionale)
+per finestra allarmi
+usata anche dalla listbox della manutenzione
+130,20
+131,arial
+132,8
+
+indirizzo in memoria per uso come filtro messaggi di errore,
+segue indicatore di apertura automatica della finestra dei messaggi
+se diverso da zero quando viene attivato almeno un bit si apre la finestra
+se zero la finestra va aperta manualmente
+se codice non presente non viene utilizzato il filtro
+135,111,1
+Nuova modifica.
+Nell'indirizzo successivo viene memorizzato lo stato di allarme dei vari
+gruppi, quindi per sapere se un gruppo è in allarme basta verificare il
+rispettivo bit all'indirizzo 112 (come da esempio sopra).
+------------------------------
+Testi finestra Allarmi
+140,Esci
+141,Reset Allarmi
+142,Nessuno
+143,Solo Allarmi
+144,Completo
+145,Visualizza Allarmi
+146,Visualizza Report
+
+Codice testo errore azionamenti
+150,Problemi con la/le macchina/e
+
+testo e titolo per gestione refresh finestra allarmi
+151,SI = Refresh automatico\nNO = Nessun refresh\nANNULLA = aggiorna e riproponi\n\nN.B. col Tasto F11 si aggiorna e si riazzera la scelta
+152,Gestione refresh allarmi
+
+numero periferica associato al plc (default 2 = prima periferica)
+154,2
+
+tempo in millisecondi di attesa per send/receive prima del timeout
+può variare tra un minimo di un secondo ad un massimo di trenta
+155,8000
+
+tipo di dato logico del plc (prf2), vedere il file prfData.h,
+segue un flag per l'invio a bit. Se non presente o zero dipende dall'invio del driver, altrimenti invia sempre come word
+156,4,0
+seconda periferica (prf3)
+157,4,0
+a seguire le altre
+-------------------------------------
+errori nel tipo di dato
+165,Questo tipo di errore non verrà più segnalato\n\nE' necessario riavviare il programma dopo\naver rimediato all'errore\n\nErrore: %s\nperiferica %s, indirizzo %d, tipo %s
+166,Tipo non valido
+167,Indirizzo non valido
+168,Periferica non esistente o non attiva
+170,Errore sconosciuto
+
+tipi di dato
+171,nessun tipo definito
+172,Campo di bit
+173,Byte
+174,Word
+175,Doppia word
+176,Float
+177,intero a 64 Bit
+178,Double
+179,Data e ora
+180,Data
+181,Ora
+182,CHAR
+183,SHORT
+184,LONG
+185,String
+
+nome periferica
+190,Nessuna
+191,Memoria
+192,PLC
+,193,??
+,194,??
+,195,??
+
+
+----------- Esportazione Dati Generale ----------------------
+Titoli per lista esportazione
+dipendono dall'implementazione locale
+5510,Globale
+5511,Report Allarmi
+5512,Trend
+
+intestazioni per export Trend
+prima colonna
+,5600,Data
+seconda colonna
+,5601,Ora
+possono essere scritte di seguito, separate dal tab oppure una per riga
+,5602,Power1\tPower2\tPower3\tSpeed1\tSpeed2\tSpeed3\tSpeed4\tTiro1\tTiro2
+,5603,Passo1\tPasso2\tTemp1\tTemp2\tDati1\tDati2
+
+
+209,-(storico)
+
+Intestazioni per esportazione statistiche allarmi
+210,Tempo di marcia
+211,Arresto per allarme
+212,Gruppo1
+213,Gruppo2
+214,Gruppo3
+215,Gruppo4
+216,Gruppo5
+217,Gruppo6
+
+220,Evento
+221,Id Allarme
+222,Allarme
+223,Data evento
+224,Ora Evento
+225,Inizio
+226,Fine
+
+230,Esportazione dati
+231,Errore!
+232,Riuscita
+-----------------------------------------------------------------
+Directory da creare all'avvio, sono undici percorsi (possono essere duplicati)
+Se non presente non viene creata, se non ce n'è nemmeno una vengono create tutte
+quelle di default.
+Alcune devono essere quasi obbligatoriamente presenti e sono:
+  -> 240 => allarmi globali
+  -> 245 => pagine di testo, configurazione, ecc
+  -> 246 => per posizionare i file storici (a meno che non vengano usati trend storici)
+  -> 248 => report allarmi
+  -> 249 => report standard
+  -> 250 => export dati in formato tabbed
+  le altre dipendono dall'implementazione
+240,alarm
+241,recipe
+242,order
+243,oper
+244,turn
+245,system
+246,history
+247,winder
+248,alarm
+249,exRep
+250,exRep
+
+-----------------------------------------------------------------
+I codici da 400 a 500 sono riservati per la gestione della manutenzione,
+i primi 80 (400-479) per le descrizioni, gli altri per stringhe varie
+------------ manutenzioni attive ------------------------------
+400,Manutenzione 1
+401,Manutenzione 2
+402,Manutenzione 3
+403,Manutenzione 4
+404,Manutenzio12345678901234567890123456789012345678901234567890
+
+------------------- Dialogo Manutenzione ------------------
+493,Lista manutenzioni da fare
+minimo numero ore per scritta in rosso
+494,2
+minimo numero ore per scritta in giallo
+495,12
+
+496,Preset tempo lavorato
+497,Ore
+498,Minuti
+
+499,Reset Tempi Scaduti, Ultimo avviso
+500,Confermi il reset?
+---------------------------------------------------------
+---------------------------------------------------------
+gestione stato linea
+Formato: type,word,maskOrNum
+type può valere 0 -> sempre stop, 1 -> sempre run, 2 -> usa campo di bit, 3 -> usa valori
+se usa valori, la maskOrNum indica il numero di valori che seguono. Devono essere consecutivi
+a partire dal indice principale e max nove valori. Devono essere inseriti solo i bit/valori
+indicanti lo stato di run
+esempio con valori
+,520,3,210,4
+,521,1
+,522,3
+,523,4
+,524,5
+esempio con campo di bit -> (1 << 0) | (1 << 2) | (1 << 3) | (1 << 4)
+,520,2,210,29
+
+word zero, usa valori
+520,3,0,1
+521,1
+522,3
+---------------------------------------------------------
+gestione reset allarmi plc
+Formato: word,resetBit
+se resetBit è minore di zero non viene usata
+una coppia per ogni periferica
+,es. 530,0,-1,0,-1,0,2
+530,0,-1
+---------------------------------------------------------
+gestione allarmi plc
+se gestisce anche gli eventi questi devono essere o all'inizio o alla fine ed essere
+sempre allineati alla word, in pratica una word non può contenere sia allarmi che eventi.
+Il numero delle word degli allarmi è comprensivo degli eventi
+L'offset per gli eventi è relativo all'indirizzo degli allarmi, es. zero se la prima word
+è un evento. Se non si usano eventi basta porne a zero il numero delle word.
+Il flag indica se esiste una word con l'indicazione dello stato di errore/evento, seguono
+l'indirizzo della suddetta word e le posizioni per i bit di stato corrispondenti.
+Se si usa questa word è inutile eseguire la lettura continua delle word degli allarmi,
+la routine preposta esegue autonomamente la lettura quando è attivo il bit di allarme o di
+evento.
+Formato:
+addrAlarm,numWordAlarm,offsEvent,numWordEvent,ifUseStatusFlag,wordStatus,bitMaskAlarm,bitMaskEvent,typeWord
+typeWord indica il tipo di dato della periferica da cui ricavare i bit per gli allarmi. Con la
+nuova specifica viene usato sempre un buffer a 32bit, ma se gli allarmi sono su word a 16bit si
+avrebbe che il diciassettesimo allarme si troverebbe sulla word alta (inutilizzata) della prima
+word a 32bit, anziché sul primo bit della word successiva.
+Se omesso o zero usa il tipo di dato a 32bit (lo stesso della periferica)
+num allarmi->18, num eventi->0, usa bit di stato-> bit 15
+
+una riga per ogni periferica, se non si usa si può omettere la riga corrispondente o porre
+il numero delle word a zero (la prima per la periferica 2, a seguire le altre)
+531,32,18,0,0,0,0,15,0
+,532,32,18,0,0,0,0,15,0
+
+periferica memoria, usa solo i primi quattro dati
+539,32,18,0,0
+---------------------------------------------------------
+gestione stampa allarmi
+numero di label,altezza font (in punti), altezza riga, margini sx, top, dx, bottom,
+(se -1 o non presente usa quello impostato nella pagina di setup), flag per print,
+nome del font
+il flag può valere:
+-> 0 = stampa diretta,
+-> 1 = preview diretto,
+-> 2 = stampa con setup,
+-> 3 = preview con setup
+poiché ho aggiunto un pulsante per il setup i flag 2 e 3 probabilmente non serviranno
+
+tutte le misure (ad eccezione del font) sono in decimi di mm
+
+540,4,14,50,100,100,100,100,0,comic sans ms
+
+coordinata X, allineamento (0 = sx, 1 = centro, 2 = dx), testo abbinato
+541,50,1,Stato
+542,180,2,Cod.
+543,425,1,Data - Ora
+544,650,0,Descrizione
+
+---------------------------------------------------------
+gestione stampa report allarmi, simile agli allarmi
+550,4,14,50,90,100,100,100,1,arial
+coordinata X, allineamento (0 = sx, 1 = centro, 2 = dx), testo abbinato
+551,50,1,Stato
+552,190,2,Cod.
+553,425,1,Data - Ora
+554,650,0,Descrizione
+-------------------------------------------------------------
+Salva immagine Video su file
+prf,addr,type,Bit,prf,addr,len,percorso predefinito
+i primi quattro valori si riferiscono al bit per l'avvio del salvataggio
+i tre seguenti sono per prelevare il nome del file (comprensivo di percorso ed estensione)
+l'ultimo valore è il nome del file (comprensivo di percorso ed estensione) predefinito
+nel caso siano lasciati nulli i dati per il nome o se nella posizione specificata non
+esistano valori
+nel salvataggio, in coda al nome viene inserito un numero autoincrementente da uno a 999
+es. expimage\\screen_001.jpg, il successivo sarà: expimage\\screen_002.jpg
+558,1,49,4,0,1,50,80,expimage\\screen.jpg
+-------------------------------------------------------------
+Stampa Video
+prf,DWORD,type,Bit,preview,setup in memoria per stampa Video
+559,1,49,4,0,0,0
+---------------------------------------------------------
+margini per print screen, se -1 viene usato il corrispondente valore di default
+della stampante
+560,10,10,10,10
+-----------------------------------------------------
+variabile utilizzata per un ping da plc, il plc alza il bit ed il sVisor lo azzera
+prf,addr,type,bit
+561,2,10,3,0
+-----------------------------------------------------
+stampa dati vari
+  codice principale,inizio dati1,inizio dati2,inizio dati3,ecc.
+,300101,300110
+600,601,611,621,ecc.
+  prf,addr,bit per avvio stampa
+601,1,48,0
+,300110,1,48,0
+  file contenente le informazioni su prf,addr,type,ndec,norm
+602,system\\stampa\\info-StampaRic.txt
+,300111,system\\stampa\\info-StampaRic.txt
+  file contenente le informazioni sugli oggetti e sulle posizioni di stampa
+603,system\\stampa\\template-StampaRic.txt
+,300112,system\\stampa\\template-StampaRic.txt
+  id su cui sono contenute prf,addr,type,ndec,norm nel file di info
+  seguono due variabili per preview e setup
+604,2000,2001,2002,2203,2204,1,0
+,300113,2000,2001,2002,2203,2204,1,0
+-----------------------------------------------------
+---------------------------------------------------------
+Gestione buffer memoria
+---------------------------------------------------------
+Variabili in memoria da inizializzare (indirizzamento a dword)
+codice identificativo e numero di dati a seguire
+800,2
+formato -> indirizzo,valore
+Il primo dato deve essere sempre zero, il primo bit viene usato per
+memorizzare lo stato di run della macchina (zero = ferma, uno = moto) e
+può essere usato per l'abilitazione del salvataggio dei trend.
+Il secondo dato viene inizializzato a uno per poter essere usato con i
+bargraph o i diametri come valore massimo/minimo moltiplicandolo per
+il normalizzatore collegato (il quale contiene il vero valore max)
+801,0,0
+802,1,1
+---------------------------------------------------------
+codice per numero di record max da visualizzare nei trend.
+Se <= zero non usa limiti, se omesso usa il default (10000).
+Altrimenti il suo range deve essere compreso tra 500 e 100000.
+999,5000
+---------------------------------------------------------
+codice per gestione file di trend, vedere le specifiche nel file include
+// per abilitazione 2° trend
+1000,1001,1011
+
+// Primo TREND
+// ind Timer Salvataggio, inizio dati, tipo trend, prefix, ext,cod2,nome del trend
+1001,20,1002,1,MH,.trd,0,dati standard
+
+//N° dati, indirizzo inizio dati, indirizzo per abilitazione salvataggio,risoluzione per export
+// la risoluzione può essere solo 0 (o non presente), 10 , 100, 1000
+1002,15,10001,1003,10
+//Abilitazione Registrazione (se commentato il salvataggio è sempre abilitato)
+//idprf,addr,type,nbit,offset
+1003,2,0,1,1,5
+
+//Dati da Salvare
+//firstCode,idprf,addr,dataType,idNorm,testo per report
+// nuova specifica, dopo il normalizzatore è possibile inserire un numero per i decimali
+// per l'export. Per compatibilità col passato viene verificato se dopo il normalizzatore
+// c'è un numero, in caso affermativo viene considerato la richiesta di decimali, se invece
+// è testo normale vengono usati i decimali di default
+// es. 11001,2,30,3,0,2,testo
+
+10001,2,30,3,0,Allungamento
+10002,2,31,3,0,Vel. Cordatrice
+10003,2,32,3,3,Vel. Cabestano 1
+10004,2,33,3,3,Vel. Cabestano 2
+10005,2,12,3,3,Set Vel. Linea
+10006,2,19,3,0,Tiro Set
+10007,2,18,3,0,Tiro Misurato
+10008,2,35,3,0,Temp. Forno
+10009,2,21,3,0,Passo Cord. Calc.
+10010,2,4,3,0,Bit Marcia Linea
+10011,1,0,3,0,Real Temp. Out Trefolo
+10012,2,80,3,0,Power Cordatrice
+10013,2,81,3,0,Power Cabestano 1
+10014,2,82,3,0,Power Cabestano 2
+10015,2,22,3,0,Contametri
+
+// Secondo TREND
+// ind Timer Salvataggio, inizio dati, tipo trend, prefix, ext,nome del trend
+1011,21,1012,1,MS,.trd,dati particolari
+
+//N° dati, indirizzo inizio dati, indirizzo per abilitazione salvataggio
+1012,1,11001,1013
+//Abiltazione Registrazione (se commentato il salvataggio è sempre abilitato)
+//idprf,addr,type,nbit,offset
+,1013,2,0,1,1,5
+
+//Dati da Salvare
+//firstCode,idprf,addr,dataType,idNorm
+11001,2,45,3,4,Velocità Linea Spira
+---------------------------------------------------------
+
+---------------------------------------------------------
+---------------------------------------------------------
+**** modificato, spostato nella pagina
+Gestione ricette generalizzata
+inizio in memoria della ricetta
+se il nome della ricetta è alfanumerico NameInMem indica l'indirizzo
+in memoria dove si trova il nome e len è la lunghezza
+occorre riservare in memoria ((len + tre) / quattro) DWDATA
+se è omesso o vale zero, il nome della ricetta è il primo valore in memoria
+1200,20,NameInMem,len
+il primo campo di edit rappresenta il nome della ricetta
+primo array -> periferica di destinazione
+1201,0,2,2,2,2,2
+secondo array -> indirizzo di destinazione
+1202,0,50,51,52,53,54
+terzo array -> tipo di dato
+1203,0,5,5,5,5,5
+****
+---------------------------------------------------------
+---------------------------------------------------------
+5990,Inserire Tessera magnetica
+cause stop macchina predefinite
+6001,Allarme
+6002,Fine Lavoro
+cause stop macchina, devono essere consecutive per un massimo di 300
+la lettura si ferma al primo codice non presente
+6011,Guasto Meccanico
+6012,Guasto Elettrico
+6013,Mancanza ENEL
+6014,Supero ENEL
+6015,Mancanza Acqua
+6016,Materiale Fragile
+6017,Mancanza Operaio
+6018,Pausa Pranzo
+6019,Cambio Filiere
+6020,Mancanza Decapato
+6021,Manutenzione Prog.
+6022,Mancanza Bobina
+6023,Rottura Saldature
+6024,Mancanza Aria
+6025,Difetto Svolgimanto
+6026,Rottura Filo
+
+-----------------------------------------------------
+Impostazione dati e periferica per gestione cause di STOP
+prf
+6400,5
+Testi per operatore non definito
+6401,Operatore non definito.
+6402,Attenzione
+ind.plc,type,offset
+6403,2,4,1
+-----------------------------------------------------
+titoli listbox oggetto allarmi
+6411,alarm(addr,bit)
+6412,S
+6413,date
+6414,time
+6415,F
+6416,G
+6417,Group
+6418,P
+6419,Descrition
+-----------------------------------------------------
+titolo e messaggio di avvertimento soglia dimensione file
+6430,Attenzione, limite dimensione file
+6431,Si è superata la soglia di avvertimento per dimensione file,\n al raggiungimento del limite i file più vecchi saranno cancellati.

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\..\gestcomm\genMainWin.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="mr_88.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="mr_88_command.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\applic\testConn\include\connClass.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source">
+      <UniqueIdentifier>{c76de74b-b76c-4cc6-a1b2-0c5c02dd907e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource">
+      <UniqueIdentifier>{f5f8343f-7516-4545-9878-0271a36652b0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\..\gestcomm\resource\commap.rc">
+      <Filter>Resource</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="..\..\gestcomm\resource\resource_cust.rc">
+      <Filter>Resource</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

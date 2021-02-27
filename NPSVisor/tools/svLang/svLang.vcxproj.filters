@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="source\BasicExcelVC6.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\chooseExport.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\def_mainapp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\fullView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\mainWin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\manexcel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\manExcelWrap.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\P_ModEdit.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\P_ModListCodes.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\P_ModListFiles.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\pMenuBtn.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource\resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resource\Canc.BMP">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\done.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\done2.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\done_.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\export_excel.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\export_excel2.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\folder.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\folder2.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\hand_p.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\ico.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\imglist3.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\import_excel.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\import_excel2.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\ok.BMP">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\Pan.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\PanMoveLock.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\save.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\save2.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\siei_m3.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\update.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resource\update2.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="resource\pAppl.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
