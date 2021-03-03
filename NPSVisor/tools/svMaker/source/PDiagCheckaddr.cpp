@@ -48,6 +48,7 @@ bool PDiagCheckaddr::create()
     int h;
     _stscanf_s(buff, _T("%d,%d,%d,%d,%d"), &x, &y, &w, &h, &maximized);
 
+#ifdef CHECK_OUT
     int width = GetSystemMetrics(SM_CXSCREEN);
     int height = GetSystemMetrics(SM_CYSCREEN);
     if(x < 0)
@@ -61,6 +62,7 @@ bool PDiagCheckaddr::create()
       if(y < 0)
         y = 0;
       }
+#endif
     SetWindowPos(*this, 0, x, y, w, h, SWP_NOZORDER);
     if(maximized)
       ShowWindow(*this, SW_MAXIMIZE);

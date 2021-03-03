@@ -298,6 +298,7 @@ void POpenSource::fillEdit(HWND hwed, setOfString& set)
 //-----------------------------------------------------------
 static void checkOut(int& x, int& y)
 {
+#ifdef CHECK_OUT
   int width = GetSystemMetrics(SM_CXSCREEN);
   int height = GetSystemMetrics(SM_CYSCREEN);
 
@@ -309,6 +310,7 @@ static void checkOut(int& x, int& y)
     y = 0;
   else if(y > height - 100)
     y = height - 100;
+#endif
 }
 //----------------------------------------------------------------------------
 bool POpenSource::create()

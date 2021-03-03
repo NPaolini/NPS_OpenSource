@@ -144,7 +144,11 @@ class myClipboard_ListBox : public Clipboard_ListBox
 #define OPEN_SOURCE_DIM   _T("dim")
 #define OPEN_SOURCE_POS   _T("pos")
 
+#define OLD_MAIN_POS   _T("MainPos")
+
 #define MAIN_PATH _T("\\Main")
+//----------------------------------------------------------------------------
+//#define CHECK_OUT
 //----------------------------------------------------------------------------
 class myManageIni : public manageIni
 {

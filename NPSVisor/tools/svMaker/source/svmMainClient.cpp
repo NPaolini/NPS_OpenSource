@@ -8,7 +8,6 @@
 #include "svmBase.h"
 #include "svm_AllObj.h"
 #include "sizer.h"
-#include "pregistry.h"
 #include "svmPageProperty.h"
 #include "p_file.h"
 #include "dChoosePath.h"
@@ -768,6 +767,7 @@ void set_Coord(PWin* t, DWORD coords)
 
   t->Attr.x = (short)LOWORD(coords);
   t->Attr.y = (short)HIWORD(coords);
+#ifdef CHECK_OUT
   if(t->Attr.x < 0)
     t->Attr.x = 0;
   else if(t->Attr.x > width - 100)
@@ -776,6 +776,7 @@ void set_Coord(PWin* t, DWORD coords)
     t->Attr.y = 0;
   else if(t->Attr.y > height - 100)
     t->Attr.y = height - 100;
+#endif
 }
 //-----------------------------------------------------------
 svmMainClient::svmMainClient(PWin * parent, HINSTANCE hInstance) :
@@ -896,6 +897,30 @@ struct svmParam
   operator DWORD() { return U.v; }
   operator LPDWORD() { return &U.v; }
 };
+//----------------------------------------------------------------------------
+bool getMainCoord(DWORD& target)
+{
+  myManageIni ini(SVMAKER_INI_FILE);
+  ini.parse();
+  LPCTSTR value = ini.getValue(OLD_MAIN_POS, MAIN_PATH);
+  if(value) {
+    __int64 t = _tcstoi64(value, 0, 10);
+    target = (DWORD)t;
+    return true;
+    }
+  return false;
+}
+//----------------------------------------------------------------------------
+bool setMainCoord(DWORD source)
+{
+  myManageIni ini(SVMAKER_INI_FILE);
+  ini.parse();
+  TCHAR t[64];
+  wsprintf(t, _T("%lu"), source);
+  ini_param param = { OLD_MAIN_POS, t };
+  ini.addParam(param, MAIN_PATH);
+  return ini.save();
+}
 //-----------------------------------------------------------
 bool svmMainClient::create()
 {
@@ -920,6 +945,10 @@ bool svmMainClient::create()
     }
   ToggleUnicode = true;
   setTitle();
+  DWORD pos = 0;
+  getMainCoord(pos);
+  SetWindowPos(*getParent(), 0, (short)LOWORD(pos), (short)HIWORD(pos), 0, 0, SWP_NOZORDER|SWP_NOSIZE);
+
   return true;
 }
 //----------------------------------------------------------------------------
@@ -1181,9 +1210,18 @@ void closeWithAnim(HWND hwnd, bool check)
 */
 }
 //-----------------------------------------------------------
+static void saveCoord(HWND hwnd)
+{
+  PRect r;
+  GetWindowRect(hwnd, r);
+  DWORD coords = MAKELONG(r.left, r.top);
+  setMainCoord(coords);
+}
+//-----------------------------------------------------------
 void svmMainClient::closeProgr()
 {
   if(okToDone(true)) {
+    saveCoord(*getParent());
     closeWithAnim(*getParent(), false);
     PostQuitMessage(0);
     }
@@ -1328,6 +1366,7 @@ LRESULT svmMainClient::windowProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM
           switch(curr) {
             case tDONE:
               if(okToDone(true)) {
+                saveCoord(*getParent());
                 closeWithAnim(*getParent(), false);
                 PostQuitMessage(0);
                 }
