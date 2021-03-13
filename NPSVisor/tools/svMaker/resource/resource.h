@@ -1346,6 +1346,8 @@
 #define IDC_CHECK_SIMPLE_BORDER         1203
 #define IDC_CHECK_STRETCHED_BMP         1203
 #define IDC_VERT                        1203
+#define IDC_CHECK_OFFSET2               1203
+#define IDC_CHECK_MONITOR_LAST_POS      1203
 #define IDC_BUTTON_WZ_RCP_ADD           1204
 #define IDC_CHECK_COL_AXES              1204
 #define IDC_CHECK_AL_TIME               1204

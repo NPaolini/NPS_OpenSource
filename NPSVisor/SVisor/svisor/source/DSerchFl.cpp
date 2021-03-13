@@ -176,7 +176,7 @@ class TD_SearchCurrAndHistory : public TD_SearchFile
 //----------------------------------------------------------------------------
 //#define SUB_BASE_KEY _T("Software\\NPS_Programs\\SVisor")
 //----------------------------------------------------------------------------
-void setKeyInfoSearch(LPCTSTR keyName, DWORD value)
+bool setKeyDWord(LPCTSTR keyName, DWORD value)
 {
   myManageIni ini(SVISOR_INI_FILE);
   ini.parse();
@@ -184,10 +184,10 @@ void setKeyInfoSearch(LPCTSTR keyName, DWORD value)
   wsprintf(t, _T("%lu"), value);
   ini_param param = { keyName, t };
   ini.addParam(param, MAIN_PATH);
-  ini.save();
+  return ini.save();
 }
 //----------------------------------------------------------------------------
-void getKeyInfoSearch(LPCTSTR keyName, DWORD& value)
+bool getKeyDWord(LPCTSTR keyName, DWORD& value)
 {
   myManageIni ini(SVISOR_INI_FILE);
   ini.parse();
@@ -195,7 +195,9 @@ void getKeyInfoSearch(LPCTSTR keyName, DWORD& value)
   if(str) {
     __int64 t = _tcstoi64(str, 0, 10);
     value = (DWORD)t;
+    return true;
     }
+  return false;
 }
 //----------------------------------------------------------------------------
 bool gSearchFile(const infoSearch& info, PWin* parent, LPTSTR target)

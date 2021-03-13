@@ -2815,13 +2815,13 @@ bool TD_LGraph2b::chooseFile()
   smartPointerConstString sp = getStringOrIdByLang(ID_TITLE_FIND_FILE);
 
   infoSearchParam isp;
-  getKeyInfoSearch(KEY_LGRAPH_FILE, isp);
+  getKeyDWord(KEY_LGRAPH_FILE, isp);
   infoSearch info(sp, path, isp);
   if(!info.chooseParam(this, true))
     return false;
 
   info.copyDataTo(isp);
-  setKeyInfoSearch(KEY_LGRAPH_FILE, isp);
+  setKeyDWord(KEY_LGRAPH_FILE, isp);
 
   if(gSearchFile(info, this, fileName)) {
 #if 0

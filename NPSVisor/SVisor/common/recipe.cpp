@@ -387,14 +387,14 @@ static bool getNameRecipe(LPTSTR target, PWin* w, setOfString& sos, LPCTSTR ext)
     sp = smartPointerConstString(_T("Ricerca Ricette"), false);
 
   infoSearchParam isp;
-  getKeyInfoSearch(KEY_RECIPE_FILE, isp);
+  getKeyDWord(KEY_RECIPE_FILE, isp);
   isp.U.history = false;
   infoSearch info(sp, path, isp);
   if(!info.chooseParam(w, true))
     return false;
 
   info.copyDataTo(isp);
-  setKeyInfoSearch(KEY_RECIPE_FILE, isp);
+  setKeyDWord(KEY_RECIPE_FILE, isp);
   if(gSearchFile(info, w, target)) {
     int len = _tcslen(target);
     for(int i = len - 1; i > 0; --i) {

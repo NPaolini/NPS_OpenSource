@@ -123,6 +123,44 @@ static bool startOnSysTray()
   return 2 == toSysTray;
 */
 }
+//----------------------------------------------------------------------------
+bool setKeyDWord(LPCTSTR keyName, DWORD value);
+bool getKeyDWord(LPCTSTR keyName, DWORD& value);
+//-----------------------------------------------------------
+struct lastPosMain
+{
+  union {
+    struct {
+      short int x;
+      short int y;
+      };
+    DWORD v;
+    } U;
+  lastPosMain() { U.v = 0; }
+  lastPosMain(int x, int y) {
+    U.x = x; U.y = y;  }
+  operator DWORD&() { return U.v; }
+};
+//-----------------------------------------------------------
+#define LAST_POS_KEY _T("LastPos")
+//-----------------------------------------------------------
+bool retrieveLastPos(PRect& rOffs)
+{
+  lastPosMain lpm;
+  if(getKeyDWord(LAST_POS_KEY, lpm)) {
+    rOffs.MoveTo(lpm.U.x, lpm.U.y);
+    return true;
+    }
+  return false;
+}
+//-----------------------------------------------------------
+void savePos(HWND hwnd)
+{
+  PRect r;
+  GetWindowRect(hwnd, r);
+  lastPosMain lpm(r.left, r.top);
+  setKeyDWord(LAST_POS_KEY, lpm);
+}
 //-----------------------------------------------------------
 bool mainWin::create()
 {
@@ -161,7 +199,7 @@ bool mainWin::create()
     p = findNextParamTrim(p);
     int addX = 0;
     int addY = 0;
-    if(p && _ttoi(p)) {
+    if(ixMon >= 0 && p && _ttoi(p)) {
       GetWindowRect(*this, rOffs);
       rOffs.MoveTo(0, 0);
       addX = 2;
@@ -171,7 +209,10 @@ bool mainWin::create()
       case 0:  // è il primo, nessuna azione
       case 10:
       default:
-        ixMon = 0;
+        if(retrieveLastPos(rOffs))
+          ixMon = -1;
+        else
+          ixMon = 0;
         break;
       case 20:
         rOffs.Offset(rOffs.Width(), 0);
@@ -292,6 +333,9 @@ LRESULT mainWin::windowProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lPara
     }
 
   switch(message) {
+    case WM_DESTROY:
+      savePos(hwnd);
+      break;
     case WM_ACTIVATEAPP:
       activeSetForeg(toBool(wParam));
       break;

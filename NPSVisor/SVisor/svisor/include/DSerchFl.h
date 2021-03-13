@@ -36,8 +36,8 @@ struct infoSearchParam
   operator DWORD&() { return U.v; }
 };
 //----------------------------------------------------------------------------
-void setKeyInfoSearch(LPCTSTR keyName, DWORD value);
-void getKeyInfoSearch(LPCTSTR keyName, DWORD& value);
+bool setKeyDWord(LPCTSTR keyName, DWORD value);
+bool getKeyDWord(LPCTSTR keyName, DWORD& value);
 //----------------------------------------------------------------------------
 class infoSearch
 {

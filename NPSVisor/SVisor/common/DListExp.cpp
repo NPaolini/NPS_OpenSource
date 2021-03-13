@@ -201,7 +201,7 @@ static returnExp exp_alarm(PWin* par, bool rep, bool history, int id)
   infoSearch info(p, path, stInfo);
 #else
   infoSearchParam isp;
-  getKeyInfoSearch(KEY_EXP_ALARM, isp);
+  getKeyDWord(KEY_EXP_ALARM, isp);
   infoSearch info(p, path, isp);
 #endif
   TCHAR tFile[_MAX_PATH];
@@ -212,7 +212,7 @@ static returnExp exp_alarm(PWin* par, bool rep, bool history, int id)
   stInfo.copyData(info);
 #else
   info.copyDataTo(isp);
-  setKeyInfoSearch(KEY_EXP_ALARM, isp);
+  setKeyDWord(KEY_EXP_ALARM, isp);
 #endif
 
   if(gSearchFile(info, par, tFile)) {
@@ -567,7 +567,7 @@ returnExp exportData(idExport choose, PWin* par, int id, bool history)
   infoSearch info(p, path, stInfo);
 #else
   infoSearchParam isp;
-  getKeyInfoSearch(KEY_EXP_DATA, isp);
+  getKeyDWord(KEY_EXP_DATA, isp);
   infoSearch info(p, path, isp);
 #endif
   TCHAR tFile[_MAX_PATH];
@@ -578,7 +578,7 @@ returnExp exportData(idExport choose, PWin* par, int id, bool history)
   stInfo.copyData(info);
 #else
   info.copyDataTo(isp);
-  setKeyInfoSearch(KEY_EXP_DATA, isp);
+  setKeyDWord(KEY_EXP_DATA, isp);
 #endif
 
   if(gSearchFile(info, par, tFile)) { {

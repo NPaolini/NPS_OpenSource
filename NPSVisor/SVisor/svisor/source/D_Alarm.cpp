@@ -553,7 +553,7 @@ void TD_Alarm::fill_LB(int action)
     bool success = true;
     bool history = false;
     if(2 != action) {
-      getKeyInfoSearch(KEY_REP_ALARM, isp);
+      getKeyDWord(KEY_REP_ALARM, isp);
       infoSearch info(sp, filenameReport, isp);
 
       do {
@@ -569,7 +569,7 @@ void TD_Alarm::fill_LB(int action)
         } while(false);
       if(success) {
         info.copyDataTo(isp);
-        setKeyInfoSearch(KEY_REP_ALARM, isp);
+        setKeyDWord(KEY_REP_ALARM, isp);
         if(gSearchFile(info, this, path)) {
           if(!_tcsncmp(path, _T("H/"), 2))
             history = true;
